@@ -1,0 +1,87 @@
+.loginHeading {
+	background: rgb(255, 255, 255);
+	font-size: 32px;
+	text-align: center;
+	width: 300px;
+	/* margin-top: 20px; */
+	padding: 10px;
+}
+.Card {
+	background: rgb(255, 255, 255);
+	background-size: 100%;
+	width: 350px;
+	/* height: 400px; */
+	height: auto;
+	border: none;
+	align-items: center;
+	-webkit-box-shadow: 10px 10px 22px -16px rgb(0 0 0 / 75%);
+	-moz-box-shadow: 10px 10px 22px -16px rgba(0, 0, 0, .75);
+	box-shadow: 1px 2px 22px -10px rgb(0 0 0 / 75%);
+	z-index: 1;
+}
+
+.forms {
+	display: inline-block;
+	width: 100%;
+	height: auto;
+	padding: auto;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 0.5px solid #c4c2c2;
+	border-radius: 0px;
+	border-bottom: 1px solid #cfcccc;
+	box-shadow: none;
+	vertical-align: middle;
+	outline: none;
+}
+.forms:focus {
+	outline: none;
+	box-shadow: none;
+	border: none;
+	border: 2px solid #0cd070;
+}
+.container {
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	min-height: 433px;
+	height: 100% !important;
+}
+.form {
+	width: 300px;
+	/* height: 280px; */
+	height: auto;
+}
+.query {
+	font-size: 15px;
+	font-family: 'Times New Roman', Times, serif;
+}
+.reset {
+	text-align: left;
+	margin-top: 0px;
+}
+.forgot {
+	text-align: right;
+	margin-top: -21px;
+}
+
+.loginButton{
+    display: inline-block;
+    color: #fff;
+    background: #0cd070;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: none;
+    font-size: 12px;
+    padding: 8px 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+	width: 100%;
+}

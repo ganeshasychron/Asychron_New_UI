@@ -1,0 +1,12 @@
+.svgedit {
+    height: auto;
+    margin-right: 20px;
+    color: green !important;
+    cursor: pointer;
+}
+
+.svgdelete {
+    height: auto;
+    color: red !important;
+    cursor: pointer;
+}
