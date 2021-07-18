@@ -1,0 +1,11 @@
+.link {
+	background-color: rgba(215, 226, 240, 0.356);
+	display: inline-block;
+	text-align: center;
+}
+@media screen and (max-width: 600px) {
+	.link {
+		width: 89px;
+		padding: 0px;
+	}
+}

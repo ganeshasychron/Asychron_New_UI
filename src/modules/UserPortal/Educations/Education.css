@@ -1,6 +1,6 @@
 .svgedit {
     height: auto;
-    margin-right: 20px;
+  
     color: green !important;
     cursor: pointer;
 }
@@ -9,4 +9,71 @@
     height: auto;
     color: red !important;
     cursor: pointer;
+}
+
+.row.educations{
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+   align-content: center;
+   justify-content: center;
+   align-items: center;
+}
+
+.button.edit-education{
+  background: none;
+  border: none;
+}
+
+.button.delete-education {
+    margin-left: 10px;
+    background: none;
+    border: none;
+}
+
+.danger-danger{
+
+    background-color: red !important;
+    border: none;
+    display: flex !important;
+    flex-direction: column !important;
+    align-content: center !important;
+}
+
+.row.modal-education{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ align-content: center;
+ flex-wrap: nowrap;
+}
+
+.cancel_button.education{
+    color: #515b64;
+    background-color: rgb(211, 208, 208);
+    display: inline-block;
+    font-weight: 500;
+    padding: 8px 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: middle;
+    margin: 2px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: none;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+@media (min-width: 992px){
+.table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
 }

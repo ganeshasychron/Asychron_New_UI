@@ -1,0 +1,71 @@
+.linkbutton {
+	background-color: #fff;
+	text-align: center;
+	color: black;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.linkbutton:hover {
+	color: black;
+	background-color: rgba(180, 128, 238, 0.849);
+}
+
+.link {
+    background-color: rgba(215, 226, 240, 0.356);
+}
+
+#field{
+    padding-top: 0px;
+    margin-bottom: 0px;
+  }
+
+#label{
+padding-left: 0px;
+}
+
+#viewField{
+    display :flex;
+}
+
+#DescField{
+    display :flex;
+    align-content: center !important;
+    justify-content: center;
+    align-items: center;
+}
+
+#btnReset{
+	background: #6d80d6;
+}
+
+#btnCancel{
+	background: #a5ada9;
+}
+
+.svgedit {
+    height: auto;
+    color: green !important;
+    cursor: pointer;
+}
+
+.svgdelete {
+    height: auto;
+    color: red !important;
+    cursor: pointer;
+}
+
+#edit{
+  background: none;
+  border: none;
+}
+
+#delete{
+    margin-left: 10px;
+    background: none;
+    border: none;
+}
+
+ 
+

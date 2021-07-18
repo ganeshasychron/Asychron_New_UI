@@ -3,15 +3,13 @@ import * as RiIcons from 'react-icons/ri';
 
 export const SidebarData = [
   {
-    title: "DASHBOARD",
-    path: "/",
-    iconClosed: <RiIcons.RiArrowDownSFill />,
-    iconOpened: <RiIcons.RiArrowUpSFill />,
+    title: 'DASHBOARD',
+    path: '/'
   },
 
   {
-    title: "HOME",
-    path: "#",
+    title: 'HOME',
+    path: '#',
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
 
@@ -79,5 +77,45 @@ export const SidebarData = [
   {
     title: "CALENDAR",
     path: "/calendar",
+  },
+  {
+    title: "SURVEY",
+    path: "/survey",
+  },
+  {
+    title: "POLLS",
+    path: "/polls",
+  },
+  {
+    title: "MANAGE LEAVES",
+    path: "/manageLeaves"
+  },
+  {
+    title: "MANAGE POLICIES",
+    path: "/managePolicies"
+  },
+  {
+    title: "MANAGE POLLS",
+    path: "/managePolls"
+  },
+  {
+    title: "MANAGE TASKS",
+    path: "/manageTask",
+  },
+  {
+    title: "VACANCIES",
+    path: "/vacancies",
+  },
+  {
+    title: 'ManageHiring',
+    path: '/hiring'
+  },
+  {
+    title: "USERS",
+    path: "/usersManagement",
+  },
+  {
+    title: "AdminPerformance",
+    path: "/AdminPerformance",
   },
 ];

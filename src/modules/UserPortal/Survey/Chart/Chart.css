@@ -1,0 +1,7 @@
+
+.apex_chart{
+    height: auto;
+    width: auto;
+    display: inline-flex;
+    flex-wrap: wrap;
+ }

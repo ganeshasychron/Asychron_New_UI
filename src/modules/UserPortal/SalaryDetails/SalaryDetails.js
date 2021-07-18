@@ -20,9 +20,11 @@ const SalaryDetails = () => {
 							Form 16
 						</Button>
 					</a>
-					<Button className="mr-1" variant="outline-secondary">
-						Tax Details
-					</Button>
+					<a href="https://www.incometaxindia.gov.in/Pages/tax-payers-information/booklets.aspx">
+						<Button className="mr-1" variant="outline-secondary">
+							Tax Details
+						</Button>
+					</a>
 				</Col>
 				<hr className="hr-line" />
 				<Col>

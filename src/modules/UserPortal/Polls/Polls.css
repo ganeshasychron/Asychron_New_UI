@@ -1,0 +1,95 @@
+table {
+   table-layout: auto;
+}
+
+.btn-align {
+   display: flex;
+   justify-content: space-evenly;
+}
+
+.Back Button{
+   display: flex;
+   justify-items: right;
+}
+
+.columnwidth {
+   width : 250px;
+}
+
+#submitid {
+   width: 130px;
+   padding-left: 20px;
+   font-weight: normal;
+   margin-top: 1rem;
+}
+
+#submitid1 {
+   margin-left: 500px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+#LabelArea{
+   margin-left: 10px;
+}
+
+#PollLabel{
+   padding-top: 20px;
+   margin-left:20px;
+   padding-bottom: 20px;   
+}
+
+.questionFont{
+   font-weight: 600;
+   margin-left: 20px;
+}
+
+
+/* Charts */
+
+.CardArea{
+   align-content: center;
+   justify-content: center;
+   border-radius: .3rem;
+   display: flex;
+   flex: auto;
+   flex-wrap: wrap;
+}
+    
+.leavesdashboard{
+   border: .5px solid #ccc;
+   background-color: whitesmoke;
+}
+ 
+.card.polls{
+   justify-content: space-between;
+   width: auto;
+   border: 1px solid #ccc;
+   border-radius: 2px;
+   display: flex;
+   flex: auto;
+   margin: 10px;
+   margin-bottom: 0px !important;
+   margin-bottom: -5px !important;
+}
+ 
+.card-body.polls{
+   display: inline-block;
+   border: none;
+   outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

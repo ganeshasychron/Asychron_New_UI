@@ -1,76 +1,50 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
-import { SidebarData } from './SidebarData';
-import SubMenu from './SubMenu.js';
+import React from 'react';
+// import { useLocation} from "react-router-dom";
+import { Nav } from 'react-bootstrap';
+import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
-import './Sidebar.css';
-import Routers from '../../routers/routers';
 
-const Nav = styled.div`
-  background: #15171c;
-  height: 50px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-`;
+import { SidebarData } from '../Sidebar/SidebarData';
 
-const NavIcon = styled(Link)`
-  margin-left: 2rem;
-  font-size: 2rem;
-  height: 80px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-`;
+function Sidebar({ color, routes }) {
+	// const location = useLocation();
+	// const activeRoute = (routeName) => {
+	//   return location.pathname.indexOf(routeName) > -1 ? "active" : "";
+	// };
+	return (
+		<IconContext.Provider value={{ color: '#fff' }}>
+			<div className="sidebar" data-color={color}>
+				<div className="sidebar-wrapper">
+					<Nav>
+						{SidebarData.map((item, index) => {
+							return <SubMenu item={item} key={index} />;
+						})}
 
-const SidebarNav = styled.nav`
- 
-  width: 250px;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
-  transition: 350ms;
-  z-index: 10;
-`;
-
-const SidebarWrap = styled.div`
-  width: 100%;
-`;
-
-const Sidebar = () => {
-  const [sidebar, setSidebar] = useState(false);
-
-  const showSidebar = () => setSidebar(!sidebar);
-
-  return (
-    <>
-      <IconContext.Provider value={{ color: "#fff" }}>
-        <Nav>
-          <NavIcon to="#">
-            <FaIcons.FaBars onClick={showSidebar} />
-          </NavIcon>
-        </Nav>
-
-        <SidebarNav className="sidebar-nav" sidebar={sidebar}>
-          <SidebarWrap>
-            <NavIcon to="#">
-              <AiIcons.AiOutlineClose onClick={showSidebar} />
-            </NavIcon>
-            {SidebarData.map((item, index) => {
-              return <SubMenu item={item} key={index} />;
-            })}
-          </SidebarWrap>
-        </SidebarNav>
-        <Routers />
-      </IconContext.Provider>
-    </>
-  );
-};
+						{/* {routes.map((prop, key) => {
+              if (!prop.redirect)
+                return (
+                  <li
+                    className={
+                      prop.upgrade
+                        ? "active active-pro"
+                        : activeRoute(prop.path)
+                    }
+                    key={key}
+                  >
+                    <NavLink
+                      to={prop.path}
+                      className="nav-link"
+                      activeClassName="active"
+                    ></NavLink>
+                  </li>
+                );
+              return null;
+            })} */}
+					</Nav>
+				</div>
+			</div>
+		</IconContext.Provider>
+	);
+}
 
 export default Sidebar;

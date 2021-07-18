@@ -1,0 +1,125 @@
+
+/* survey data list page */
+
+.submit-btn{
+  margin: 2px;
+}
+ 
+.ColumnButtons{
+   width: 140px;   /*100px*/
+    display: inline-flex;
+}
+
+@media screen and (max-width: 500px) {
+  .ColumnButtons{
+    width: auto;
+  
+  }
+}
+
+/* Complete page labels  */
+ 
+.hr-line-2{
+  margin-bottom: 0px;
+}
+
+#LabelArea{
+  display:flex;
+  margin-bottom: 20px;
+ /* flex-wrap: wrap;*/
+}
+
+#FirstLabelId{
+  width: 105px;
+}
+
+#SecondLabelId{
+  font-weight: 600;
+ }
+ 
+.SecondLabel{
+  width: 255px;   
+ margin-right: 190px;  
+ margin-left: 10px;   
+}
+.SecondLabel2{
+  margin-left: 10px;    
+}
+
+@media screen and (max-width: 500px) {
+  .SecondLabel{
+margin-right: 0px;
+width: auto;
+  }
+}
+
+.submit-button{
+  margin:2px;
+  margin-top:10px;
+  margin-bottom: 10px; 
+ }
+
+ .page-heading1{
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 1em;
+  line-height: 10px;
+  color: black;
+  font-weight: 700;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+/* Chart Bar,Pie */   
+
+.CardArea{
+  align-content: center;
+  justify-content: center;
+  border-radius: .3rem;
+  display: flex;
+  flex: auto;
+  flex-wrap: wrap;
+}
+   
+.leavesdashboard{
+  border: .5px solid #ccc;
+  background-color: whitesmoke;
+}
+
+.card.survey{
+  justify-content: space-between;
+  width: auto;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  display: flex;
+  flex: auto;
+  margin: 10px;
+  margin-bottom: 0px !important;
+  margin-bottom: -5px !important;
+}
+
+.card-body.survey{
+  display: inline-block;
+  border: none;
+  outline: none;
+}
+
+.select_option{
+  width: 100%;
+  float: left;
+  text-align: left;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,
+  box-shadow .15s ease-in-out;
+}
+
+

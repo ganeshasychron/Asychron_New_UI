@@ -1,45 +1,68 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Table } from 'react-bootstrap';
 //import { FaEdit, FaTrash } from 'react-icons/fa';
 import './policies.css';
 import '../../../shared/CSS/FormStyles.css';
+import { FaDownload } from 'react-icons/fa';
+import * as services from "../../../services/services";
 
-const Policies = () => {
-    return (
-        <div className="jumbotron jumbo-form">
-            <h5 className="page-heading">Policies</h5>
-            <hr className="hr-line" />
-            <div className="form-container">
-                <form>
-                    <div className="table-responsive">
+class Policies extends React.Component {
 
-                        <Table striped bordered hover>
-                       
-                            <thead>   
-                                <tr >
-                                  
-                                 
-                                    <th > <div className="ColumnWidth"> Name    </div>
-                                      </th>
-                                    <th  > Download    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>HR Policies</td>
+    state = {
+        data: []
+    }
 
-                                    <td>  
-                                   <input type="submit" value="Download" className="submit-btn" />
-                                    </td>
-                                </tr>
-                            </tbody>
-                            
-                        </Table>
-                    </div>
-                </form>
+    componentDidMount() {
+        this.getPolicy();
+    }
+
+    async getPolicy() {
+        await services.getService("policies").then((res) => {
+            console.log(res.data);
+            this.setState({ data: res.data.Policy });
+        });
+    }
+
+    render() {
+        return (
+            <div className="jumbotron jumbo-form">
+                <h5 className="page-heading">Policies</h5>
+                <hr className="hr-line" />
+                <div className="table-responsive">
+                    <Table striped bordered hover>
+
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div className="ColumnWidth"> Name </div>
+                                </th>
+                                <th> Download </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {
+                                this.state.data.map((data) => (
+                                    <tr key={data._id}>
+                                        <td>
+                                            {data.name}
+                                        </td>
+                                        <td>
+                                            <button className="button edit-education">
+                                                <FaDownload className="svgdownload" />
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))
+                            }
+                        </tbody>
+
+                    </Table>
+                </div>
             </div>
-        </div>
-    )
-}
+        )
+    }
 
+}
 export default Policies;
+
