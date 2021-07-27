@@ -7,7 +7,7 @@ import UserReference from '../modules/UserPortal/UserReference/UserReference';
 import Certification from '../modules/UserPortal/Certifications/Certification';
 import ProfileDetails from '../modules/UserPortal/PersonalDetails/ProfileDetails';
 import Headers from '../shared/Header/Header';
-import Leaves from '../modules/UserPortal/LeavesDashboard/LeavesDashboard';
+import Leaves from '../modules/UserPortal/LeavesDashboard/Leaves';
 import UserBankDetails from '../modules/UserPortal/UserBankDetails/UserBankDetails';
 import Family from '../modules/UserPortal/Family/Family';
 import Performance from '../modules/UserPortal/Performance/Performance';
