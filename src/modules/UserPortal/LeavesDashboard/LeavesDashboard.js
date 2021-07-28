@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import * as services from '../../../services/services';
-import '../../../../src/shared/CSS/blueTheme.css';
+
 import './LeavesDashboard.css';
 import '../../../shared/CSS/blueTheme.css';
+import './Leaves.css';
 import { Col, Row, Button, Table } from 'react-bootstrap';
 import logo from '../../../assets/images/parking.png';
 import check1 from '../../../../src/assets/images/check (1).png';
@@ -159,243 +160,266 @@ class Leaves extends Component {
 	};
 	render() {
 		return (
-			<div className="jumbotron asy-main-jumbotron">
-				<div className="row asy-main-row">
-					<Col>
-						<h5 className="asy-main-page-heading"> Leaves Balance </h5>
-					</Col>
-				</div>
-				<div className="row">
-					<div className="col-xl-6 col-lg-6">
-						<div className="card .asy-card-primary-design">
-							<div className="card-body">
-								<Col>
-									<p className="asy-card-page-heading">Book Time Off</p>
-								</Col>
-								<form>
-									<div className="form-group col-12 col-md-12">
-										<label for="inputProjectName" className="col-form-label">
-											Leaves Type
-										</label>
-										<select class="form-control" name="activity">
-											<option value="" disabled selected className="activity">
-												Select Activities
-											</option>
-											<option value="Development" className="activity">
-												Development
-											</option>
-											<option value="Testing" className="activity">
-												Testing
-											</option>
-											<option value="Training" className="activity">
-												Training
-											</option>
-										</select>
-									</div>
-									<Row>
-										<div className="form-group col-12 col-md-6">
-											<label for="leaveperiodfrom" className="col-form-label">
-												Leave Period From
-											</label>
-											<input
-												type="text"
-												className="form-control form-input"
-												id="leaveperiodfrom"
-												placeholder="From"
-												required
-											/>
-										</div>
-										<div className="form-group col-12 col-md-6">
-											<label for="leaveperiodto" className="col-form-label">
-												Leave Period To
-											</label>
-											<input
-												type="text"
-												className="form-control form-input"
-												id="leaveperiodto"
-												placeholder="To"
-												required
-											/>
-										</div>
-									</Row>
-									<Row>
-										<div className="form-group col-12 col-md-12">
-											<label for="Reason" className="col-form-label">
-												Reason
-											</label>
-											<textarea
-												type="text"
-												className="form-control form-input"
-												id="reason"
-												placeholder="Reason For Leaves"
-												required
-											/>
-										</div>
-									</Row>
-									<div className="asy-button-class text-center">
-										<Button className="asy-primary-submit-button">
-											<h6 className="text-center asy-button-heading">Book Time Off</h6>
-										</Button>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-					<div className="col-xl-6 col-lg-6">
-						<Row>
-							<div className="form-group col-12 col-md-6">
-								<div className="card asy-leaves-page-card">
-									<div className="card-body asy-leaves-page-body">
-										<div className="row asy-card-heading">
-											<div className="col asy">
-												<img
-													src={logo}
-													alt="img logo"
-													className="rounded-circle avatar-lg img-thumbnail"
-												/>
-											</div>
-											<div className="col asy-leaves-page-lable">
-												<h6 className="asy-card-lable text-center">Paid Leaves</h6>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div className="form-group col-12 col-md-6">
-								<div className="card asy-leaves-page-card">
-									<div className="card-body asy-leaves-page-body">
-										<div className="row asy-card-heading">
-											<div className="col asy">
-												<img
-													src={logo}
-													alt="img logo"
-													className="rounded-circle avatar-lg img-thumbnail"
-												/>
-											</div>
-											<div className="col asy-leaves-page-lable">
-												<h6 className="asy-card-lable text-center">Paid Leaves</h6>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</Row>
-						<Row>
-							<div className="form-group col-12 col-md-6">
-								<div className="card asy-leaves-page-card">
-									<div className="card-body asy-leaves-page-body">
-										<div className="row asy-card-heading">
-											<div className="col asy">
-												<img
-													src={logo}
-													alt="img logo"
-													className="rounded-circle avatar-lg img-thumbnail"
-												/>
-											</div>
-											<div className="col asy-leaves-page-lable">
-												<h6 className="asy-card-lable text-center">Paid Leaves</h6>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div className="form-group col-12 col-md-6">
-								<div className="card asy-leaves-page-card">
-									<div className="card-body asy-leaves-page-body">
-										<div className="row asy-card-heading">
-											<div className="col asy">
-												<img
-													src={logo}
-													alt="img logo"
-													className="rounded-circle avatar-lg img-thumbnail"
-												/>
-											</div>
-											<div className="col asy-leaves-page-lable">
-												<h6 className="asy-card-lable text-center">Paid Leaves</h6>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</Row>
-					</div>
-				</div>
-				<div>
-					<div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
-						<Table className="asy-Table">
-							<thead>
-								<tr className="asy-TableHeading">
-									<th className="asy-th">Leaves Type</th>
-									<th className="asy-th">Applied On</th>
-									<th className="asy-th">Leaves Period</th>
-									<th className="asy-th">Reason</th>
-									<th className="asy-th">Status</th>
-									<th className="asy-th">Action</th>
-								</tr>
-							</thead>
+      <div className="jumbotron asy-main-jumbotron">
+        <div className="row asy-main-row">
+          <Col>
+            <h5 className="asy-main-page-heading"> Leaves Balance </h5>
+          </Col>
+        </div>
+        <div className="row">
+          <div className="col-xl-6 col-lg-6">
+            <div className="card .asy-card-primary-design">
+              <div className="card-body">
+                <Col>
+                  <p className="asy-card-page-heading">Book Time Off</p>
+                </Col>
+                <form>
+					<Row>
+                  <div className="form-group col-12 col-md-12">
+                    <label for="inputProjectName" className="col-form-label">
+                      Leaves Type
+                    </label>
+                    <select className="form-control form-input" name="activity">
+                      <option value="" disabled selected className="activity">
+                        Select Activities
+                      </option>
+                      <option value="Development" className="activity">
+                        Development
+                      </option>
+                      <option value="Testing" className="activity">
+                        Testing
+                      </option>
+                      <option value="Training" className="activity">
+                        Training
+                      </option>
+                    </select>
+                  </div>
+				  </Row>
+                  <Row>
+                    <div className="form-group col-12 col-md-6">
+                      <label for="leaveperiodfrom" className="col-form-label">
+                        Leave Period From
+                      </label>
+                      <input
+                        type="text"
+                        className="form-control form-input"
+                        id="leaveperiodfrom"
+                        placeholder="From"
+                        required
+                      />
+                    </div>
+                    <div className="form-group col-12 col-md-6">
+                      <label for="leaveperiodto" className="col-form-label">
+                        Leave Period To
+                      </label>
+                      <input
+                        type="text"
+                        className="form-control form-input"
+                        id="leaveperiodto"
+                        placeholder="To"
+                        required
+                      />
+                    </div>
+                  </Row>
+                  <Row>
+                    <div className="form-group col-12 col-md-12">
+                      <label for="Reason" className="col-form-label">
+                        Reason
+                      </label>
+                      <textarea
+                        type="text"
+                        className="form-control form-input"
+                        id="reason"
+                        placeholder="Reason For Leaves"
+                        required
+                      />
+                    </div>
+                  </Row>
+                  <div className="asy-button-class text-center">
+                    <Button className="asy-primary-submit-button">
+                      <h6 className="text-center asy-button-heading">
+                        Book Time Off
+                      </h6>
+                    </Button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-6 col-lg-6">
+            <Row>
+              <div className="form-group col-12 col-md-6">
+                <div className="card asy-leaves-page-card">
+                  <div className="card-body asy-leaves-page-body">
+                    <div className="row asy-card-heading">
+                      <div className="col asy">
+                        <img
+                          src={logo}
+                          alt="img logo"
+                          className="rounded-circle avatar-lg img-thumbnail"
+                        />
+                      </div>
+                      <div className="col asy-leaves-page-lable">
+                        <h6 className="asy-card-lable text-center">
+                          Paid Leaves
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="form-group col-12 col-md-6">
+                <div className="card asy-leaves-page-card">
+                  <div className="card-body asy-leaves-page-body">
+                    <div className="row asy-card-heading">
+                      <div className="col asy">
+                        <img
+                          src={logo}
+                          alt="img logo"
+                          className="rounded-circle avatar-lg img-thumbnail"
+                        />
+                      </div>
+                      <div className="col asy-leaves-page-lable">
+                        <h6 className="asy-card-lable text-center">
+                          Paid Leaves
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Row>
+            <Row>
+              <div className="form-group col-12 col-md-6">
+                <div className="card asy-leaves-page-card">
+                  <div className="card-body asy-leaves-page-body">
+                    <div className="row asy-card-heading">
+                      <div className="col asy">
+                        <img
+                          src={logo}
+                          alt="img logo"
+                          className="rounded-circle avatar-lg img-thumbnail"
+                        />
+                      </div>
+                      <div className="col asy-leaves-page-lable">
+                        <h6 className="asy-card-lable text-center">
+                          Paid Leaves
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="form-group col-12 col-md-6">
+                <div className="card asy-leaves-page-card">
+                  <div className="card-body asy-leaves-page-body">
+                    <div className="row asy-card-heading">
+                      <div className="col asy">
+                        <img
+                          src={logo}
+                          alt="img logo"
+                          className="rounded-circle avatar-lg img-thumbnail"
+                        />
+                      </div>
+                      <div className="col asy-leaves-page-lable">
+                        <h6 className="asy-card-lable text-center">
+                          Paid Leaves
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Row>
+          </div>
+        </div>
+        <div>
+          <div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
+            <Table className="asy-Table">
+              <thead>
+                <tr className="asy-TableHeading">
+                  <th className="asy-th">Leaves Type</th>
+                  <th className="asy-th">Applied On</th>
+                  <th className="asy-th">Leaves Period</th>
+                  <th className="asy-th">Reason</th>
+                  <th className="asy-th">Status</th>
+                  <th className="asy-th">Action</th>
+                </tr>
+              </thead>
 
-							<tbody>
-								{this.state.data.map((data) => (
-									<tr className="asy-TableData" key={data._id}>
-										<td>{data.leavesType}</td>
-										<td>{data.leaveFrom}</td>
-										<td>{data.leaveTo}</td>
-										<td>{data.reason}</td>
-										<td>
-											{!data ? (
-												<div>
-													<img
-														src={check11}
-														srcset={(check12, check13)}
-														className="asy-Check"
-													/>
-													<label>Approved</label>
-												</div>
-											) : (
-												<div>
-													<img src={check1} srcset={(check2, check3)} className="asy-Check" />
-													<label>Approved</label>
-												</div>
-											)}
-										</td>
-										<td>
-											<Button variant="none" onClick={this.handleModalShow.bind(this, data._id)}>
-												<img src={trash1} srcset={(trash2, trash3)} className="asy-Trash" />
-											</Button>
-											<Modal show={this.state.showHide}>
-												<Modal.Body>
-													<h6>Are you Sure. Delete This Data? </h6>
-												</Modal.Body>
-												<Modal.Footer>
-													<div className="row modal-education">
-														<div className="col modal-education">
-															<Button
-																className="submit-button"
-																onClick={this.handledeleteData}
-															>
-																Delete
-															</Button>
-														</div>
-														<div className="col modal-education">
-															<Button
-																className="danger-danger submit-button"
-																onClick={this.handleModalHide}
-															>
-																Cancel
-															</Button>
-														</div>
-													</div>
-												</Modal.Footer>
-											</Modal>
-										</td>
-									</tr>
-								))}
-							</tbody>
-						</Table>
-					</div>
-				</div>
-			</div>
-		);
+              <tbody>
+                {this.state.data.map((data) => (
+                  <tr className="asy-TableData" key={data._id}>
+                    <td>{data.leavesType}</td>
+                    <td>{data.leaveFrom}</td>
+                    <td>{data.leaveTo}</td>
+                    <td>{data.reason}</td>
+                    <td>
+                      {!data ? (
+                        <div>
+                          <img
+                            src={check11}
+                            srcset={(check12, check13)}
+                            className="asy-Check"
+                          />
+                          <label>Approved</label>
+                        </div>
+                      ) : (
+                        <div>
+                          <img
+                            src={check1}
+                            srcset={(check2, check3)}
+                            className="asy-Check"
+                          />
+                          <label>Approved</label>
+                        </div>
+                      )}
+                    </td>
+                    <td>
+                      <Button
+                        variant="none"
+                        onClick={this.handleModalShow.bind(this, data._id)}
+                      >
+                        <img
+                          src={trash1}
+                          srcset={(trash2, trash3)}
+                          className="asy-Trash"
+                        />
+                      </Button>
+                      <Modal show={this.state.showHide}>
+                        <Modal.Body>
+                          <h6>Are you Sure. Delete This Data? </h6>
+                        </Modal.Body>
+                        <Modal.Footer>
+                          <div className="row modal-education">
+                            <div className="col modal-education">
+                              <Button
+                                className="submit-button"
+                                onClick={this.handledeleteData}
+                              >
+                                Delete
+                              </Button>
+                            </div>
+                            <div className="col modal-education">
+                              <Button
+                                className="danger-danger submit-button"
+                                onClick={this.handleModalHide}
+                              >
+                                Cancel
+                              </Button>
+                            </div>
+                          </div>
+                        </Modal.Footer>
+                      </Modal>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </div>
+        </div>
+      </div>
+    );
 	}
 }
 export default Leaves;
