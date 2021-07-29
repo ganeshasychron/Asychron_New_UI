@@ -16,8 +16,8 @@
 	--hr-line-color: #707070;
 	--box-shadow: rgba(191, 211, 233, 0.5);
 }
-body{
-background-color: var(--asy-main-background-color);
+body {
+	background-color: var(--asy-main-background-color);
 }
 .asy-main-jumbotron {
 	height: auto;
@@ -40,10 +40,10 @@ background-color: var(--asy-main-background-color);
 	border-radius: 8px;
 	background: var(--blue-color);
 	border-color: var(--white-color) !important;
-	 width: 100%;
+	width: 100%;
 	height: auto;
 	line-height: 16px;
-  border-radius: 8px;
+	border-radius: 8px;
 }
 .asy-primary-submit-button:hover {
 	background: var(--blue-color);
@@ -54,6 +54,8 @@ background-color: var(--asy-main-background-color);
 	font-size: 18px;
 	font-weight: 700;
 	letter-spacing: 1px;
+	vertical-align: middle;
+	padding-top: 5px;
 	color: var(--black-light-color);
 }
 .asy-card-primary-design {
@@ -70,11 +72,14 @@ background-color: var(--asy-main-background-color);
 	border: solid 1px var(--border-color);
 	background-color: var(--white-color);
 }
+.asy-fullTableWrapped {
+	margin-top: 20px;
+}
 .asy-TableHeading {
 	font-family: 'Poppins', sans-serif;
 	font-size: 16px;
 	font-weight: 500;
-
+	text-align: left;
 	padding: 0px;
 	margin: 0px;
 }
@@ -84,6 +89,7 @@ background-color: var(--asy-main-background-color);
 	font-family: 'Poppins', sans-serif;
 	font-size: 15px;
 	font-weight: 530;
+	text-align: left;
 	color: var(--black-light-color);
 	height: 10px;
 	border-radius: 5px;
@@ -129,7 +135,15 @@ background-color: var(--asy-main-background-color);
 }
 img.asy-Trash {
 	border: none;
+	width: 25px;
+	height: 25px;
 }
 img.asy-Check {
 	border: none;
+	width: 25px;
+	height: 25px;
+}
+.table td,
+.table th {
+	vertical-align: middle;
 }
