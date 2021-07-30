@@ -3,7 +3,6 @@ import * as services from '../../../services/services';
 import Moment from 'react-moment';
 import './LeavesDashboard.css';
 import '../../../shared/CSS/blueTheme.css';
-import './Leaves.css';
 import { Col, Row, Button, Table } from 'react-bootstrap';
 import logo from '../../../assets/images/parking.png';
 import check1 from '../../../../src/assets/images/check (1).png';
