@@ -1,7 +1,10 @@
 @import "../../../shared/CSS/blueTheme.css";
+
 .asy-card-page-heading {
 	margin: 0 50px 23px 10px;
 	font-family: Poppins;
+	margin-bottom: 5px !important;
+	margin-left: -9px !important;
 	font-size: 20px;
 	font-weight: 500;
 	font-stretch: normal;
@@ -11,29 +14,75 @@
 	text-align: left;
 	color: var(--black-light-color);
 }
-.asy-card-heading {
-	margin: -20px -20px 50px;
-	padding: 30px 95px 22px 14px;
-	background-image: var(--card-gradient-color);
-}
+
 .asy-leaves-page-card {
 	padding: 0 0 27px;
-	height: 220px;
+	height: 223px !important;
 	border-radius: 8px;
 	box-shadow: 18px 18px 28px 0 rgba(191, 211, 233, 0.58);
 	border: solid 1px rgba(208, 208, 208, 0.42);
 	background-color: var(--white-color);
 }
-.avatar-lg {
-	height: 3rem;
-	width: 3rem;
+
+.leaves-card-color {
+	width: auto;
+	background-image: var(--card-gradient-color);
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	display: inline-flex;
 }
-.rounded-circle {
-	border-radius: 50% !important;
+
+.asy-circle {
+	width: 4rem;
+	height: 4rem;
+	background-color: var(--white-color);
+	margin: 15px;
+	margin-left: 15px;
+	margin-bottom: 15px;
 }
-.img-thumbnail {
-	padding: .25rem;
-	border: 1px solid #dee2e6;
-	border-radius: .25rem;
-	max-width: 100%;
+
+.img-rounded {
+	width: 24px;
+	height: 24px;
+	object-fit: contain;
+	opacity: 0.55;
+	border: none;
+	margin-top: 22px;
+
+}
+
+
+
+.asy-leaves-card-heading {
+	margin-top: 33px;
+	margin-left: 5px;
+	display: inline-flex;
+	color: var(--black-light-color);
+	font-size: 20px;
+	font-weight: 600;
+	font-family: Poppins;
+}
+
+.asy-card-text-inline {
+	clear: both;
+	display: inline-block;
+	overflow: hidden;
+	letter-spacing: 1px;
+	color: var(--black-light-color);
+	font-size: 37px;
+	font-family: Poppins;
+	font-weight: 700;
+	margin-top: 10px !important;
+}
+
+.asy-card-text-inline.asy-third-text {
+	color: var(--light-grey-text-color);
+	font-size: 28px;
+}
+
+.asy-card-secondary-text {
+	color: var(--black-light-color);
+	font-family: Poppins;
+	font-weight: 700;
+	margin-bottom: 10px !important;
 }
