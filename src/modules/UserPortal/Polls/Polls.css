@@ -13,7 +13,7 @@ table {
 }
 
 .columnwidth {
-   width : 250px;
+   width : 300px;
 }
 
 #submitid {
@@ -43,6 +43,7 @@ table {
    font-weight: 600;
    margin-left: 20px;
 }
+
 
 
 /* Charts */

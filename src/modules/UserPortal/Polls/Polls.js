@@ -45,7 +45,7 @@ class Polls extends Component {
             this.getPolls();
             this.setState({
                 showForm: !this.state.showForm
-              });
+            });
         })
     };
 
@@ -60,14 +60,17 @@ class Polls extends Component {
     };
 
     showForm = () => {
-        return  !this.state.showForm ? (
-            this.showForm()
-          ) : (
-            <div className="jumbotron jumbo-form h-auto">
+        return (
+            <div className="jumbotron asy-main-jumbotron vh-100">
+                <div className="row asy-main-row">
+                    <Col>
+                        <h5 className="asy-main-page-heading"> Polls</h5>
+                    </Col>
+                </div>
 
-                <h5 className="page-heading ">Polls</h5>
+
                 <hr className="hr-line" />
-                <div className="form-container h-100">
+                <div className="form-container ">
                     <form className="h-100 d-inline-block mt-2">
                         <Row>
                             <div id="LabelArea" className="form-group ">
@@ -108,21 +111,21 @@ class Polls extends Component {
 
                 <hr className="hr-line-2" />
                 <Row>
-                <div className="questionFont">
-                    <label  for="inputdegree" className="col-form-label pt-4"> {this.state.activePoll.question} </label>
+                    <div className="questionFont">
+                        <label for="inputdegree" className="col-form-label pt-4"> {this.state.activePoll.question} </label>
                     </div>
                 </Row>
 
                 <Row>
-                
+
                     <div class="form-check form-check-inline">
                         {
                             this.state.activePoll.options.map((data) => (
-                                <div key={data._id}>
+                                <div key={data.id}>
                                     <div id="submitid">
-                                    
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value={data} onChange={(e) => { this.setState({ vote: e.target.value }) }} />
-                                        <label class="form-check-label" for="inlineRadio1">{data}</label>
+
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value={data.value} onChange={(e) => { this.setState({ vote: e.target.value }) }} />
+                                        <label class="form-check-label" for="inlineRadio1">{data.value}</label>
                                     </div>
                                 </div>
                             ))
@@ -130,12 +133,22 @@ class Polls extends Component {
                     </div>
                 </Row>
 
-                <Row>
-                    <div id="submitid1">
-                        <button type="button" className="submit-btn" onClick={this.submitVoteHandler}>Submit Vote</button>
-                        <button type="button" className="cancel_button education" onClick={() =>this.setState({showForm: !this.state.showForm})}>Cancel</button>
-                    </div>
-                </Row>
+
+                <div className="text-center">
+                    <Button className="asy-primary-submit-button w-2" onClick={this.submitVoteHandler}>
+                        <h6 className="text-center asy-button-heading">
+                            Submit Vote
+                        </h6>
+                    </Button>
+                    <Button className="asy-primary-submit-button w-2" onClick={() => this.setState({ showForm: !this.state.showForm })}>
+                        <h6 className="text-center asy-button-heading">
+                            Cancel
+                        </h6>
+                    </Button>
+                    {/*<button type="button" className="submit-btn" onClick={this.submitVoteHandler}>Submit Vote</button>
+                    <button type="button" className="cancel_button education" onClick={() => this.setState({ showForm: !this.state.showForm })}>Cancel</button>*/}
+                </div>
+
 
             </div>
         );
@@ -143,28 +156,37 @@ class Polls extends Component {
 
     showResult = () => {
         return (
-            <div className="jumbotron jumbo-form h-auto">
-                <h5 className="page-heading ">Polls</h5>
+            <div className="jumbotron asy-main-jumbotron">
+                <div className="row asy-main-row">
+                    <Col>
+                        <h5 className="asy-main-page-heading"> Polls</h5>
+                    </Col>
+                </div>
                 <Col className="d-flex flex-row-reverse">
-                    <Button outline='secondary'>
-                        Back
+                    <Button className="asy-primary-submit-button w-2" onClick={() => this.setState({ showResult: !this.state.showResult })}>
+                        <h6 className="text-center asy-button-heading">
+                            Back
+                        </h6>
                     </Button>
                 </Col>
                 <hr className="hr-line" />
+
 
                 <div className="text-center center" >
                     <div className='CardArea' >
 
                         <div className='card polls'>
-                            <h5 className="page-heading1">Section Wise Analysis</h5>
+                            <p className="asy-card-page-heading  text-center mt-3 font-weight-bold">Section Wise Analysis</p>
+                            
                             <hr className="hr-line-2" />
                             <div className="card-body polls">
                                 <Select />
                             </div>
                         </div>
 
-                        <div className='card'>
-                            <h5 className="page-heading1">Complete Analysis</h5>
+                        <div className='card polls'>
+                            <p className="asy-card-page-heading text-center mt-3 font-weight-bold">Complete Analysis</p>
+                            
                             <hr className="hr-line-2" />
                             <div className="card-body">
                                 <Select />
@@ -186,28 +208,32 @@ class Polls extends Component {
                             {
                                 this.state.showResult ? this.showResult() :
 
-                                    <div className="jumbotron jumbo-form">
-                                        <h5 className="page-heading">Polls</h5>
+                                    <div className="jumbotron asy-main-jumbotron h-100 vh-100">
+                                        <div className="row asy-main-row">
+                                            <Col>
+                                                <h5 className="asy-main-page-heading"> Polls</h5>
+                                            </Col>
+                                        </div>
 
                                         <hr className="hr-line" />
                                         <div className="form-container">
                                             <form>
-                                                <div class="table-responsive" >
-                                                    <Table class="table" striped bordered hover>
-                                                        <thead className="border">
-                                                            <tr>
-                                                                <th>Poll Title</th>
-                                                                <th>Initiated by</th>
-                                                                <th>Priority</th>
-                                                                <th>Status</th>
-                                                                <th className="columnwidth"></th>
+                                                <div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
+                                                    <Table className="asy-Table">
+                                                        <thead>
+                                                            <tr className="asy-TableHeading">
+                                                                <th className="asy-th">Poll Title</th>
+                                                                <th className="asy-th">Initiated by</th>
+                                                                <th className="asy-th">Priority</th>
+                                                                <th className="asy-th">Status</th>
+                                                                <th className="columnwidth asy-th"></th>
                                                             </tr>
                                                         </thead>
 
                                                         <tbody>
                                                             {
                                                                 this.state.data.map((data) => (
-                                                                    <tr key={data._id}>
+                                                                    <tr className="asy-TableData" key={data._id}>
                                                                         <td>
                                                                             {data.pollTitle}
                                                                         </td>
@@ -221,14 +247,26 @@ class Polls extends Component {
                                                                             {data.status}
                                                                         </td>
                                                                         <td className="btn-align">
-                                                                            <Button outline color="secondary"
+
+                                                                            <Button className="asy-primary-submit-button w-2" onClick={() => this.setState({ showResult: !this.state.showResult })}>
+                                                                                <h6 className="text-center asy-button-heading">
+                                                                                    View Result
+                                                                                </h6>
+                                                                            </Button>
+                                                                            <Button className="asy-primary-submit-button w-2" onClick={this.giveVoteHandler.bind(this, data._id)}>
+                                                                                <h6 className="text-center asy-button-heading">
+                                                                                    Give Vote
+                                                                                </h6>
+                                                                            </Button>
+
+                                                                            {/*<Button outline color="secondary"
                                                                                 onClick={() => this.setState({ showResult: !this.state.showResult })}>
                                                                                 View Result
                                                                             </Button>
                                                                             <Button outline color="secondary"
                                                                                 onClick={this.giveVoteHandler.bind(this, data._id)}>
                                                                                 Give Vote
-                                                                            </Button>
+                                                                </Button>*/}
                                                                         </td>
                                                                     </tr>
                                                                 ))
