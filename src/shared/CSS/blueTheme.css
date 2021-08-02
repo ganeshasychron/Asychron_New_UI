@@ -1,26 +1,31 @@
 :root {
-    --asy-main-background-color: #f6fafd;
+    --asy-main-background-color: #F6FAFD;
     --page-heading-color: #181818;
-    --white-color: #ffffff;
-    --blue-color: #1bdcff;
-    --grey-color: #e2e2e2;
-    --siderbar-darkblue-color: #06163a;
+    --white-color: #FFFFFF;
+    --blue-color: #1BDCFF;
+    --grey-color: #E2E2E2;
+    --siderbar-darkblue-color: #06163A;
     --sidebar-darkblue-selected-color: #000922;
-    --sidebar-font-color: #c5c5c5;
-    --sidebar-underline-color: #dbdbdb;
-    --card-border: #d6d6d6;
+    --sidebar-font-color: #C5C5C5;
+    --sidebar-underline-color: #DBDBDB;
+    --card-border: #D6D6D6;
     --black-light-color: #242424;
-    --small-lable-color: #6e6e6e;
-    --card-gradient-color: linear-gradient(to bottom, #1bdcff, #43c9ff 57%, #7cadff, #0e6e80);
+    --small-lable-color: #6E6E6E;
+    --card-gradient-color: linear-gradient(to bottom, #2DE0FF, #4ECDFF 57%, #8FB8FF, #2C8999);
+    --border-color: #D8D8D8;
+    --hr-line-color: #707070;
+    --box-shadow: rgba(191, 211, 233, 0.5);
+    --light-grey-text-color: #939393;
 }
-
-.asy-main-jumbotron{
-    height: auto;
-    position: relative;
+body {
     background-color: var(--asy-main-background-color);
 }
-
-.asy-main-page-heading{
+.asy-main-jumbotron {
+    height: auto;
+    position: relative;
+    background: none;
+}
+.asy-main-page-heading {
     color: var(--page-heading-color);
     font-family: Roboto;
     margin-top: -15px;
@@ -32,105 +37,91 @@
     letter-spacing: 1px;
     text-align: left;
 }
-
-.asy-primary-submit-button{
-   
-    color: var(--black-light-color);
+.asy-primary-submit-button {
     border-radius: 8px;
     background: var(--blue-color);
-     border-color:#fff !important;
+    border-color: var(--white-color) !important;
+    width: 100%;
+    height: auto;
+    line-height: 16px;
+    border-radius: 8px;
 }
-
-.asy-primary-submit-button:hover{
+.asy-primary-submit-button:hover {
     background: var(--blue-color);
 }
-
-.asy-button-heading{
+.asy-button-heading {
     font-family: Poppins;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 1px;
-
- 
+    margin-top: 8px !important;
     color: var(--black-light-color);
 }
-
 .asy-card-primary-design {
-	border: solid 1px var(--card-border);
-	background-color: var(--white-color);
-	opacity: 0.64;
-	border-radius: 10px;
+    border: solid 1px var(--card-border);
+    background-color: var(--white-color);
+    opacity: 0.64;
+    border-radius: 10px;
 }
-
 .asy-mainBoxBorder {
-	padding: 10px 20px;
-	margin-top: 20px;
-	opacity: 1;
-	border-radius: 5px;
-	border: solid 1px var(--border-color);
-	background-color: var(--white-color);
+    padding: 10px 20px;
+    margin-top: 20px;
+    opacity: 1;
+    border-radius: 5px;
+    border: solid 1px var(--border-color);
+    background-color: var(--white-color);
 }
-
 .asy-TableHeading {
-	font-family: 'Poppins', sans-serif;
-	font-size: 16px;
-	font-weight: 500;
-
-	padding: 0px;
-	margin: 0px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0px;
+    margin: 0px;
 }
-
 .asy-TableData {
-	box-shadow: 3px 1px 13px 0 var(--box-shadow);
-	background-color: var(--blue-color);
-	font-family: 'Poppins', sans-serif;
-	font-size: 15px;
-	font-weight: 530;
-	color: var(--black-light-color);
-	height: 10px;
-	border-radius: 5px;
+    box-shadow: 3px 1px 13px 0 var(--box-shadow);
+    background-color: var(--blue-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 530;
+    color: var(--black-light-color);
+    height: 10px;
+    border-radius: 5px;
 }
-
 .asy-Line {
-	padding: 0px;
-	margin: 0px;
-	width: 100%;
-	height: 1px;
-	opacity: 1;
-	background-color: var(--hr-line-color);
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 1px;
+    opacity: 1;
+    background-color: var(--hr-line-color);
 }
-
 .asy-Tablestriped tbody tr:nth-of-type(even) {
-	background-color: rgba(0, 0, 0, .05);
+    background-color: rgba(0, 0, 0, .05);
 }
-
 .asy-Table {
-	border-collapse: separate;
-	border-spacing: 0 1rem;
-	margin: 0 !important;
-	border-top: hidden !important;
+    border-collapse: separate;
+    border-spacing: 0 1rem;
+    margin: 0 !important;
+    border-top: hidden !important;
 }
-
 .asy-th {
-	border: 1px solid var(--border-color) !important;
-	border-top: none !important;
-	border-left: none !important;
-	border-right: none !important;
+    border: 1px solid var(--border-color) !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
 }
-
 img.asy-Check {
-	border: none;
-	width: 25px;
-	height: 25px;
+    border: none;
+    width: 25px;
+    height: 25px;
 }
-
 img.asy-Trash {
-	border: none;
-	width: 25px;
-	height: 25px;
+    border: none;
+    width: 25px;
+    height: 25px;
 }
-
 .table td,
 .table th {
-	vertical-align: middle;
+    vertical-align: middle;
 }
