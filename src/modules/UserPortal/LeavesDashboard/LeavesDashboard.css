@@ -54,11 +54,12 @@
 
 
 .asy-leaves-card-heading {
-	margin-top: 33px;
+	margin-top: 35px;
 	margin-left: 5px;
 	display: inline-flex;
 	color: var(--black-light-color);
-	font-size: 20px;
+	font-size: 18px;
+	letter-spacing: 1px;
 	font-weight: 600;
 	font-family: Poppins;
 }
@@ -84,5 +85,5 @@
 	color: var(--black-light-color);
 	font-family: Poppins;
 	font-weight: 700;
-	margin-bottom: 10px !important;
+	
 }
