@@ -56,8 +56,81 @@
 }
 
 .asy-card-primary-design {
-    border: solid 1px var(--card-border);
-    background-color: var(--white-color);
-    opacity: 0.64;
-    border-radius: 5px;
+	border: solid 1px var(--card-border);
+	background-color: var(--white-color);
+	opacity: 0.64;
+	border-radius: 10px;
+}
+
+.asy-mainBoxBorder {
+	padding: 10px 20px;
+	margin-top: 20px;
+	opacity: 1;
+	border-radius: 5px;
+	border: solid 1px var(--border-color);
+	background-color: var(--white-color);
+}
+
+.asy-TableHeading {
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+
+	padding: 0px;
+	margin: 0px;
+}
+
+.asy-TableData {
+	box-shadow: 3px 1px 13px 0 var(--box-shadow);
+	background-color: var(--blue-color);
+	font-family: 'Poppins', sans-serif;
+	font-size: 15px;
+	font-weight: 530;
+	color: var(--black-light-color);
+	height: 10px;
+	border-radius: 5px;
+}
+
+.asy-Line {
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+	height: 1px;
+	opacity: 1;
+	background-color: var(--hr-line-color);
+}
+
+.asy-Tablestriped tbody tr:nth-of-type(even) {
+	background-color: rgba(0, 0, 0, .05);
+}
+
+.asy-Table {
+	border-collapse: separate;
+	border-spacing: 0 1rem;
+	margin: 0 !important;
+	border-top: hidden !important;
+}
+
+.asy-th {
+	border: 1px solid var(--border-color) !important;
+	border-top: none !important;
+	border-left: none !important;
+	border-right: none !important;
+}
+
+img.asy-Check {
+	border: none;
+	width: 25px;
+	height: 25px;
+}
+
+img.asy-Trash {
+	border: none;
+	width: 25px;
+	height: 25px;
+}
+
+.table td,
+.table th {
+	vertical-align: middle;
 }

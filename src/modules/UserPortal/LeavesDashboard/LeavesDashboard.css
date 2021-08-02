@@ -17,7 +17,7 @@
 
 .asy-leaves-page-card {
 	padding: 0 0 27px;
-	height: 223px !important;
+	height: 219px !important;
 	border-radius: 8px;
 	box-shadow: 18px 18px 28px 0 rgba(191, 211, 233, 0.58);
 	border: solid 1px rgba(208, 208, 208, 0.42);
@@ -54,11 +54,12 @@
 
 
 .asy-leaves-card-heading {
-	margin-top: 33px;
+	margin-top: 35px;
 	margin-left: 5px;
 	display: inline-flex;
 	color: var(--black-light-color);
-	font-size: 20px;
+	font-size: 18px;
+	letter-spacing: 1px;
 	font-weight: 600;
 	font-family: Poppins;
 }
@@ -84,5 +85,5 @@
 	color: var(--black-light-color);
 	font-family: Poppins;
 	font-weight: 700;
-	margin-bottom: 10px !important;
+	
 }
