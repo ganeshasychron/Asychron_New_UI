@@ -14,13 +14,13 @@
     --card-gradient-color: linear-gradient(to bottom, #1bdcff, #43c9ff 57%, #7cadff, #0e6e80);
 }
 
-.asy-main-jumbotron{
+.asy-main-jumbotron {
     height: auto;
     position: relative;
     background-color: var(--asy-main-background-color);
 }
 
-.asy-main-page-heading{
+.asy-main-page-heading {
     color: var(--page-heading-color);
     font-family: Roboto;
     margin-top: -15px;
@@ -33,25 +33,25 @@
     text-align: left;
 }
 
-.asy-primary-submit-button{
-   
+.asy-primary-submit-button {
+
     color: var(--black-light-color);
     border-radius: 8px;
     background: var(--blue-color);
-     border-color:#fff !important;
+    border-color: #fff !important;
 }
 
-.asy-primary-submit-button:hover{
+.asy-primary-submit-button:hover {
     background: var(--blue-color);
 }
 
-.asy-button-heading{
+.asy-button-heading {
     font-family: Poppins;
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 1px;
 
- 
+
     color: var(--black-light-color);
 }
 

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import * as services from "../../../services/services";
 
 import "./LeavesDashboard.css";
-import "../../../shared/CSS/blueTheme.css";
 
 import Moment from 'react-moment';
 import { Col, Row, Button, Table } from "react-bootstrap";
