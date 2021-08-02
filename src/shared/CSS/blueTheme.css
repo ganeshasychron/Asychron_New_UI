@@ -73,6 +73,7 @@ body {
 
 .asy-mainBoxBorder {
 	padding: 10px 20px;
+	margin-top: 20px;
 	opacity: 1;
 	border-radius: 5px;
 	border: solid 1px var(--border-color);
@@ -126,25 +127,19 @@ body {
 	border-right: none !important;
 }
 
-.asy-Check {
-	width: 26px;
-	height: 26px;
-	margin-right: 5px;
-	object-fit: contain;
-}
-
-.asy-Trash {
-	width: 34px;
-	height: 30px;
-	object-fit: contain;
-	margin: 0px;
-	border: none !important;
+img.asy-Check {
+	border: none;
+	width: 25px;
+	height: 25px;
 }
 
 img.asy-Trash {
 	border: none;
+	width: 25px;
+	height: 25px;
 }
 
-img.asy-Check {
-	border: none;
+.table td,
+.table th {
+	vertical-align: middle;
 }
