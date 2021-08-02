@@ -417,8 +417,12 @@ class Leaves extends Component {
                 {this.state.data.map((data) => (
                   <tr className="asy-TableData" key={data._id}>
                     <td>{data.leavesType}</td>
-                   <td><Moment format="D MMM YYYY">{data.leaveFrom}</Moment></td>
-										<td><Moment format="D MMM YYYY">{data.leaveTo}</Moment></td>
+                    <td>
+                      <Moment format="D MMM YYYY">{data.leaveFrom}</Moment>
+                    </td>
+                    <td>
+                      <Moment format="D MMM YYYY">{data.leaveTo}</Moment>
+                    </td>
                     <td>{data.reason}</td>
                     <td>
                       {!data ? (
