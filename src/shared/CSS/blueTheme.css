@@ -4,6 +4,7 @@
     --white-color: #ffffff;
     --blue-color: #1bdcff;
     --grey-color: #e2e2e2;
+    --danger-red-color: red;
     --siderbar-darkblue-color: #06163a;
     --sidebar-darkblue-selected-color: #000922;
     --sidebar-font-color: #c5c5c5;
@@ -48,11 +49,46 @@ body {
     width: 100%;
     height: auto;
     line-height: 16px;
-    border-radius: 8px;
 }
 
 .asy-primary-submit-button:hover {
     background: var(--blue-color);
+}
+
+.asy-secondary-submit-button {
+    border-radius: 8px;
+    background: var(--blue-color);
+    border-color: var(--white-color) !important;
+    line-height: 16px;
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 10px;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    padding: 16px 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.asy-secondary-cancle-button {
+    border-radius: 8px;
+    background: var(--danger-red-color);
+    color: var(--white-color);
+    border-color: var(--white-color) !important;
+    line-height: 16px;
+    display: inline-block;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    padding: 16px 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 .asy-button-heading {
@@ -64,11 +100,21 @@ body {
     color: var(--black-light-color);
 }
 
+.add-button-flip{
+
+     background: var(--blue-color);
+     color: var(--black-light-color);
+      border-color: var(--white-color) !important;
+          margin-top: -20px !important;
+      border-radius: 8px;
+      margin-bottom: 30px !important;
+}
+
 .asy-card-primary-design {
     border: solid 1px var(--card-border);
     background-color: var(--white-color);
-    opacity: 0.64;
     border-radius: 10px;
+    margin-top: 0;
 }
 
 .asy-mainBoxBorder {

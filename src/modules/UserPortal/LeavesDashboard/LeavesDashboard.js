@@ -180,7 +180,7 @@ class Leaves extends Component {
         </div>
         <div className="row">
           <div className="col-xl-6 col-lg-6">
-            <div className="card .asy-card-primary-design">
+            <div className="card asy-card-primary-design">
               <div className="card-body">
                 <Col>
                   <p className="asy-card-page-heading">Book Time Off</p>
