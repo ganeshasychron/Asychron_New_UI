@@ -7,11 +7,6 @@ table {
    justify-content: space-evenly;
 }
 
-.Back Button{
-   display: flex;
-   justify-items: right;
-}
-
 .columnwidth {
    width : 300px;
 }
@@ -26,8 +21,6 @@ table {
 #inlineRadio1{
    background-color: #1bdcff;
 }
-
-
 
 #LabelArea{
    margin-left: 30px;
@@ -48,13 +41,6 @@ table {
    width: auto;
 }
 
-/* .row-margin{
-   margin-left: 6px;
-} */
-
-
-
- 
 input[type='radio']:after {
    width: 15px;
    height: 15px;
@@ -90,7 +76,6 @@ input[type='radio']:checked:after {
    border: solid 1px rgba(208, 208, 208, 0.42);
    background-color: var(--white-color);
 }
-
 
 /* Charts */
 
