@@ -61,95 +61,91 @@ class Polls extends Component {
 
     showForm = () => {
         return (
-            <div className="jumbotron asy-main-jumbotron vh-100">
+            <div className="jumbotron asy-main-jumbotron">
+
                 <div className="row asy-main-row">
                     <Col>
                         <h5 className="asy-main-page-heading"> Polls</h5>
                     </Col>
                 </div>
 
-
                 <hr className="hr-line" />
                 <div className="form-container ">
-                    <form className="h-100 d-inline-block mt-2">
-                        <Row>
-                            <div id="LabelArea" className="form-group ">
-                                <label id="FirstLabelId" for="inputdegree" className="col-form-label">Poll Title </label>
-                                <div className="SecondLabel">
-                                    <label id="SecondLabelId" for="inputdegree" className="col-form-label">
-                                        {
-                                            this.state.activePoll.pollTitle
-                                        }
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div id="LabelArea" className="form-group ">
-                                <label id="FirstLabelId" for="inputdegree" className="col-form-label">Poll Priority  </label>
-                                <div className="SecondLabel">
-                                    <label id="SecondLabelId" for="inputdegree" className="col-form-label">
-                                        {
-                                            this.state.activePoll.priority
-                                        }
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div id="LabelArea" className="form-group ">
-                                <label id="FirstLabelId" for="inputdegree" className="col-form-label">Initiated By </label>
-                                <div className="SecondLabel2">
-                                    <label id="SecondLabelId" for="inputdegree" className="col-form-label">
-                                        {
-                                            this.state.activePoll.initiatedBy
-                                        }
-                                    </label>
-                                </div>
-                            </div>
-                        </Row>
-                    </form>
-                </div>
-
-                <hr className="hr-line-2" />
-                <Row>
-                    <div className="questionFont">
-                        <label for="inputdegree" className="col-form-label pt-4"> {this.state.activePoll.question} </label>
-                    </div>
-                </Row>
-
-                <Row>
-
-                    <div class="form-check form-check-inline">
-                        {
-                            this.state.activePoll.options.map((data) => (
-                                <div key={data.id}>
-                                    <div id="submitid">
-
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value={data.value} onChange={(e) => { this.setState({ vote: e.target.value }) }} />
-                                        <label class="form-check-label" for="inlineRadio1">{data.value}</label>
+                    <div className="card asy-polls-page-card" >
+                        <form className="h-100 d-inline-block mt-2">
+                            <Row>
+                                <div id="LabelArea" className="form-group ">
+                                    <label id="FirstLabelId" for="inputdegree" className="col-form-label">Poll Title </label>
+                                    <div className="SecondLabel">
+                                        <label id="SecondLabelId" for="inputdegree" className="col-form-label">
+                                            {
+                                                this.state.activePoll.pollTitle
+                                            }
+                                        </label>
                                     </div>
                                 </div>
-                            ))
-                        }
+
+                                <div id="LabelArea" className="form-group ">
+                                    <label id="FirstLabelId" for="inputdegree" className="col-form-label">Poll Priority  </label>
+                                    <div className="SecondLabel">
+                                        <label id="SecondLabelId" for="inputdegree" className="col-form-label">
+                                            {
+                                                this.state.activePoll.priority
+                                            }
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div id="LabelArea" className="form-group ">
+                                    <label id="FirstLabelId" for="inputdegree" className="col-form-label">Initiated By </label>
+                                    <div className="SecondLabel2">
+                                        <label id="SecondLabelId" for="inputdegree" className="col-form-label">
+                                            {
+                                                this.state.activePoll.initiatedBy
+                                            }
+                                        </label>
+                                    </div>
+                                </div>
+                            </Row>
+
+                            <hr className="hr-line-2" />
+                            <Row>
+                                <div className="questionFont">
+                                    <label for="inputdegree" className="col-form-label pt-4"> {this.state.activePoll.question} </label>
+                                </div>
+                            </Row>
+
+                            <Row>
+                                <div class="form-check form-check-inline">
+                                    {
+                                        this.state.activePoll.options.map((data) => (
+                                            <div key={data.id}>
+                                                <div id="submitid">
+
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value={data.value} onChange={(e) => { this.setState({ vote: e.target.value }) }} />
+                                                    <label class="form-check-label" for="inlineRadio1">{data.value}</label>
+                                                </div>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+                            </Row>
+                        </form>
                     </div>
-                </Row>
+                </div>
 
-
-                <div className="text-center">
-                    <Button className="asy-primary-submit-button w-2" onClick={this.submitVoteHandler}>
+                <div className=" text-center mt-3">
+                    <Button className=" asy-primary-submit-button width" onClick={this.submitVoteHandler}>
                         <h6 className="text-center asy-button-heading">
                             Submit Vote
                         </h6>
                     </Button>
-                    <Button className="asy-primary-submit-button w-2" onClick={() => this.setState({ showForm: !this.state.showForm })}>
+                    <Button className=" asy-primary-submit-button width" onClick={() => this.setState({ showForm: !this.state.showForm })}>
                         <h6 className="text-center asy-button-heading">
                             Cancel
                         </h6>
                     </Button>
-                    {/*<button type="button" className="submit-btn" onClick={this.submitVoteHandler}>Submit Vote</button>
-                    <button type="button" className="cancel_button education" onClick={() => this.setState({ showForm: !this.state.showForm })}>Cancel</button>*/}
                 </div>
-
-
             </div>
         );
     }
@@ -157,27 +153,27 @@ class Polls extends Component {
     showResult = () => {
         return (
             <div className="jumbotron asy-main-jumbotron">
+
                 <div className="row asy-main-row">
                     <Col>
                         <h5 className="asy-main-page-heading"> Polls</h5>
                     </Col>
                 </div>
+
                 <Col className="d-flex flex-row-reverse">
-                    <Button className="asy-primary-submit-button w-2" onClick={() => this.setState({ showResult: !this.state.showResult })}>
+                    <Button className="asy-primary-submit-button width" onClick={() => this.setState({ showResult: !this.state.showResult })}>
                         <h6 className="text-center asy-button-heading">
                             Back
                         </h6>
                     </Button>
                 </Col>
+
                 <hr className="hr-line" />
 
-
-                <div className="text-center center" >
+                <div className="text-center" >
                     <div className='CardArea' >
-
                         <div className='card polls'>
                             <p className="asy-card-page-heading  text-center mt-3 font-weight-bold">Section Wise Analysis</p>
-                            
                             <hr className="hr-line-2" />
                             <div className="card-body polls">
                                 <Select />
@@ -186,13 +182,11 @@ class Polls extends Component {
 
                         <div className='card polls'>
                             <p className="asy-card-page-heading text-center mt-3 font-weight-bold">Complete Analysis</p>
-                            
                             <hr className="hr-line-2" />
                             <div className="card-body">
                                 <Select />
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -208,7 +202,8 @@ class Polls extends Component {
                             {
                                 this.state.showResult ? this.showResult() :
 
-                                    <div className="jumbotron asy-main-jumbotron h-100 vh-100">
+                                    <div className="jumbotron asy-main-jumbotron ">
+
                                         <div className="row asy-main-row">
                                             <Col>
                                                 <h5 className="asy-main-page-heading"> Polls</h5>
@@ -258,15 +253,6 @@ class Polls extends Component {
                                                                                     Give Vote
                                                                                 </h6>
                                                                             </Button>
-
-                                                                            {/*<Button outline color="secondary"
-                                                                                onClick={() => this.setState({ showResult: !this.state.showResult })}>
-                                                                                View Result
-                                                                            </Button>
-                                                                            <Button outline color="secondary"
-                                                                                onClick={this.giveVoteHandler.bind(this, data._id)}>
-                                                                                Give Vote
-                                                                </Button>*/}
                                                                         </td>
                                                                     </tr>
                                                                 ))
