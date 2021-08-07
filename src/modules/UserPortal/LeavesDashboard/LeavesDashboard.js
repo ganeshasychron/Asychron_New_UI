@@ -417,8 +417,12 @@ class Leaves extends Component {
                 {this.state.data.map((data) => (
                   <tr className="asy-TableData" key={data._id}>
                     <td>{data.leavesType}</td>
-                   <td><Moment format="D MMM YYYY">{data.leaveFrom}</Moment></td>
-										<td><Moment format="D MMM YYYY">{data.leaveTo}</Moment></td>
+                    <td>
+                      <Moment format="D MMM YYYY">{data.leaveFrom}</Moment>
+                    </td>
+                    <td>
+                      <Moment format="D MMM YYYY">{data.leaveTo}</Moment>
+                    </td>
                     <td>{data.reason}</td>
                     <td>
                       {!data ? (
@@ -427,6 +431,7 @@ class Leaves extends Component {
                             src={check11}
                             srcset={(check12, check13)}
                             className="asy-Check"
+                            alt="fa-check-button"
                           />
                           <label>Approved</label>
                         </div>
@@ -436,6 +441,7 @@ class Leaves extends Component {
                             src={check1}
                             srcset={(check2, check3)}
                             className="asy-Check"
+                            alt="fa-check-button"
                           />
                           <label>Approved</label>
                         </div>
@@ -450,6 +456,7 @@ class Leaves extends Component {
                           src={trash1}
                           srcset={(trash2, trash3)}
                           className="asy-Trash"
+                          alt="fa-trash-button"
                         />
                       </Button>
                       <Modal show={this.state.showHide}>

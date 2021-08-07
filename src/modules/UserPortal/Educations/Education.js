@@ -4,6 +4,7 @@ import { FaEdit, FaTrash } from "react-icons/fa";
 import "./Education.css";
 import "../../../shared/CSS/blueTheme.css";
 import * as services from "../../../services/services";
+import Moment from "react-moment";
 class education extends Component {
   state = {
     hideform: false,
@@ -427,27 +428,27 @@ class education extends Component {
         {this.state.hideform ? (
           this.hideform()
         ) : (
-          <div className="table-responsive">
-            <Table striped bordered hover>
+          <div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
+            <Table className="asy-Table">
               <thead>
-                <tr>
-                  <th> Degree </th>
-                  <th> Specialization </th>
-                  <th> College / School </th>
-                  <th> University / Board </th>
-                  <th> Year of Passing </th>
-                  <th> Percentage </th>
-                  <th> Action </th>
+                <tr className="asy-TableHeading">
+                  <th className="asy-th"> Degree </th>
+                  <th className="asy-th"> Specialization </th>
+                  <th className="asy-th"> College / School </th>
+                  <th className="asy-th"> University / Board </th>
+                  <th className="asy-th"> Year of Passing </th>
+                  <th className="asy-th"> Percentage </th>
+                  <th className="asy-th"> Action </th>
                 </tr>
               </thead>
               <tbody>
                 {this.state.data.map((data) => (
-                  <tr key={data._id}>
+                  <tr className="asy-TableData" key={data._id}>
                     <td> {data.degree} </td>
                     <td> {data.specialization} </td>
                     <td> {data.college} </td>
                     <td> {data.board} </td>
-                    <td> {data.datePassing} </td>
+                    <td> <Moment format="D MMM YYYY">{data.datePassing}</Moment> </td>
                     <td> {data.percentage} </td>
                     <td>
                       <button
