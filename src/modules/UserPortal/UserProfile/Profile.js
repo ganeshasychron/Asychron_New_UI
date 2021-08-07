@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Col } from 'react-bootstrap';
+import { Col, Button, ListGroup } from 'react-bootstrap';
 import ReactApexChart from 'react-apexcharts';
-import { ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ProfileDetails from "../PersonalDetails/ProfileDetails";
 import styles from './Profile.module.css';
 import * as services from "../../../services/services";
+import Moment from 'react-moment';
 class Profiles extends Component {
 	constructor(props) {
 		super(props);
@@ -19,7 +19,7 @@ class Profiles extends Component {
 			email: "",
 			department: "",
 			designation: "",
-			reportManeger:"",
+			reportManeger: "",
 			doj: "",
 			employeType: "",
 			shiftEmp: "",
@@ -81,21 +81,26 @@ class Profiles extends Component {
 	}
 
 	render() {
+
 		return (
 			<>
 				<div>
 					{
 						this.state.profilePage ?
 
-							<div className="jumbotron jumbo-form">
-								<h5 className="page-heading">Profile</h5>
-								<hr id={styles.hr1} className="hr-line" />
+							<div className="jumbotron asy-main-jumbotron">
+								<div className="row asy-main-row">
+									<Col>
+										<h5 className="asy-main-page-heading"> Profile </h5>
+									</Col>
+								</div>
 
 								<div className="text-center">
 									<div className={styles.CardArea} id="chart">
 										<div className={styles.row}>
 											{
-												<div className={[styles.card,"col-md-9 col-sm-9 col-xs-12"].join(' ')}>
+												<div className={[styles.card, "col-md-9 col-sm-9 col-xs-12 asy-card-primary-design"].join(' ')}>
+
 													<div className={styles['card-body']}>
 
 														<div align="left" className={styles['card-body-1']}>
@@ -107,11 +112,15 @@ class Profiles extends Component {
 
 																<div className={styles.items}>
 																	<label id={styles.SecondLabelId} htmlFor="inputdegree" className="col-form-label"> {this.state.data.userName} </label>
+
 																</div>
 
 																<div className={styles.items}>
-																	<input type="button" value="Edit" className="submit-button"
-																		onClick={() => this.setState({ detailsPage: true, profilePage: false })} />
+																	<Button className="asy-primary-submit-button col-3" onClick={() => this.setState({ detailsPage: true, profilePage: false })} >
+																		<h6 className="text-center asy-button-heading">
+																			Edit
+																		</h6>
+																	</Button>
 																</div>
 
 																<div className={styles.items}>
@@ -161,7 +170,11 @@ class Profiles extends Component {
 
 																<div id={styles.LabelArea} className="form-group ">
 																	<label id={styles.FirstLabelId} htmlFor="inputdegree" className="col-form-label">Doj</label>
-																	<div className={styles.SecondLabel}>  <label id={styles.SecondLabelId} htmlFor="inputdegree" className="col-form-label"> {this.state.data.doj} </label>
+																	<div className={styles.SecondLabel}>  <label id={styles.SecondLabelId} htmlFor="inputdegree" className="col-form-label">
+																		<Moment format="D MMM YYYY">
+																			{this.state.data.doj}
+																		</Moment>
+																	</label>
 																	</div>  </div>
 
 																<div id={styles.LabelArea} className="form-group ">
@@ -179,10 +192,10 @@ class Profiles extends Component {
 												</div>
 											}
 
-											<div className={[styles.card,"ml-2","col-md-3 col-md-3 col-md-12"].join(' ')}>
+											<div className={[styles.card, "ml-2", "col-md-3  justify-content-center col-md-12 asy-card-primary-design"].join(' ')}>
 												<div className={styles['card-body']}>
-													<ListGroup className={styles.news1}>
-														<ListGroup.Item className={styles.news2}>Do Submit Remaining Part ....</ListGroup.Item>
+													<ListGroup className={[styles.news1, " mx-auto"].join(' ')}>
+														<ListGroup.Item className={styles.news2}>Do Submit Remaining Details Part ....</ListGroup.Item>
 														<ListGroup.Item > <Link to="./bank-details">  Bank Details </Link></ListGroup.Item>
 														<ListGroup.Item >  <Link to="../salary-details">Salary Details </Link></ListGroup.Item>
 														<ListGroup.Item ><Link to="./certifications">Certficate Details </Link></ListGroup.Item>
