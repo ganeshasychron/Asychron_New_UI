@@ -1,5 +1,5 @@
 :root {
-    --asy-main-background-color: #f6fafd;
+    --asy-main-background-color: #F6FAFD;
     --page-heading-color: #181818;
     --white-color: #ffffff;
     --blue-color: #1bdcff;
@@ -7,9 +7,9 @@
     --danger-red-color: red;
     --siderbar-darkblue-color: #06163a;
     --sidebar-darkblue-selected-color: #000922;
-    --sidebar-font-color: #c5c5c5;
-    --sidebar-underline-color: #dbdbdb;
-    --card-border: #d6d6d6;
+    --sidebar-font-color: #C5C5C5;
+    --sidebar-underline-color: #DBDBDB;
+    --card-border: #D6D6D6;
     --black-light-color: #242424;
     --small-lable-color: #6e6e6e;
     --card-gradient-color: linear-gradient(to bottom, #2de0ff, #4ecdff 57%, #8fb8ff, #2c8999);
@@ -28,7 +28,6 @@ body {
     position: relative;
     background: none;
 }
-
 .asy-main-page-heading {
     color: var(--page-heading-color);
     font-family: Roboto;
@@ -41,7 +40,6 @@ body {
     letter-spacing: 1px;
     text-align: left;
 }
-
 .asy-primary-submit-button {
     border-radius: 8px;
     background: var(--blue-color);
@@ -49,14 +47,9 @@ body {
     width: 100%;
     height: auto;
     line-height: 16px;
-}
-
-.asy-primary-submit-button:hover {
-    background: var(--blue-color);
-}
-
-.asy-secondary-submit-button {
     border-radius: 8px;
+}
+.asy-primary-submit-button:hover {
     background: var(--blue-color);
     border-color: var(--white-color) !important;
     line-height: 16px;
@@ -97,7 +90,6 @@ body {
 .asy-secondary-cancle-button:hover{
 background: var(--danger-red-color);
 }
-
 .asy-button-heading {
     font-family: Poppins;
     font-size: 18px;
@@ -123,7 +115,6 @@ background: var(--danger-red-color);
     border-radius: 10px;
     margin-top: 0;
 }
-
 .asy-mainBoxBorder {
     padding: 10px 20px;
     margin-top: 20px;
@@ -132,7 +123,6 @@ background: var(--danger-red-color);
     border: solid 1px var(--border-color);
     background-color: var(--white-color);
 }
-
 .asy-TableHeading {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
@@ -140,18 +130,16 @@ background: var(--danger-red-color);
     padding: 0px;
     margin: 0px;
 }
-
 .asy-TableData {
     box-shadow: 3px 1px 13px 0 var(--box-shadow);
     background-color: var(--blue-color);
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 530;
     color: var(--black-light-color);
     height: 10px;
     border-radius: 5px;
 }
-
 .asy-Line {
     padding: 0px;
     margin: 0px;
@@ -160,47 +148,32 @@ background: var(--danger-red-color);
     opacity: 1;
     background-color: var(--hr-line-color);
 }
-
 .asy-Tablestriped tbody tr:nth-of-type(even) {
     background-color: rgba(0, 0, 0, .05);
 }
-
 .asy-Table {
     border-collapse: separate;
     border-spacing: 0 1rem;
     margin: 0 !important;
     border-top: hidden !important;
 }
-
 .asy-th {
     border: 1px solid var(--border-color) !important;
     border-top: none !important;
     border-left: none !important;
     border-right: none !important;
 }
-
 img.asy-Check {
     border: none;
     width: 25px;
     height: 25px;
 }
-
 img.asy-Trash {
     border: none;
     width: 25px;
     height: 25px;
 }
-
 .table td,
 .table th {
     vertical-align: middle;
-}
-
-.asy-modal-footer {
-    display: inline-block !important;
-    border-top: none !important;
-    padding-bottom: 16px !important;
-    padding-left: 24px !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
 }
