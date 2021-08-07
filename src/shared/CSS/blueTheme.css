@@ -91,6 +91,13 @@ body {
     cursor: pointer;
 }
 
+.asy-secondary-submit-button:hover{
+ background: var(--blue-color);
+}
+.asy-secondary-cancle-button:hover{
+background: var(--danger-red-color);
+}
+
 .asy-button-heading {
     font-family: Poppins;
     font-size: 18px;
@@ -139,7 +146,7 @@ body {
     background-color: var(--blue-color);
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
-    font-weight: 530;
+    font-weight: 600;
     color: var(--black-light-color);
     height: 10px;
     border-radius: 5px;
