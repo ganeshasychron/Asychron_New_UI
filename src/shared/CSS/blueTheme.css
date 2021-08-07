@@ -130,7 +130,6 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-weight: 500;
-
     padding: 0px;
     margin: 0px;
 }
@@ -188,4 +187,13 @@ img.asy-Trash {
 .table td,
 .table th {
     vertical-align: middle;
+}
+
+.asy-modal-footer {
+    display: inline-block !important;
+    border-top: none !important;
+    padding-bottom: 16px !important;
+    padding-left: 24px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }

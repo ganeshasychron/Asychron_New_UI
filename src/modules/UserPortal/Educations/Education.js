@@ -448,7 +448,9 @@ class education extends Component {
                     <td> {data.specialization} </td>
                     <td> {data.college} </td>
                     <td> {data.board} </td>
-                    <td> <Moment format="D MMM YYYY">{data.datePassing}</Moment> </td>
+                    <td>
+                      <Moment format="D MMM YYYY">{data.datePassing}</Moment>
+                    </td>
                     <td> {data.percentage} </td>
                     <td>
                       <button
@@ -471,23 +473,23 @@ class education extends Component {
                       >
                         <FaTrash className="svgdelete" />
                       </button>
-                      <Modal show={this.state.showHide}>
+                      <Modal show={this.state.showHide} className="text-center">
                         <Modal.Body>
                           <h6> Are you Sure.Delete This Data ? </h6>
                         </Modal.Body>
-                        <Modal.Footer>
-                          <div className="row modal-education">
-                            <div className="col modal-education">
+                        <Modal.Footer className="asy-modal-footer">
+                          <div className="row modal-education ">
+                            <div className="col modal-education ">
                               <Button
-                                className="submit-button"
+                                className="asy-secondary-submit-button"
                                 onClick={this.handledeleteData}
                               >
                                 Delete
                               </Button>
                             </div>
-                            <div className="col modal-education">
+                            <div className="col modal-education ">
                               <Button
-                                className="danger-danger submit-button"
+                                className="asy-secondary-cancle-button "
                                 onClick={this.handleModalHide}
                               >
                                 Cancel
