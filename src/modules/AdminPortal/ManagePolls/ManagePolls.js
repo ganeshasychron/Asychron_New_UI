@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import { Table, Row, Col, form } from 'react-bootstrap';
+import { Table, Row, Col, Modal, Button } from "react-bootstrap";
 import '../../../shared/CSS/FormStyles.css';
 import './ManagePolls.module.css';
-import { Button } from 'reactstrap';
+// import { Button } from 'reactstrap';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { FaTrash } from 'react-icons/fa';
 import * as services from "../../../services/services";
+import moment from 'moment';
 
 class ManagePolls extends Component {
 
     state = {
         showAddPoll: false,
         showList: true,
+        showHide:"",
         userInput: "",
         options: [],
         id: "",
@@ -87,6 +89,7 @@ class ManagePolls extends Component {
             this.setState({
                 data: newData,
                 id: "",
+                showHide:false
             });
         });
         this.getPolls();
@@ -119,7 +122,7 @@ class ManagePolls extends Component {
             question: "",
             voteType: "",
             options: [],
-            showAddPoll: !this.state.showAddPoll ,
+            showAddPoll: !this.state.showAddPoll,
             dyanamicBtnName: "submit",
         });
     };
@@ -127,6 +130,14 @@ class ManagePolls extends Component {
     handleManualReset = (event) => {
         event.preventDefault();
         this.form.reset();
+    };
+
+    handleModalShow = (id) => {
+        this.setState({ showHide: !false, editId: id });
+    };
+
+    handleModalHide = () => {
+        this.setState({ showHide: false, editId: "" });
     };
 
 
@@ -166,160 +177,184 @@ class ManagePolls extends Component {
         });
     }
 
+    
+
     showAddPoll = () => {
         return (
-            <div className="jumbotron jumbo-form h-auto">
-                <h5 className="page-heading ">Manage Polls</h5>
+            <div className="jumbotron asy-main-jumbotron">
+                <div className="row asy-main-row">
+                    <Col>
+                        <h5 className="asy-main-page-heading">ManagePolls</h5>
+                    </Col>
+                </div>
                 <hr className="hr-line" />
                 <div className="form-container">
-                    <form>
+                    <div className="card asy-polls-page-card" >
+                        <form>
 
-                        <Row>
-                            <div className="form-group col-12 col-md-6">
-                                <label for="inputPollTitle" className="col-form-label">
-                                    Poll Title
-                                </label>
-                                <input
-                                    onChange={(e) => { this.setState({ pollTitle: e.target.value }) }}
-                                    type="text"
-                                    className="form-control form-input"
-                                    id="inputPollTitle"
-                                    placeholder="Poll Title"
-                                    value={this.state.pollTitle}
-                                />
-                            </div>
-                            
-                            <div className="form-group col-12 col-md-6">
-                                <label for="priorityType" className="col-form-label">
-                                    Priority
-                                </label>
-                                <select class="form-control" name="priority" value={this.state.priority} onChange={(e) => { this.setState({ priority: e.target.value }) }}>
-                                    <option value="" disabled selected className="priority">
-                                        Select Priority Type
-                                    </option>
-                                    <option value="High" className="priority">
-                                        High
-                                    </option>
-                                    <option value="Medium" className="priority">
-                                        Medium
-                                    </option>
-                                    <option value="Low" className="priority">
-                                        Low
-                                    </option>
+                            <Row>
+                                <div className="form-group col-12 col-md-6">
+                                    <label for="inputPollTitle" className="col-form-label">
+                                        Poll Title
+                                    </label>
+                                    <input
+                                        onChange={(e) => { this.setState({ pollTitle: e.target.value }) }}
+                                        type="text"
+                                        className="form-control form-input"
+                                        id="inputPollTitle"
+                                        placeholder="Poll Title"
+                                        value={this.state.pollTitle}
+                                    />
+                                </div>
 
-                                </select>
+                                <div className="form-group col-12 col-md-6">
+                                    <label for="priorityType" className="col-form-label">
+                                        Priority
+                                    </label>
+                                    <select class="form-control" name="priority" value={this.state.priority} onChange={(e) => { this.setState({ priority: e.target.value }) }}>
+                                        <option value="" disabled selected className="priority">
+                                            Select Priority Type
+                                        </option>
+                                        <option value="High" className="priority">
+                                            High
+                                        </option>
+                                        <option value="Medium" className="priority">
+                                            Medium
+                                        </option>
+                                        <option value="Low" className="priority">
+                                            Low
+                                        </option>
 
-                            </div>
-                        </Row>
-                        
-                        <Row>
-                            <div className="form-group col-12 col-md-6">
-                                <label for="StartDate" className="col-form-label">
-                                    Start Date
-                                </label>
-                                <input
-                                    onChange={(e) => { this.setState({ startDate: e.target.value }) }}
-                                    type="date"
-                                    className="form-control form-input"
-                                    // placeholder="Start Date (DD/MM/YYYY)"
-                                    id="StartDate"
-                                    value={this.state.startDate}
-                                />
-                            </div>
-                            
-                            <div className="form-group col-12 col-md-6">
-                                <label for="EndDate" className="col-form-label">
-                                    End Date
-                                </label>
-                                <input
-                                    onChange={(e) => { this.setState({ endDate: e.target.value }) }}
-                                    type="date"
-                                    className="form-control form-input"
-                                    // placeholder="End Date(DD/MM/YYYY)"
-                                    id="EndDate"
-                                    value={this.state.endDate}
-                                />
-                            </div>
-                        </Row>
+                                    </select>
 
-                        <Row>
-                            <div className="form-group col-12 col-md-6">
-                                <label for="inputQuestion" className="col-form-label">
-                                    Question
-                                </label>
-                                <input
-                                    onChange={(e) => { this.setState({ question: e.target.value }) }}
-                                    type="text"
-                                    className="form-control form-input"
-                                    id="inputQuestion"
-                                    placeholder="Question"
-                                    value={this.state.question}
-                                />
-                            </div>
+                                </div>
+                            </Row>
 
-                            <div className="form-group col-12 col-md-6">
-                                <label for="optionType" className="col-form-label">
-                                    Options Type
-                                </label>
-                                <select class="form-control" name="options" value={this.state.voteType} onChange={(e) => { this.setState({ voteType: e.target.value }) }}>
-                                    <option value="" selected disabled className="option">
-                                        Select Options Type
-                                    </option>
-                                    <option value="Radio" className="option">
-                                        Radio
-                                    </option>
-                                    <option value="CheckBox" className="option">
-                                        Checkbox
-                                    </option>
-                                </select>
-                            </div>
-                        </Row>
+                            <Row>
+                                <div className="form-group col-12 col-md-6">
+                                    <label for="StartDate" className="col-form-label">
+                                        Start Date
+                                    </label>
+                                    <input
+                                        onChange={(e) => { this.setState({ startDate: e.target.value }) }}
+                                        type= "date"
+                                        className="form-control form-input"
+                                        placeholder="Start Date (DD/MM/YYYY)"
+                                        id="StartDate"
+                                        value={this.state.startDate}
+                                    />
+                                </div>
+
+                                <div className="form-group col-12 col-md-6">
+                                    <label for="EndDate" className="col-form-label">
+                                        End Date
+                                    </label>
+                                    <input
+                                        onChange={(e) => { this.setState({ endDate: e.target.value }) }}
+                                        type="date"
+                                        className="form-control form-input"
+                                        placeholder="End Date(DD/MM/YYYY)"
+                                        id="EndDate"
+                                        value={this.state.endDate}
+                                    />
+                                </div>
+                            </Row>
+
+                            <Row>
+                                <div className="form-group col-12 col-md-6">
+                                    <label for="inputQuestion" className="col-form-label">
+                                        Question
+                                    </label>
+                                    <input
+                                        onChange={(e) => { this.setState({ question: e.target.value }) }}
+                                        type="text"
+                                        className="form-control form-input"
+                                        id="inputQuestion"
+                                        placeholder="Question"
+                                        value={this.state.question}
+                                    />
+                                </div>
+
+                                <div className="form-group col-12 col-md-6">
+                                    <label for="optionType" className="col-form-label">
+                                        Options Type
+                                    </label>
+                                    <select class="form-control" name="options" value={this.state.voteType} onChange={(e) => { this.setState({ voteType: e.target.value }) }}>
+                                        <option value="" selected disabled className="option">
+                                            Select Options Type
+                                        </option>
+                                        <option value="Radio" className="option">
+                                            Radio
+                                        </option>
+                                        <option value="CheckBox" className="option">
+                                            Checkbox
+                                        </option>
+                                    </select>
+                                </div>
+                            </Row>
 
 
-                        <Row>
-                            <div className="form-group col-12 col-md-6">
-                                <label for="inputOptions" className="col-form-label">
-                                    Options
-                                </label>
-                                <input
-                                    type="text"
-                                    className="form-control form-input"
-                                    id="inputCompany"
-                                    placeholder="Options"
-                                    value={this.state.item}
-                                    onChange={item => this.updateInput(item.target.value)}
-                                />
-                            </div>
+                            <Row>
+                                <div className="form-group col-12 col-md-6">
+                                    <label for="inputOptions" className="col-form-label">
+                                        Options
+                                    </label>
+                                    <input
+                                        type="text"
+                                        className="form-control form-input"
+                                        id="inputCompany"
+                                        placeholder="Options"
+                                        // value=""
+                                        onChange={item => this.updateInput(item.target.value)}
+                                    />
+                                </div>
 
-                            
-                            <div className="form-group col-12 col-md-6">
-                                <button type="button" className="submit-button mt-4 mb-8" onClick={() => this.addItem()}> Add Options </button>
-                            </div>
-                        </Row>
 
-                        <Row>
-                            <div className="form-group col-12 col-md-6">
-                                <ListGroup>
-                                    {
-                                        this.state.options.map(item => {
-                                            return (
-                                                <ListGroup.Item>
-                                                    <div align="left">
-                                                        {item.value}
-                                                        <div align="right">
-                                                            <FaTrash className="svgdelete"
-                                                                onClick={() => this.deleteItem(item.id)}/>
+                                <div className="form-group col-12 col-md-6">
+                                    <Button className=" asy-primary-submit-button width mt-4" onClick={() => this.addItem()}>
+                                        <h6 className="text-center asy-button-heading">
+                                            Add Options
+                                        </h6>
+                                    </Button>
+                                    { /*<button type="button" className="submit-button mt-4 mb-8" onClick={() => this.addItem()}> Add Options </button>*/}
+                                </div>
+                            </Row>
+
+                            <Row>
+                                <div className="form-group col-12 col-md-6">
+                                    <ListGroup>
+                                        {
+                                            this.state.options.map(item => {
+                                                return (
+                                                    <ListGroup.Item>
+                                                        <div align="left">
+                                                            {item.value}
+                                                            <div align="right">
+                                                                <FaTrash className="svgdelete"
+                                                                    onClick={() => this.deleteItem(item.id)} />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </ListGroup.Item>
-                                            )
-                                        })
-                                    }
-                                </ListGroup>
-                            </div>
+                                                    </ListGroup.Item>
+                                                )
+                                            })
+                                        }
+                                    </ListGroup>
+                                </div>
 
-                        </Row>
-                        <div align="center">
+                            </Row>
+                            <div className=" text-center my-3">
+                                <Button className=" asy-primary-submit-button width" onClick={this.submitHandler.bind(this)}>
+                                    <h6 className="text-center asy-button-heading">
+                                        {this.state.dyanamicBtnName}
+                                    </h6>
+                                </Button>
+                                <Button className=" asy-primary-submit-button width" onClick={this.handleReset}>
+                                    <h6 className="text-center asy-button-heading">
+                                        cancel
+                                    </h6>
+                                </Button>
+                            </div>
+                            { /*<div align="center">
                             <button type="button" value="Submit" className="submit-button" onClick={this.submitHandler.bind(this)}>
                                 {this.state.dyanamicBtnName}
                             </button>
@@ -327,8 +362,9 @@ class ManagePolls extends Component {
                             <button type="button" value="cancel" className="cancel-button" onClick={this.handleReset}>
                                 cancel
                             </button>
-                        </div>
-                    </form>
+                                </div>*/}
+                        </form>
+                    </div>
                 </div>
             </div>
         );
@@ -339,33 +375,42 @@ class ManagePolls extends Component {
             <div>
                 {
                     this.state.showAddPoll ? this.showAddPoll() :
-                        <div className="jumbotron jumbo-form">
-                            <h5 className="page-heading">Manage Polls</h5>
+                        <div className="jumbotron asy-main-jumbotron">
+                            <div className="row asy-main-row">
+                                <Col>
+                                    <h5 className="asy-main-page-heading">ManagePolls</h5>
+                                </Col>
+                            </div>
                             <div align="right">
-                                <button type="button" className="submit-button"  onClick={this.handleReset}>
-                                    Add Poll 
-                                </button>
+                                <Button className=" asy-primary-submit-button width" onClick={this.handleReset}>
+                                    <h6 className="text-center asy-button-heading">
+                                        Add Poll
+                                    </h6>
+                                </Button>
+                                {/*<button type="button" className="submit-button" onClick={this.handleReset}>
+                                    Add Poll
+                </button>*/}
                             </div>
                             <hr className="hr-line" />
                             <div className="form-container">
                                 <form>
-                                    <div class="table-responsive" >
-                                        <Table class="table" striped bordered hover>
-                                            <thead className="border">
-                                                <tr>
-                                                    <th>Poll Title</th>
-                                                    <th>Priority</th>
-                                                    <th>Status</th>
-                                                    <th>Start Date</th>
-                                                    <th>End Date</th>
-                                                    <th className="columnwidth"></th>
+                                    <div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
+                                        <Table className="asy-Table">
+                                            <thead>
+                                                <tr className="asy-TableHeading">
+                                                    <th className="asy-th">Poll Title</th>
+                                                    <th className="asy-th">Priority</th>
+                                                    <th className="asy-th">Status</th>
+                                                    <th className="asy-th">Start Date</th>
+                                                    <th className="asy-th">End Date</th>
+                                                    <th className="columnwidth asy-th"></th>
                                                 </tr>
                                             </thead>
 
                                             <tbody>
                                                 {
                                                     this.state.data.map((data) => (
-                                                        <tr key={data._id}>
+                                                        <tr className="asy-TableData" key={data._id}>
                                                             <td>
                                                                 {data.pollTitle}
                                                             </td>
@@ -383,8 +428,45 @@ class ManagePolls extends Component {
                                                             </td>
 
                                                             <td className="btn-align">
-                                                                <Button outline color="secondary" onClick={this.handleupdateData.bind(this, data._id)}>Edit</Button>
-                                                                <Button outline color="secondary" onClick={this.handledeleteData.bind(this, data._id)}>Delete</Button>
+                                                                <div className=" text-center mt-3">
+                                                                    <Button className=" asy-primary-submit-button width" onClick={this.handleupdateData.bind(this, data._id)}>
+                                                                        <h6 className="text-center asy-button-heading">
+                                                                            Edit
+                                                                        </h6>
+                                                                    </Button>
+                                                                    <Button className=" asy-primary-submit-button width" onClick={this.handleModalShow.bind(this, data._id)}>
+                                                                        <h6 className="text-center asy-button-heading">
+                                                                            Delete
+                                                                        </h6>
+                                                                    </Button>
+                                                                </div>
+                                                                <Modal show={this.state.showHide}>
+                                                                    <Modal.Body>
+                                                                        <h6> Are you Sure.Delete This Data ? </h6>
+                                                                    </Modal.Body>
+                                                                    <Modal.Footer>
+                                                                        <div className="row modal-education">
+                                                                            <div className="col modal-education">
+                                                                                <Button
+                                                                                    className="submit-button"
+                                                                                    onClick={this.handledeleteData.bind(this,data._id)}
+                                                                                >
+                                                                                    Delete
+                                                                                </Button>
+                                                                            </div>
+                                                                            <div className="col modal-education">
+                                                                                <Button
+                                                                                    className="danger-danger submit-button"
+                                                                                    onClick={this.handleModalHide}
+                                                                                >
+                                                                                    Cancel
+                                                                                </Button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </Modal.Footer>
+                                                                </Modal>
+                                                                {/*<Button outline color="secondary" onClick={this.handleupdateData.bind(this, data._id)}>Edit</Button>
+                                                    <Button outline color="secondary" onClick={this.handledeleteData.bind(this, data._id)}>Delete</Button>*/}
                                                             </td>
                                                         </tr>
                                                     ))
