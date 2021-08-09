@@ -412,7 +412,7 @@ class education extends Component {
               !this.hideform()
             ) : (
               <button
-                className="add-button-flip submit-button"
+                className="add-button-flip"
                 onClick={() =>
                   this.setState({
                     hideform: true,
