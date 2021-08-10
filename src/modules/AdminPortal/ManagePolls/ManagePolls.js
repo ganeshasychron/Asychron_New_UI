@@ -6,7 +6,8 @@ import './ManagePolls.module.css';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { FaTrash } from 'react-icons/fa';
 import * as services from "../../../services/services";
-import moment from 'moment';
+import Moment from 'react-moment'
+
 
 class ManagePolls extends Component {
 
@@ -180,8 +181,11 @@ class ManagePolls extends Component {
     
 
     showAddPoll = () => {
+        
         return (
+            
             <div className="jumbotron asy-main-jumbotron">
+            
                 <div className="row asy-main-row">
                     <Col>
                         <h5 className="asy-main-page-heading">ManagePolls</h5>
@@ -189,7 +193,8 @@ class ManagePolls extends Component {
                 </div>
                 <hr className="hr-line" />
                 <div className="form-container">
-                    <div className="card asy-polls-page-card" >
+                    <div className="card asy-manage-page-card" >
+                    <div className="card-body">
                         <form>
 
                             <Row>
@@ -235,9 +240,10 @@ class ManagePolls extends Component {
                                     <label for="StartDate" className="col-form-label">
                                         Start Date
                                     </label>
+                                    
                                     <input
                                         onChange={(e) => { this.setState({ startDate: e.target.value }) }}
-                                        type= "date"
+                                        type="date"
                                         className="form-control form-input"
                                         placeholder="Start Date (DD/MM/YYYY)"
                                         id="StartDate"
@@ -364,6 +370,7 @@ class ManagePolls extends Component {
                             </button>
                                 </div>*/}
                         </form>
+                        </div>
                     </div>
                 </div>
             </div>

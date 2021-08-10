@@ -2,5 +2,6 @@
     vertical-align: text-bottom;
 } */
 
-.col-md-3point5 {width: 40%}
-.col-md-8point5 {width: 81.25%;}
+.card.asy-manage-page-card{
+width: 100%;
+}

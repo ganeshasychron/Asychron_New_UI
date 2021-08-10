@@ -124,7 +124,7 @@ class Polls extends Component {
                                                 
                                                 <label class="container">{data.value}  
                                                 <input type="radio" name="radio" value={data.value} onChange={(e) => { this.setState({ vote: e.target.value }) }} />  
-                                                <span class="check"></span>  
+                                                <div class="check"></div>  
                                               </label>  
                                                     {/*<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value={data.value} onChange={(e) => { this.setState({ vote: e.target.value }) }} />
                                         <label class="form-check-label" for="inlineRadio1">{data.value}</label>*/}
