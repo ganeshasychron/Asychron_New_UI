@@ -157,14 +157,14 @@ body {
     margin: 0px;
 }
 .asy-TableData {
-    box-shadow: 3px 1px 13px 0 var(--box-shadow);
+    box-shadow: 3px 1px 13px 0 var(--box-shadow) !important;
     background-color: var(--blue-color);
+       color: var(--black-light-color);
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
     font-weight: 600;
-    color: var(--black-light-color);
-    height: 10px;
-    border-radius: 5px;
+    border-radius: 8px !important;
+    padding: 1000px 1000px !important;
 }
 .asy-Line {
     padding: 0px;
