@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import '../../../shared/CSS/FormStyles.css';
 import styles from './task.module.css';
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import _ from "lodash";
 import * as services from "../../../services/services";
+import {  Col } from 'react-bootstrap';
+import moment from "moment";
 
 const Task = () => {
 
@@ -72,9 +73,14 @@ const Task = () => {
 	}
 
 	return (
-		<div className="jumbotron jumbo-form">
-			<h5 className="page-heading">My Task</h5>
-			<hr className="hr-line" />
+		<div className="jumbotron asy-main-jumbotron">
+		<div className="row asy-main-row">
+		  <Col>
+			<h5 className="asy-main-page-heading"> My Task </h5>
+		  </Col>
+		</div>
+		<div className="card asy-card-primary-design">
+		<div className="card-body">
 			<div className="text-center center" >
 				<div id={[styles.row]} className="row row-cols-1 row-cols-md-4">
 					<DragDropContext onDragEnd={handleDragEnd} >
@@ -103,9 +109,9 @@ const Task = () => {
 																						{...provided.draggableProps}
 																						{...provided.dragHandleProps} >
 																						<div className={styles.TaskContent}>
-																							<div> Title:-{el.title}  </div>
-																							<div> Due On:-{el.dueDate}   </div>
-																							<div> Priority:-{el.priority} </div>
+																							<div> Title:- <div className="d-inline-block asy-card-secondary-text">{el.title} </div> </div>
+																							<div> Due On:- <div className="d-inline-block asy-card-secondary-text">{moment.utc(el.dueDate).format("D MMM YYYY")} </div>  </div>
+																							<div> Priority:- <div className="d-inline-block asy-card-secondary-text" >{el.priority} </div></div>
 																						</div>
 																					</div>
 																				)
@@ -127,6 +133,8 @@ const Task = () => {
 						})}
 					</DragDropContext>
 				</div>
+			</div>
+			</div>
 			</div>
 		</div>
 	)
