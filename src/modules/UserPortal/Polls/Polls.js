@@ -136,22 +136,24 @@ class Polls extends Component {
                                 </div>
                                
                             </Row>
+
+                            <div className=" text-center mt-3">
+                            <Button className=" asy-primary-submit-button width" onClick={this.submitVoteHandler}>
+                                <h6 className="text-center asy-button-heading">
+                                    Submit Vote
+                                </h6>
+                            </Button>
+                            <Button className=" asy-primary-submit-button width" onClick={() => this.setState({ showForm: !this.state.showForm })}>
+                                <h6 className="text-center asy-button-heading">
+                                    Cancel
+                                </h6>
+                            </Button>
+                        </div>
                         </form>
                     </div>
                     </div>
 
-                    <div className=" text-center mt-3">
-                        <Button className=" asy-primary-submit-button width" onClick={this.submitVoteHandler}>
-                            <h6 className="text-center asy-button-heading">
-                                Submit Vote
-                            </h6>
-                        </Button>
-                        <Button className=" asy-primary-submit-button width" onClick={() => this.setState({ showForm: !this.state.showForm })}>
-                            <h6 className="text-center asy-button-heading">
-                                Cancel
-                            </h6>
-                        </Button>
-                    </div>
+                   
                 </div>
                 );
     }

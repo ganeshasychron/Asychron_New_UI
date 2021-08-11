@@ -428,10 +428,11 @@ class ManagePolls extends Component {
                                                                 {data.status}
                                                             </td>
                                                             <td>
-                                                                {data.startDate}
+                                                                <Moment format="D MMM YYYY">{data.startDate}</Moment>
                                                             </td>
                                                             <td>
-                                                                {data.endDate}
+                                                            <Moment format="D MMM YYYY">{data.endDate}</Moment>
+                                                                
                                                             </td>
 
                                                             <td className="btn-align">
