@@ -523,6 +523,8 @@ class ProfileDetails extends React.Component {
                   <h5 className="asy-main-page-heading"> Profile Details </h5>
                 </Col>
               </div>
+              <div className="card asy-card-primary-design">
+              <div className="card-body">
               <div className="form-container">
                 <form ref={(form) => (this.form = form)} onReset={this.handleReset} >
                   <Row>
@@ -701,17 +703,17 @@ class ProfileDetails extends React.Component {
 
 
                   <div className="asy-button-class text-center d-flex justify-content-center g-4">
-                    <Button onClick={this.submitHandler.bind(this)} className="asy-primary-submit-button text-center col-1 col-sm-2 mr-1">
+                    <Button onClick={this.submitHandler.bind(this)} className="asy-primary-submit-button text-center  col-sm-2 mr-1">
                       <h6 className="text-center asy-button-heading">
                         Update
                       </h6>
                     </Button>
-                    <Button id={styles.btnReset} onClickCapture={this.handleManualReset} className="asy-primary-submit-button text-center col-1 col-sm-2 mr-1">
+                    <Button id={styles.btnReset} onClickCapture={this.handleManualReset} className="asy-primary-submit-button text-center col-sm-2 mr-1">
                       <h6 className="text-center asy-button-heading">
                         Reset
                       </h6>
                     </Button>
-                    <Button onClick={() => this.setState({ profilePage: true, detailsPage: false })} id={styles.btnCancel} className="asy-primary-submit-button text-center col-1 col-sm-2">
+                    <Button onClick={() => this.setState({ profilePage: true, detailsPage: false })} id={styles.btnCancel} className="asy-primary-submit-button text-center col-sm-2">
                       <h6 className="text-center asy-button-heading">
                         Cancel
                       </h6>
@@ -719,6 +721,8 @@ class ProfileDetails extends React.Component {
                   </div>
 
                 </form>
+              </div>
+              </div>
               </div>
             </div>
             : null

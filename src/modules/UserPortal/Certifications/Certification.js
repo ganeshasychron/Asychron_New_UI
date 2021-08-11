@@ -1,9 +1,10 @@
 import React from 'react';
 import { Table, Row, Col, Modal, Button } from 'react-bootstrap';
-import { FaEdit, FaTrash } from 'react-icons/fa';
 import styles from './Certification.module.css';
-import '../../../shared/CSS/FormStyles.css';
 import * as services from '../../../services/services';
+import Moment from 'react-moment';
+import trash1 from "../../../../src/assets/images/trash.png";
+import edit from "../../../../src/assets/images/edit (1).png";
 class Certification extends React.Component {
 	constructor(props) {
 		super(props);
@@ -164,19 +165,19 @@ class Certification extends React.Component {
 	render() {
 		return (
 			<div>
-				<div className="jumbotron jumbo-form">
+				<div className="jumbotron asy-main-jumbotron">
 					{this.state.ListOpen ? (
 						<div>
-							<Row>
-								{' '}
+							<Row className={styles.Row} >
+								<div className="row asy-main-row">
 								<Col>
-									<h5 className="page-heading"> CERTIFICATION </h5>{' '}
+									<h5 className="asy-main-page-heading"> Certification </h5>
 								</Col>
+								</div>
 								<Col>
-									{' '}
-									<div align="right">
-										<button
-											className="add-button submit-button"
+									<div align="right" className="row-col-4 " >
+										<Button
+											className="asy-primary-submit-button col-sm-2"
 											onClick={() =>
 												this.setState({
 													ListOpen: false,
@@ -184,53 +185,38 @@ class Certification extends React.Component {
 													dyanamicBtnName: 'Submit'
 												})}
 										>
-											{' '}
-											ADD{' '}
-										</button>
-									</div>{' '}
-								</Col>{' '}
+											<h6 className="text-center asy-button-heading "> Add 	</h6>
+										</Button>
+									</div>
+								</Col>
 							</Row>
-							<hr className="hr-line" />
-							<div className="table-responsive">
-								<Table striped bordered hover>
+							
+							<div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
+								<Table className="asy-Table">
 									<thead>
-										<tr>
-											<th>Certificate Name</th>
-											<th>Certificate Type</th>
-											<th>Uploaded On</th>
-											<th>Action</th>
+										<tr className="asy-TableHeading">
+											<th className="asy-th">Certificate Name</th>
+											<th className="asy-th">Certificate Type</th>
+											<th className="asy-th">Uploaded On</th>
+											<th className="asy-th">Action</th>
 										</tr>
 									</thead>
 									<tbody>
 										{this.state.data.map((data) => (
-											<tr key={data._id}>
+											<tr className="asy-TableData" key={data._id}>
 												<td> {data.name} </td>
 												<td> {data.typeCertificate} </td>
-												<td> {data.updatedOn} </td>
+												<td><Moment format="D MMM YYYY ">{data.updatedOn}</Moment> </td>
 												<td>
-													<button
-														id={styles.edit}
-														className="button"
-														update
-														onClick={() =>
-															this.setState({ ListOpen: false, FormOpen: true })}
-													>
-														<FaEdit
-															className={styles.svgedit}
-															onClick={this.handleUpdateData.bind(this, data._id)}
-														/>
-													</button>
-													<button
-														id={styles.delete}
-														className="button"
-														onClick={this.handleModalShow.bind(this, data._id)}
-													>
-														<FaTrash className={styles.svgdelete} />
-													</button>
+													<Button variant="none" update onClick={() => this.setState({ ListOpen: false, FormOpen: true })} >
+												<img src={edit} className="asy-Trash" onClick={this.handleUpdateData.bind(this, data._id)} 	/>
+													</Button>
+													<Button variant="none" onClick={this.handleModalShow.bind(this, data._id)} >
+														<img src={trash1} className="asy-Trash"/>
+													</Button>
 
 													<Modal show={this.state.showHide}>
 														<Modal.Body>
-															{' '}
 															<h6> Are you Sure. Delete This Data? </h6>
 														</Modal.Body>
 														<Modal.Footer>
@@ -240,8 +226,7 @@ class Certification extends React.Component {
 																		className="submit-button"
 																		onClick={this.handledeleteData}
 																	>
-																		{' '}
-																		Delete{' '}
+																		Delete
 																	</Button>
 																</div>
 																<div className="col">
@@ -250,8 +235,7 @@ class Certification extends React.Component {
 																		className="danger-danger submit-button"
 																		onClick={this.handleModalHide}
 																	>
-																		{' '}
-																		Cancel{' '}
+																		Cancel
 																	</Button>
 																</div>
 															</div>
@@ -267,8 +251,13 @@ class Certification extends React.Component {
 					) : null}
 					{this.state.FormOpen ? (
 						<div>
-							<h5 className="page-heading">CERTIFICATION </h5>
-							<hr className="hr-line" />
+						<div className="row asy-main-row">
+                <Col>
+                  <h5 className="asy-main-page-heading"> Certification </h5>
+                </Col>
+              </div>
+			                <div className="card asy-card-primary-design">
+								<div className="card-body">
 							<div className="form-container">
 								<form
 									onSubmit={() =>
@@ -351,41 +340,33 @@ class Certification extends React.Component {
 										</div>
 									</Row>
 
-									<div className="text-center">
-										<button
-											type="button"
-											className="submit-button"
-											onClick={() => {
-												this.submitHandler();
-											}}
-										>
-											{this.state.dyanamicBtnName}
-										</button>
+									<div className="asy-button-class text-center d-flex justify-content-center">
+										<Button
+											className="asy-primary-submit-button text-center col-sm-2 mr-1"
+											onClick={() => { this.submitHandler();	}} 	>
+										 <h6 className="text-center asy-button-heading"> {this.state.dyanamicBtnName} </h6>
+										</Button>
 
-										<button
+										<Button
 											id={styles.btnReset}
-											type="button"
-											className="submit-button"
+											className="asy-primary-submit-button text-center col-sm-2 mr-1"
 											onClickCapture={this.handleManualReset}
-											value="reset"
-										>
-											{' '}
-											Reset{' '}
-										</button>
+											value="reset" >
+											<h6 className="text-center asy-button-heading"> Reset </h6>
+										</Button>
 
-										<button
+										<Button
 											id={styles.btnCancel}
-											type="button"
-											className="cancel-button"
+											className="asy-primary-submit-button text-center col-sm-2"
 											onClick={() => this.setState({ ListOpen: true, FormOpen: false })}
 											onClickCapture={this.handleManualReset}
-											value="reset"
-										>
-											{' '}
-											Cancel{' '}
-										</button>
+											value="reset" >
+											<h6 className="text-center asy-button-heading"> Cancel </h6>
+										</Button>
 									</div>
 								</form>
+							</div>
+							</div>
 							</div>
 						</div>
 					) : null}
