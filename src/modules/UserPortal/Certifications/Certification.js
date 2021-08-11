@@ -2,7 +2,7 @@ import React from 'react';
 import { Table, Row, Col, Modal, Button } from 'react-bootstrap';
 import styles from './Certification.module.css';
 import * as services from '../../../services/services';
-import Moment from 'react-moment';
+import moment from "moment";
 import trash1 from "../../../../src/assets/images/trash.png";
 import edit from "../../../../src/assets/images/edit (1).png";
 class Certification extends React.Component {
@@ -206,7 +206,7 @@ class Certification extends React.Component {
 											<tr className="asy-TableData" key={data._id}>
 												<td> {data.name} </td>
 												<td> {data.typeCertificate} </td>
-												<td><Moment format="D MMM YYYY ">{data.updatedOn}</Moment> </td>
+												<td> {moment.utc(data.updatedOn).format("D MMM YYYY")} </td>
 												<td>
 													<Button variant="none" update onClick={() => this.setState({ ListOpen: false, FormOpen: true })} >
 												<img src={edit} className="asy-Trash" onClick={this.handleUpdateData.bind(this, data._id)} 	/>
