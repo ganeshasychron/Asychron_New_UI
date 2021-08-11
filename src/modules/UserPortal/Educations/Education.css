@@ -1,6 +1,10 @@
+.asy-education-primary-card{
+    margin-top: -60px !important;
+   
+}
+
 .svgedit {
     height: auto;
-  
     color: green !important;
     cursor: pointer;
 }
@@ -8,6 +12,7 @@
 .svgdelete {
     height: auto;
     color: red !important;
+    background-color: none !important;
     cursor: pointer;
 }
 
@@ -15,9 +20,6 @@
    display: flex;
    flex-wrap: wrap;
    flex-direction: row;
-   align-content: center;
-   justify-content: center;
-   align-items: center;
 }
 
 .button.edit-education{
@@ -26,7 +28,6 @@
 }
 
 .button.delete-education {
-    margin-left: 10px;
     background: none;
     border: none;
 }
@@ -76,4 +77,13 @@
     overflow-x: auto;
     overflow-y: hidden;
 }
+}
+
+.asy-modal-footer{
+    border-top: none;
+    display: inline-block;
+    padding-bottom: 16px;
+    padding-left: 24px;
+    margin-left: 0;
+    margin-right: 0;
 }
