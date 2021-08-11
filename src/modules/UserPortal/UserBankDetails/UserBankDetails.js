@@ -100,7 +100,6 @@ class UserBankDetails extends Component {
 					this.setState({ onHideForm: !this.state.onHideForm });
 				});
 			} else {
-				
 			}
 		} else {
 			if (this.handleValidation()) {
