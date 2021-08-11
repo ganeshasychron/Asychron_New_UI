@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import { Col, Row, Table, Modal, Button } from 'react-bootstrap';
-import { FaEdit, FaTrash } from 'react-icons/fa';
 import * as services from '../../../services/services';
+
+import trash1 from '../../../../src/assets/images/trashw.png';
+import trash2 from '../../../../src/assets/images/trashw@2x.png';
+import trash3 from '../../../../src/assets/images/trashw@3x.png';
+import edit1 from '../../../../src/assets/images/edit (1).png';
+import edit2 from '../../../../src/assets/images/edit (1)@2x.png';
+import edit3 from '../../../../src/assets/images/edit (1)@3x.png';
 
 class UserBankDetails extends Component {
 	constructor(props) {
@@ -13,11 +19,6 @@ class UserBankDetails extends Component {
 			update: false,
 			id: '',
 			showHide: '',
-			branchName: '',
-			bankName: '',
-			accountNum: '',
-			ifscCode: '',
-			userName: 'admin123',
 			errors: {},
 			data: []
 		};
@@ -99,7 +100,6 @@ class UserBankDetails extends Component {
 					this.setState({ onHideForm: !this.state.onHideForm });
 				});
 			} else {
-				console.log('fill the form ');
 			}
 		} else {
 			if (this.handleValidation()) {
@@ -152,7 +152,7 @@ class UserBankDetails extends Component {
 		return !this.state.onHideForm ? (
 			this.onHideForm()
 		) : (
-			<div className="form-container">
+			<div className="form-container asy-mainBoxBorder">
 				<form
 					onSubmit={() => this.setState({ onHideForm: false, dyanamicBtnName: 'Submit' })}
 					ref={(form) => (this.form = form)}
@@ -160,12 +160,12 @@ class UserBankDetails extends Component {
 				>
 					<Row>
 						<div className="form-group col-12 col-md-6">
-							<label for="inputBankName" className="col-form-label">
+							<label for="inputBankName" className="asy-FormLabel">
 								Name of Bank
 							</label>
 							<input
 								type="text"
-								className="form-control form-input"
+								className="form-control asy-InputValues "
 								id="inputBankName"
 								placeholder="Enter Bank Name"
 								onChange={(e) => {
@@ -178,12 +178,12 @@ class UserBankDetails extends Component {
 							<div className="error-msg">{this.state.errors['inputBankName']}</div>
 						</div>
 						<div className="form-group col-12 col-md-6">
-							<label for="inputIfscCode" className="col-form-label">
+							<label for="inputIfscCode" className="asy-FormLabel">
 								IFSC Code
 							</label>
 							<input
 								type="text"
-								className="form-control form-input"
+								className="form-control asy-InputValues "
 								id="inputIfscCode"
 								placeholder="Enter IFSC code"
 								onChange={(e) => {
@@ -198,12 +198,12 @@ class UserBankDetails extends Component {
 					</Row>
 					<Row>
 						<div className="form-group col-12 col-md-6">
-							<label for="inputBranchAddress" className="col-form-label">
+							<label for="inputBranchAddress" className="asy-FormLabel">
 								Branch Address
 							</label>
 							<input
 								type="text"
-								className="form-control form-input"
+								className="form-control asy-InputValues "
 								id="inputBranchAddress"
 								placeholder="Enter Branch Address"
 								onChange={(e) => {
@@ -216,12 +216,12 @@ class UserBankDetails extends Component {
 							<div className="error-msg">{this.state.errors['inputBranchAddress']}</div>
 						</div>
 						<div className="form-group col-12 col-md-6">
-							<label for="inputAccountNumber" className="col-form-label">
+							<label for="inputAccountNumber" className="asy-FormLabel">
 								Account Number
 							</label>
 							<input
 								type="number"
-								className="form-control form-input"
+								className="form-control asy-InputValues "
 								id="inputAccountNumber"
 								placeholder="Enter Account Number"
 								onChange={(e) => {
@@ -237,7 +237,7 @@ class UserBankDetails extends Component {
 					<div className="text-center">
 						<button
 							type="button"
-							className="submit-button"
+							className="asy-secondary-submit-button"
 							onClick={() => {
 								this.onSubmitHandler();
 							}}
@@ -246,7 +246,7 @@ class UserBankDetails extends Component {
 						</button>
 						<button
 							type="reset"
-							className="cancel-button"
+							className="asy-secondary-cancle-button"
 							onClick={() => {
 								this.setState({ onHideForm: !this.state.onHideForm });
 								this.handleManualReset();
@@ -263,17 +263,17 @@ class UserBankDetails extends Component {
 	};
 	render() {
 		return (
-			<div className="jumbotron jumbo-form">
+			<div className="jumbotron asy-main-jumbotron">
 				<Row>
 					<Col>
-						<h5 className="page-heading align-middle">Bank Details</h5>
+						<h5 className="asy-main-page-heading">Bank Details</h5>
 					</Col>
 					<Col className="d-flex flex-row-reverse">
 						{this.state.onHideForm ? (
 							!this.onHideForm()
 						) : (
 							<button
-								className="submit-button"
+								className="add-button-flip"
 								onClick={() => this.setState({ onHideForm: true, dyanamicBtnName: 'Submit' })}
 							>
 								ADD
@@ -281,25 +281,25 @@ class UserBankDetails extends Component {
 						)}
 					</Col>
 				</Row>
-				<hr className="hr-line" />
+				<hr className="asy-hr-line" />
 				<div>
 					{this.state.onHideForm ? (
 						this.onHideForm()
 					) : (
-						<div className="table-responsive">
-							<Table striped bordered hover>
+						<div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
+							<Table className="asy-Table">
 								<thead>
-									<tr>
-										<th>Name Of Bank</th>
-										<th>IFSC Code</th>
-										<th>Branch Address</th>
-										<th>Account Number</th>
-										<th>Edit / Delete</th>
+									<tr className="asy-TableHeading">
+										<th className="asy-th">Name Of Bank</th>
+										<th className="asy-th">IFSC Code</th>
+										<th className="asy-th">Branch Address</th>
+										<th className="asy-th">Account Number</th>
+										<th className="asy-th">Edit / Delete</th>
 									</tr>
 								</thead>
 								<tbody>
 									{this.state.data.map((data) => (
-										<tr key={data}>
+										<tr className="asy-TableData" key={this.state.id}>
 											<td>{data.bankName}</td>
 											<td>{data.ifscCode}</td>
 											<td>{data.branchName}</td>
@@ -309,18 +309,20 @@ class UserBankDetails extends Component {
 													className="editbutton"
 													onClick={this.onEditData.bind(this, data._id)}
 												>
-													<FaEdit
-														className="svgedit"
+													<img
+														src={edit1}
+														srcset={(edit2, edit3)}
+														className="asy-Edit"
 														onClick={() => this.setState({ onHideForm: true })}
 													/>
 												</button>
+
 												<button
 													className="deletebutton"
 													onClick={this.handleModalShow.bind(this, data._id)}
 												>
-													<FaTrash className="svgdelete" />
+													<img src={trash1} srcset={(trash2, trash3)} className="asy-Trash" />
 												</button>
-
 												<Modal show={this.state.showHide}>
 													<Modal.Body>
 														<h6>Are you sure ! Delete this Data ?</h6>
