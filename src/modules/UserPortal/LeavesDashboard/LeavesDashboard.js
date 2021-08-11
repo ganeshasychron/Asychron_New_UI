@@ -179,7 +179,7 @@ class Leaves extends Component {
         </div>
         <div className="row">
           <div className="col-xl-6 col-lg-6">
-            <div className="card .asy-card-primary-design">
+            <div className="card asy-card-primary-design">
               <div className="card-body">
                 <Col>
                   <p className="asy-card-page-heading">Book Time Off</p>
@@ -430,6 +430,7 @@ class Leaves extends Component {
                             src={check11}
                             srcset={(check12, check13)}
                             className="asy-Check"
+                            alt="fa-check-button"
                           />
                           <label>Approved</label>
                         </div>
@@ -439,6 +440,7 @@ class Leaves extends Component {
                             src={check1}
                             srcset={(check2, check3)}
                             className="asy-Check"
+                            alt="fa-check-button"
                           />
                           <label>Approved</label>
                         </div>
@@ -453,6 +455,7 @@ class Leaves extends Component {
                           src={trash1}
                           srcset={(trash2, trash3)}
                           className="asy-Trash"
+                          alt="fa-trash-button"
                         />
                       </Button>
                       <Modal show={this.state.showHide}>

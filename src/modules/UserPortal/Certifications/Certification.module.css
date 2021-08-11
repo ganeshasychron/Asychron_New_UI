@@ -11,33 +11,6 @@ input[type="file" i] {
 	background: #a5ada9;
 }
 
-.svgedit {
-    height: auto;
-    color: green !important;
-    cursor: pointer;
-}
-
-.svgdelete {
-    height: auto;
-    color: red !important;
-    cursor: pointer;
-}
-
-#edit{
-  background: none;
-  border: none;
-}
-
-#delete{
-    margin-left: 10px;
-    background: none;
-    border: none;
-}
-
-#danger{
-    background-color: red !important;
-    border: none;
-    display: flex !important;
-    flex-direction: column !important;
-    align-content: center !important;
+.Row{
+    margin-left: 0px;
 }
