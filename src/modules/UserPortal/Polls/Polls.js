@@ -173,7 +173,7 @@ class Polls extends Component {
                 </div>
 
 
-                <div className="text-center" >
+                <div className="text-center">
                     <div className='CardArea' >
                         <div className='card polls'>
                             <p className="asy-card-page-heading  text-center mt-3 font-weight-bold">Section Wise Analysis</p>

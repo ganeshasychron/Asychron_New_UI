@@ -308,13 +308,14 @@ class ManagePolls extends Component {
                                         />
                                     </div>
 
-                                    <div className="form-group col-12 col-md-6">
-                                        <Button className=" asy-primary-submit-button width mt-4" onClick={() => this.addItem()}>
-                                            <h6 className="text-center asy-button-heading">
+                                    <div className="form-group col-12 col-md-6 mt-3">
+                                        <Button className=" asy-primary-submit-button width py-0" onClick={() => this.addItem()}>
+                                            <h6 className="text-center asy-button-heading font">
                                                 Add Options
                                             </h6>
                                         </Button>
                                     </div>
+
                                 </Row>
 
                                 <Row>
@@ -345,7 +346,7 @@ class ManagePolls extends Component {
                                             {this.state.dyanamicBtnName}
                                         </h6>
                                     </Button>
-                                    <Button className="asy-secondary-cancle-button cancel" onClick={this.handleReset}>
+                                    <Button className="asy-secondary-cancle-button cancel mb-1" onClick={this.handleReset}>
                                         <h6 className="text-center asy-button-heading">
                                             cancel
                                         </h6>
