@@ -1,7 +1,6 @@
-/* .btn{
-    vertical-align: text-bottom;
-} */
+.asy-secondary-cancle-button.cancel{
+    height:50px;
+    padding: 2px 15px;
+ }
 
-.card.asy-manage-page-card{
-width: 100%;
-}
+ 

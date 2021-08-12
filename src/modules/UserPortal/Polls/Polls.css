@@ -1,14 +1,19 @@
-table {
+/* table {
    table-layout: auto;
-}
+} */
 
 .btn-align {
    display: flex;
    justify-content: space-evenly;
+   
+}
+
+#tabletd{
+   height: 60px;
 }
 
 .columnwidth {
-   width : 300px;
+   width : 350px;
 }
 
 #submitid {
@@ -40,7 +45,10 @@ table {
 .asy-primary-submit-button.width{
    width: auto;
 }
-
+.asy-secondary-cancle-button.cancel{
+   height:50px;
+   padding: 2px 15px;
+}
 
  .container {
   display: block;
@@ -48,18 +56,14 @@ table {
   padding-left: 20px;
   margin: 0% !important;
   cursor: pointer;
-  /* font-size: 25px; */
-
 }
 
-/* Hide the default radio button */
 .container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
 }
 
-/* custom radio button */
 .check {
   position: absolute;
   top: 0;
@@ -71,20 +75,14 @@ table {
   padding: 4px;
   border: solid 1px #707070;
   background-color: #fff;
-
-
 }
 
 .container:hover input ~ .check {
    background-color: white;
- 
- 
-
 }
 
 .container input:checked ~ .check {
   background-color: white;
-
 }
 
 .check:after {
@@ -103,56 +101,8 @@ table {
 	width: 6px;
 	height: 6px;
 	border-radius: 50%;
-	background: #1bdcff;
-   
+	background: #1bdcff;  
 }  
-
-
-
-
- 
-
- 
-
-/* input[type='radio']:after {
-   width: 15px;
-   height: 15px;
-   border-radius: 15px;
-   top: -2px;
-   left: -1px;
-
-   content: '';
-   position: absolute;
-  display: none;
-   width: 21px;
-  height: 21px;
-
-  padding: 6px;
-  border: solid 1px #707070;
-  background-color: #fff
-}
-
-
-
-input[type='radio']:checked:after {
-   width: 15px;
-   height: 15px;
-   border-radius: 15px;
-   top: -2px;
-   left: -1px;
-   position: absolute;
-  display: none;
-   background-color: #1bdcff;
-   content: '';
-   display: inline-block;
-   visibility: visible;
-   width: 21px;
-  height: 21px;
-
-  padding: 6px;
-  border: solid 1px #707070;
-  background-color: #fff
-} */
 
 .asy-polls-page-card{
    padding: 0 0 27px;
