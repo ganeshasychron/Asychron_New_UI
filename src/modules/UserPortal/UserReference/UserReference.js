@@ -4,9 +4,15 @@ import * as services from '../../../services/services';
 import trash1 from '../../../../src/assets/images/trashw.png';
 import trash2 from '../../../../src/assets/images/trashw@2x.png';
 import trash3 from '../../../../src/assets/images/trashw@3x.png';
+import trash11 from '../../../../src/assets/images/trash.png';
+import trash12 from '../../../../src/assets/images/trash@2x.png';
+import trash13 from '../../../../src/assets/images/trash@3x.png';
 import edit1 from '../../../../src/assets/images/edit (1).png';
 import edit2 from '../../../../src/assets/images/edit (1)@2x.png';
 import edit3 from '../../../../src/assets/images/edit (1)@3x.png';
+import edit11 from '../../../../src/assets/images/edit b(1).png';
+import edit12 from '../../../../src/assets/images/edit b(1)@2x.png';
+import edit13 from '../../../../src/assets/images/edit b(1)@3x.png';
 export default class UserReference extends Component {
 	constructor(props) {
 		super(props);
@@ -348,8 +354,8 @@ export default class UserReference extends Component {
 									</tr>
 								</thead>
 								<tbody>
-									{this.state.data.map((data) => (
-										<tr className="asy-TableData" key={data._id}>
+									{this.state.data.map((data, index) => (
+										<tr className="asy-TableData" key={index}>
 											<td>{data.name}</td>
 											<td>{data.title}</td>
 											<td>{data.company}</td>
@@ -360,18 +366,39 @@ export default class UserReference extends Component {
 													className="editbutton"
 													onClick={this.onEditData.bind(this, data._id)}
 												>
-													<img
-														src={edit1}
-														srcset={(edit2, edit3)}
-														className="asy-Edit"
-														onClick={() => this.setState({ onHideForm: true })}
-													/>
+													{index % 2 === 0 ? (
+														<img
+															src={edit1}
+															srcset={(edit2, edit3)}
+															className="asy-Edit"
+															onClick={() => this.setState({ onHideForm: true })}
+														/>
+													) : (
+														<img
+															src={edit11}
+															srcset={(edit12, edit13)}
+															className="asy-Edit"
+															onClick={() => this.setState({ onHideForm: true })}
+														/>
+													)}
 												</button>
 												<button
 													className="deletebutton"
 													onClick={this.handleModalShow.bind(this, data._id)}
 												>
-													<img src={trash1} srcset={(trash2, trash3)} className="asy-Trash" />
+													{index % 2 === 0 ? (
+														<img
+															src={trash1}
+															srcset={(trash2, trash3)}
+															className="asy-Trash"
+														/>
+													) : (
+														<img
+															src={trash11}
+															srcset={(trash12, trash13)}
+															className="asy-Trash"
+														/>
+													)}
 												</button>
 
 												<Modal show={this.state.showHide}>
