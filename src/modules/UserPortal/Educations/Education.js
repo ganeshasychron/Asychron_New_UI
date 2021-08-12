@@ -1,10 +1,15 @@
 import React, { Component } from "react";
 import { Table, Row, Col, Modal, Button } from "react-bootstrap";
-import { FaEdit, FaTrash } from "react-icons/fa";
 import "./Education.css";
 import "../../../shared/CSS/blueTheme.css";
 import * as services from "../../../services/services";
 import Moment from "react-moment";
+import trash1 from "../../../../src/assets/images/trashw.png";
+import trash2 from "../../../../src/assets/images/trashw@2x.png";
+import trash3 from "../../../../src/assets/images/trashw@3x.png";
+import edit1 from "../../../../src/assets/images/edit (1).png";
+import edit2 from "../../../../src/assets/images/edit (1)@2x.png";
+import edit3 from "../../../../src/assets/images/edit (1)@3x.png";
 class education extends Component {
   state = {
     hideform: false,
@@ -454,24 +459,32 @@ class education extends Component {
                     <td> {data.percentage} </td>
                     <td>
                       <button
-                        className="button edit-education"
+                        className="editbutton"
                         update
-                        onClick={() =>
-                          this.setState({
-                            hideform: true,
-                          })
-                        }
+                        onClick={this.handleUpdateData.bind(this, data._id)}
                       >
-                        <FaEdit
-                          className="svgedit"
-                          onClick={this.handleUpdateData.bind(this, data._id)}
+                        <img
+                          src={edit1}
+                          srcset={(edit2, edit3)}
+                          className="asy-Edit"
+                          onClick={() =>
+                            this.setState({
+                              hideform: true,
+                            })
+                          }
+                          alt="Edit-Icon Education Page"
                         />
                       </button>
                       <button
                         className="button delete-education"
                         onClick={this.handleModalShow.bind(this, data._id)}
                       >
-                        <FaTrash className="svgdelete" />
+                        <img
+                          src={trash1}
+                          srcset={(trash2, trash3)}
+                          className="asy-Trash"
+                          alt="Delete-Icon Education Page"
+                        />
                       </button>
                       <Modal show={this.state.showHide} className="text-center">
                         <Modal.Body>
