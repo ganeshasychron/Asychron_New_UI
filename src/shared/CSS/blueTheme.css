@@ -17,6 +17,8 @@
 	--hr-line-color: #707070;
 	--box-shadow: rgba(191, 211, 233, 0.5);
 	--light-grey-text-color: #939393;
+	--input-value-border-color: #aeaeae;
+	--input-value-background-color: #fafafa;
 }
 
 body {
@@ -169,8 +171,8 @@ body {
 	height: 47px;
 	padding: 13px 16.9px 13px 14px;
 	border-radius: 5px;
-	border: solid 1px var(--input-value-border);
-	background-color: var(--input-value-background);
+	border: solid 1px var(--input-value-border-color);
+	background-color: var(--input-value-background-color);
 }
 
 .asy-FormLabel {
