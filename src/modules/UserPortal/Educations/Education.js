@@ -259,12 +259,12 @@ class education extends Component {
                         }}
                         value={this.state.degree}
                         type="text"
-                        className="form-control form-input"
+                        className="form-control asy-InputValues"
                         id="inputdegree"
                         placeholder="Degree"
                         required
                       />
-                      <div style={{ color: "red" }}>
+                      <div className="error-msg" style={{ color: "red" }}>
                         {this.state.errors["degree"]}
                       </div>
                     </div>
@@ -279,7 +279,7 @@ class education extends Component {
                         }}
                         value={this.state.specialization}
                         type="text"
-                        className="form-control form-input"
+                        className="form-control asy-InputValues"
                         id="inputPassword"
                         placeholder="Specialization"
                         required
@@ -301,7 +301,7 @@ class education extends Component {
                         }}
                         value={this.state.college}
                         type="text"
-                        className="form-control form-input"
+                        className="form-control asy-InputValues"
                         id="inputdegree"
                         placeholder="College/School"
                         required
@@ -321,7 +321,7 @@ class education extends Component {
                         }}
                         value={this.state.board}
                         type="text"
-                        className="form-control form-input"
+                        className="form-control asy-InputValues"
                         id="inputPassword"
                         placeholder="University/Board"
                         required
@@ -343,7 +343,7 @@ class education extends Component {
                         }}
                         value={this.state.datePassing}
                         type="text"
-                        className="form-control form-input"
+                        className="form-control asy-InputValues"
                         id="inputdegree"
                         placeholder="Year of Passing(DD/MM/YYYY)"
                         required
@@ -363,7 +363,7 @@ class education extends Component {
                         }}
                         value={this.state.percentage}
                         type="text"
-                        className="form-control form-input"
+                        className="form-control asy-InputValues"
                         id="inputPassword"
                         placeholder="percentage"
                         required
