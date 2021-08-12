@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { Row, Table, Col, Modal, Button } from 'react-bootstrap';
-import { FaEdit, FaTrash } from 'react-icons/fa';
 import * as services from '../../../services/services';
-
+import trash1 from '../../../../src/assets/images/trashw.png';
+import trash2 from '../../../../src/assets/images/trashw@2x.png';
+import trash3 from '../../../../src/assets/images/trashw@3x.png';
+import edit1 from '../../../../src/assets/images/edit (1).png';
+import edit2 from '../../../../src/assets/images/edit (1)@2x.png';
+import edit3 from '../../../../src/assets/images/edit (1)@3x.png';
 export default class UserReference extends Component {
 	constructor(props) {
 		super(props);
@@ -151,7 +155,7 @@ export default class UserReference extends Component {
 		return !this.state.onHideForm ? (
 			this.onHideForm()
 		) : (
-			<div className="form-container">
+			<div className="form-container asy-mainBoxBorder">
 				<form
 					onSubmit={() => this.setState({ onHideForm: false })}
 					ref={(form) => (this.form = form)}
@@ -159,12 +163,12 @@ export default class UserReference extends Component {
 				>
 					<Row>
 						<div className="form-group col-12 col-md-6">
-							<label for="inputName" className="col-form-label">
+							<label for="inputName" className="asy-FormLabel">
 								Name
 							</label>
 							<input
 								type="text"
-								className="form-control form-input"
+								className="form-control asy-InputValues"
 								id="inputName"
 								placeholder="Enter Your Name"
 								onChange={(e) => {
@@ -178,12 +182,12 @@ export default class UserReference extends Component {
 							<div style={{ color: 'red' }}>{this.state.errors['name']}</div>
 						</div>
 						<div className="form-group col-12 col-md-6">
-							<label for="inputEmail" className="col-form-label">
+							<label for="inputEmail" className="asy-FormLabel">
 								Email
 							</label>
 							<input
 								type="text"
-								className="form-control form-input"
+								className="form-control asy-InputValues"
 								id="inputEmail"
 								placeholder="Enter Email Address"
 								onChange={(e) => {
@@ -199,12 +203,12 @@ export default class UserReference extends Component {
 					</Row>
 					<Row>
 						<div className="form-group col-12 col-md-6">
-							<label for="inputTitle" className="col-form-label">
+							<label for="inputTitle" className="asy-FormLabel">
 								Title
 							</label>
 							<input
 								type="text"
-								className="form-control form-input"
+								className="form-control asy-InputValues"
 								id="inputTitle"
 								placeholder="Enter Title"
 								onChange={(e) => {
@@ -218,12 +222,12 @@ export default class UserReference extends Component {
 							<div style={{ color: 'red' }}>{this.state.errors['title']}</div>
 						</div>
 						<div className="form-group col-12 col-md-6">
-							<label for="inputMobile" className="col-form-label">
+							<label for="inputMobile" className="asy-FormLabel">
 								Mobile
 							</label>
 							<input
 								type="text"
-								className="form-control form-input"
+								className="form-control asy-InputValues"
 								id="inputMobile"
 								placeholder="Enter Mobile Number"
 								onChange={(e) => {
@@ -239,12 +243,12 @@ export default class UserReference extends Component {
 					</Row>
 					<Row>
 						<div className="form-group col-12 col-md-6">
-							<label for="inputCompany" className="col-form-label">
+							<label for="inputCompany" className="asy-FormLabel">
 								Company
 							</label>
 							<input
 								type="text"
-								className="form-control form-input"
+								className="form-control asy-InputValues"
 								id="inputCompany"
 								placeholder="Enter Company Name"
 								onChange={(e) => {
@@ -261,7 +265,7 @@ export default class UserReference extends Component {
 					<div className="text-center">
 						<button
 							type="button"
-							className="submit-button"
+							className="asy-secondary-submit-button"
 							onClick={() => {
 								this.onSubmitHandler();
 							}}
@@ -270,7 +274,7 @@ export default class UserReference extends Component {
 						</button>
 						<button
 							type="button"
-							className="cancel_button education"
+							className="asy-secondary-cancle-button"
 							onClick={() => {
 								this.setState({ onHideForm: !this.state.onHideForm });
 								this.handleManualReset();
@@ -307,17 +311,17 @@ export default class UserReference extends Component {
 	};
 	render() {
 		return (
-			<div className="jumbotron jumbo-form">
+			<div className="jumbotron asy-main-jumbotron">
 				<Row>
 					<Col>
-						<h5 className="page-heading">References</h5>
+						<h5 className="asy-main-page-heading">References</h5>
 					</Col>
 					<Col className="d-flex flex-row-reverse">
 						{this.state.onHideForm ? (
 							!this.onHideForm()
 						) : (
 							<button
-								className="submit-button"
+								className="add-button-flip"
 								onClick={() => this.setState({ onHideForm: true, dyanamicBtnName: 'Submit' })}
 							>
 								ADD
@@ -326,26 +330,26 @@ export default class UserReference extends Component {
 					</Col>
 				</Row>
 
-				<hr className="hr-line" />
+				<hr className="asy-hr-line" />
 				<div>
 					{this.state.onHideForm ? (
 						this.onHideForm()
 					) : (
-						<div className="table-responsive">
-							<Table striped bordered hover>
+						<div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
+							<Table className="asy-Table">
 								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Title</th>
-										<th>Company</th>
-										<th>Email</th>
-										<th>Mobile</th>
-										<th>Edit/Delete</th>
+									<tr className="asy-TableHeading">
+										<th className="asy-th">Name</th>
+										<th className="asy-th">Title</th>
+										<th className="asy-th">Company</th>
+										<th className="asy-th">Email</th>
+										<th className="asy-th">Mobile</th>
+										<th className="asy-th">Edit/Delete</th>
 									</tr>
 								</thead>
 								<tbody>
 									{this.state.data.map((data) => (
-										<tr key={data._id}>
+										<tr className="asy-TableData" key={data._id}>
 											<td>{data.name}</td>
 											<td>{data.title}</td>
 											<td>{data.company}</td>
@@ -356,8 +360,10 @@ export default class UserReference extends Component {
 													className="editbutton"
 													onClick={this.onEditData.bind(this, data._id)}
 												>
-													<FaEdit
-														className="svgedit"
+													<img
+														src={edit1}
+														srcset={(edit2, edit3)}
+														className="asy-Edit"
 														onClick={() => this.setState({ onHideForm: true })}
 													/>
 												</button>
@@ -365,7 +371,7 @@ export default class UserReference extends Component {
 													className="deletebutton"
 													onClick={this.handleModalShow.bind(this, data._id)}
 												>
-													<FaTrash className="svgdelete" />
+													<img src={trash1} srcset={(trash2, trash3)} className="asy-Trash" />
 												</button>
 
 												<Modal show={this.state.showHide}>

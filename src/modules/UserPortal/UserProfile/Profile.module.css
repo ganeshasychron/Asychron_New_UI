@@ -34,13 +34,13 @@
   flex-wrap: wrap;
 }
 
-img {
+/* img {
   width: auto;
   height: 90px;
   border-radius: 25%;
   margin-top:10px;
   border: 1px solid black;
-}
+} */
 
 .apex_chart{
   align-content: center;
@@ -92,10 +92,10 @@ img {
 	background-color: rgb(240, 220, 223);
 }
 
-a{
+/* a{
   text-decoration: none;
   color: black ;   
-}
+} */
 
 @media screen and (max-width: 500px) {
   .news1{

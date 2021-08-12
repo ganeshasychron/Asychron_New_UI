@@ -1,205 +1,236 @@
 :root {
-    --asy-main-background-color: #F6FAFD;
-    --page-heading-color: #181818;
-    --white-color: #ffffff;
-    --blue-color: #1bdcff;
-    --grey-color: #e2e2e2;
-    --danger-red-color: red;
-    --siderbar-darkblue-color: #06163a;
-    --sidebar-darkblue-selected-color: #000922;
-    --sidebar-font-color: #C5C5C5;
-    --sidebar-underline-color: #DBDBDB;
-    --card-border: #D6D6D6;
-    --black-light-color: #242424;
-    --small-lable-color: #6e6e6e;
-    --card-gradient-color: linear-gradient(to bottom, #2de0ff, #4ecdff 57%, #8fb8ff, #2c8999);
-    --border-color: #d8d8d8;
-    --hr-line-color: #707070;
-    --box-shadow: rgba(191, 211, 233, 0.5);
-    --light-grey-text-color: #939393;
+	--asy-main-background-color: #f6fafd;
+	--page-heading-color: #181818;
+	--white-color: #ffffff;
+	--blue-color: #1bdcff;
+	--grey-color: #e2e2e2;
+	--danger-red-color: red;
+	--siderbar-darkblue-color: #06163a;
+	--sidebar-darkblue-selected-color: #000922;
+	--sidebar-font-color: #c5c5c5;
+	--sidebar-underline-color: #dbdbdb;
+	--card-border: #d6d6d6;
+	--black-light-color: #242424;
+	--small-lable-color: #6e6e6e;
+	--card-gradient-color: linear-gradient(to bottom, #2de0ff, #4ecdff 57%, #8fb8ff, #2c8999);
+	--border-color: #d8d8d8;
+	--hr-line-color: #707070;
+	--box-shadow: rgba(191, 211, 233, 0.5);
+	--light-grey-text-color: #939393;
+	--input-value-border-color: #aeaeae;
+	--input-value-background-color: #fafafa;
 }
 
 body {
-    background-color: var(--asy-main-background-color);
+	background-color: var(--asy-main-background-color);
 }
 
 .asy-main-jumbotron {
-    height: auto;
-    position: relative;
-    background: none;
+	height: auto;
+	position: relative;
+	background: none;
 }
 .asy-main-page-heading {
-    color: var(--page-heading-color);
-    font-family: Roboto;
-    margin-top: -15px;
-    margin-bottom: 30px;
-    font-size: 30px;
-    font-weight: 500;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: 1px;
-    text-align: left;
+	color: var(--page-heading-color);
+	font-family: Roboto;
+	margin-top: -15px;
+	margin-bottom: 30px;
+	font-size: 30px;
+	font-weight: 500;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: 1px;
+	text-align: left;
 }
 
 .asy-primary-submit-button {
-    border-radius: 8px;
-    background: var(--blue-color);
-    border-color: var(--white-color) !important;
-    width: 100%;
-    height: auto;
-    line-height: 16px;
-    display: inline-block;
-    margin-top: 20px;
-    margin-right: 10px;
-    outline: none;
-    border: none;
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
+	border-radius: 8px;
+	background: var(--blue-color);
+	border-color: var(--white-color) !important;
+	width: 100%;
+	height: auto;
+	line-height: 16px;
+	display: inline-block;
+	margin-top: 20px;
+	margin-right: 10px;
+	outline: none;
+	border: none;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	cursor: pointer;
 }
 
 .asy-primary-submit-button:hover {
-    background: var(--blue-color);
-    border-color: var(--white-color) !important;
+	background: var(--blue-color);
+	border-color: var(--white-color) !important;
 }
 
 .asy-secondary-submit-button {
-    border-radius: 8px;
-    background: var(--blue-color);
-    color: var(--white-color);
-    border-color: var(--white-color) !important;
-    line-height: 16px;
-    display: inline-block;
-    margin-top: 20px;
-    margin-right: 20px;
-    outline: none;
-    border: none;
-    font-size: 16px;
-    padding: 16px 16px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
+	border-radius: 8px;
+	background: var(--blue-color);
+	color: var(--white-color);
+	border-color: var(--white-color) !important;
+	line-height: 16px;
+	display: inline-block;
+	margin-top: 20px;
+	margin-right: 20px;
+	outline: none;
+	border: none;
+	font-size: 16px;
+	padding: 16px 16px;
+	font-weight: 500;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	cursor: pointer;
 }
 
 .asy-secondary-cancle-button {
-    border-radius: 8px;
-    background: var(--danger-red-color);
-    color: var(--white-color);
-    border-color: var(--white-color) !important;
-    line-height: 16px;
-    display: inline-block;
-    margin-top: 20px;
-    outline: none;
-    border: none;
-    font-size: 16px;
-    padding: 16px 16px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
+	border-radius: 8px;
+	background: var(--danger-red-color);
+	color: var(--white-color);
+	border-color: var(--white-color) !important;
+	line-height: 16px;
+	display: inline-block;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	font-size: 16px;
+	padding: 16px 16px;
+	font-weight: 500;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	cursor: pointer;
 }
 
 .asy-secondary-submit-button:hover {
-    background: var(--blue-color);
+	background: var(--blue-color);
 }
 
 .asy-secondary-cancle-button:hover {
-    background: var(--danger-red-color);
+	background: var(--danger-red-color);
 }
 
 .asy-button-heading {
-    font-family: Poppins;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-top: 8px !important;
-    color: var(--black-light-color);
+	font-family: Poppins;
+	font-size: 18px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	margin-top: 8px !important;
+	color: var(--black-light-color);
 }
 
 .add-button-flip {
-
-    background: var(--blue-color);
-    color: var(--black-light-color);
-    border-color: var(--white-color) !important;
-    border: 0;
-    padding: 10px 16px;
-    margin-top: -20px !important;
-    border-radius: 8px;
-    margin-bottom: 30px !important;
-    font-weight: 600;
-    font-family: Poppins;
-    letter-spacing: 1px;
-
+	background: var(--blue-color);
+	color: var(--black-light-color);
+	border-color: var(--white-color) !important;
+	border: 0;
+	padding: 10px 16px;
+	margin-top: -20px !important;
+	border-radius: 8px;
+	margin-bottom: 30px !important;
+	font-weight: 600;
+	font-family: Poppins;
+	letter-spacing: 1px;
 }
 
 .asy-card-primary-design {
-    border: solid 1px var(--card-border);
-    background-color: var(--white-color);
-    border-radius: 10px;
-    margin-top: 0;
+	border: solid 1px var(--card-border);
+	background-color: var(--white-color);
+	border-radius: 10px;
+	margin-top: 0;
 }
 .asy-mainBoxBorder {
-    padding: 10px 20px;
-    margin-top: 20px;
-    opacity: 1;
-    border-radius: 5px;
-    border: solid 1px var(--border-color);
-    background-color: var(--white-color);
+	padding: 10px 20px;
+	margin-top: 20px;
+	opacity: 1;
+	border-radius: 5px;
+	border: solid 1px var(--border-color);
+	background-color: var(--white-color);
 }
+
 .asy-TableHeading {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 0px;
-    margin: 0px;
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	padding: 0px;
+	margin: 0px;
 }
 .asy-TableData {
-    box-shadow: 3px 1px 13px 0 var(--box-shadow) !important;
-    background-color: var(--blue-color);
-       color: var(--black-light-color);
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    border-radius: 8px !important;
-    padding: 1000px 1000px !important;
+	box-shadow: 3px 1px 13px 0 var(--box-shadow) !important;
+	background-color: var(--blue-color);
+	color: var(--black-light-color);
+	font-family: 'Poppins', sans-serif;
+	font-size: 15px;
+	font-weight: 600;
+	border-radius: 8px !important;
+	padding: 1000px 1000px !important;
+}
+.asy-InputValues {
+	height: 47px;
+	padding: 13px 16.9px 13px 14px;
+	border-radius: 5px;
+	border: solid 1px var(--input-value-border-color);
+	background-color: var(--input-value-background-color);
+}
+
+.asy-FormLabel {
+	height: 20px;
+	margin: 29px 90px 6px 5px;
+	font-family: Roboto;
+	font-size: 15px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	text-align: left;
+	color: var(--small-lable-color);
 }
 .asy-Line {
-    padding: 0px;
-    margin: 0px;
-    width: 100%;
-    height: 1px;
-    opacity: 1;
-    background-color: var(--hr-line-color);
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+	height: 1px;
+	opacity: 1;
+	background-color: var(--hr-line-color);
 }
 .asy-Tablestriped tbody tr:nth-of-type(even) {
-    background-color: rgba(0, 0, 0, .05);
+	background-color: rgba(0, 0, 0, .05);
 }
 .asy-Table {
-    border-collapse: separate;
-    border-spacing: 0 1rem;
-    margin: 0 !important;
-    border-top: hidden !important;
+	border-collapse: separate;
+	border-spacing: 0 1rem;
+	margin: 0 !important;
+	border-top: hidden !important;
 }
 .asy-th {
-    border: 1px solid var(--border-color) !important;
-    border-top: none !important;
-    border-left: none !important;
-    border-right: none !important;
+	border: 1px solid var(--border-color) !important;
+	border-top: none !important;
+	border-left: none !important;
+	border-right: none !important;
 }
 img.asy-Check {
-    border: none;
-    width: 25px;
-    height: 25px;
+	border: none;
+	width: 25px;
+	height: 25px;
+}
+img.asy-Edit {
+	border: none;
+	width: 25px;
+	height: 25px;
+	margin: 10px;
+	padding: 0;
 }
 img.asy-Trash {
-    border: none;
-    width: 25px;
-    height: 25px;
+	border: none;
+	width: 25px;
+	height: 25px;
+	margin: 10px;
+	padding: 0;
 }
 .table td,
 .table th {
-    vertical-align: middle;
+	vertical-align: middle;
 }
