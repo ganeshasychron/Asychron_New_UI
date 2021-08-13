@@ -85,7 +85,6 @@
     width: 200px;  
  }
  .Displaylabel{
- /* display:flex;*/
   color: var(--black-light-color);
   font-family: Poppins;
   font-weight: 700; 
