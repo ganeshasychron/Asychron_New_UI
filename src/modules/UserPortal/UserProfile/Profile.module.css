@@ -17,7 +17,8 @@
    width: auto;  
    height: auto;
   display: flex;
-  flex: auto;                
+  flex: auto;     
+  box-shadow: 8px 8px 10px 0px rgba(110, 132, 156, 0.58);           
 } 
 
 .card-body{
@@ -91,8 +92,15 @@
   width: 200px;   
  }
 
+.news1 {
+	background-color:none;
+}
 .news2 {
 	background-color: rgb(240, 220, 223);
+}
+
+#ReamainingCard{                        
+  background-image: var(--card-gradient-color);  
 }
 
 .Remaining-Link{
