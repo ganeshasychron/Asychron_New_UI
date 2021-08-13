@@ -1,16 +1,22 @@
 
-input[type="file" i] {
+input[type="file"] {
     height: auto;
-}
-
-#btnReset{
-	background: #6d80d6;
-}
-
-#btnCancel{
-	background: #a5ada9;
 }
 
 .Row{
     margin-left: 0px;
 }
+
+.EditButton {
+	outline: none;
+	margin: 0px;
+	background: none;
+	border: none;
+}
+.DeleteButton {
+	border: none;
+	outline: none;
+	margin-left: 0px;
+	background: none;
+}
+

@@ -2,9 +2,15 @@ import React from 'react';
 import { Table, Row, Col, Modal, Button } from 'react-bootstrap';
 import styles from './Certification.module.css';
 import * as services from '../../../services/services';
-import moment from "moment";
-import trash1 from "../../../../src/assets/images/trash.png";
-import edit from "../../../../src/assets/images/edit (1).png";
+import Moment from 'react-moment';
+
+import trash1 from '../../../../src/assets/images/trashw.png';
+import trash2 from '../../../../src/assets/images/trashw@2x.png';
+import trash3 from '../../../../src/assets/images/trashw@3x.png';
+import edit1 from '../../../../src/assets/images/edit (1).png';
+import edit2 from '../../../../src/assets/images/edit (1)@2x.png';
+import edit3 from '../../../../src/assets/images/edit (1)@3x.png';
+
 class Certification extends React.Component {
 	constructor(props) {
 		super(props);
@@ -22,8 +28,8 @@ class Certification extends React.Component {
 			name: "",
 			description: "",
 			typeCertificate: "",
-			uploadedOn:"",
-			Certificates:"",
+			uploadedOn: "",
+			Certificates: "",
 			userName: "admin123"
 		};
 	}
@@ -170,14 +176,14 @@ class Certification extends React.Component {
 						<div>
 							<Row className={styles.Row} >
 								<div className="row asy-main-row">
-								<Col>
-									<h5 className="asy-main-page-heading"> Certification </h5>
-								</Col>
+									<Col>
+										<h5 className="asy-main-page-heading"> Certification </h5>
+									</Col>
 								</div>
 								<Col>
 									<div align="right" className="row-col-4 " >
 										<Button
-											className="asy-primary-submit-button col-sm-2"
+											className="add-button-flip"
 											onClick={() =>
 												this.setState({
 													ListOpen: false,
@@ -185,12 +191,12 @@ class Certification extends React.Component {
 													dyanamicBtnName: 'Submit'
 												})}
 										>
-											<h6 className="text-center asy-button-heading "> Add 	</h6>
+											ADD
 										</Button>
 									</div>
 								</Col>
 							</Row>
-							
+
 							<div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
 								<Table className="asy-Table">
 									<thead>
@@ -206,14 +212,19 @@ class Certification extends React.Component {
 											<tr className="asy-TableData" key={data._id}>
 												<td> {data.name} </td>
 												<td> {data.typeCertificate} </td>
-												<td> {moment.utc(data.updatedOn).format("D MMM YYYY")} </td>
+												<td><Moment format="D MMM YYYY">
+													{data.updatedOn}
+												</Moment> </td>
 												<td>
-													<Button variant="none" update onClick={() => this.setState({ ListOpen: false, FormOpen: true })} >
-												<img src={edit} className="asy-Trash" onClick={this.handleUpdateData.bind(this, data._id)} 	/>
-													</Button>
-													<Button variant="none" onClick={this.handleModalShow.bind(this, data._id)} >
-														<img src={trash1} className="asy-Trash"/>
-													</Button>
+													<button className={styles.EditButton} update onClick={() => this.setState({ ListOpen: false, FormOpen: true })} >
+														<img
+															src={edit1}
+															srcset={(edit2, edit3)}
+															className="asy-Edit" onClick={this.handleUpdateData.bind(this, data._id)} />
+													</button>
+													<button className={styles.DeleteButton} onClick={this.handleModalShow.bind(this, data._id)} >
+														<img src={trash1} srcset={(trash2, trash3)} className="asy-Trash" />
+													</button>
 
 													<Modal show={this.state.showHide}>
 														<Modal.Body>
@@ -223,7 +234,7 @@ class Certification extends React.Component {
 															<div className="row">
 																<div className="col">
 																	<Button
-																		className="submit-button"
+																		className="asy-secondary-submit-button"
 																		onClick={this.handledeleteData}
 																	>
 																		Delete
@@ -231,8 +242,7 @@ class Certification extends React.Component {
 																</div>
 																<div className="col">
 																	<Button
-																		id={styles.danger}
-																		className="danger-danger submit-button"
+																		className="asy-secondary-cancle-button"
 																		onClick={this.handleModalHide}
 																	>
 																		Cancel
@@ -251,14 +261,13 @@ class Certification extends React.Component {
 					) : null}
 					{this.state.FormOpen ? (
 						<div>
-						<div className="row asy-main-row">
-                <Col>
-                  <h5 className="asy-main-page-heading"> Certification </h5>
-                </Col>
-              </div>
-			                <div className="card asy-card-primary-design">
-								<div className="card-body">
-							<div className="form-container">
+							<div className="row asy-main-row">
+								<Col>
+									<h5 className="asy-main-page-heading"> Certification </h5>
+								</Col>
+							</div>
+
+							<div className="form-container asy-mainBoxBorder">
 								<form
 									onSubmit={() =>
 										this.setState({ ListOpen: true }) & this.setState({ FormOpen: false })}
@@ -272,7 +281,7 @@ class Certification extends React.Component {
 											</label>
 											<input
 												type="text"
-												className="form-control form-input"
+												className="form-control asy-InputValues"
 												id="inputdegree"
 												placeholder="Name"
 												ref="name"
@@ -290,7 +299,7 @@ class Certification extends React.Component {
 											</label>
 											<input
 												type="text"
-												className="form-control form-input"
+												className="form-control asy-InputValues"
 												id="inputPassword"
 												placeholder="Type of Certification"
 												ref="type"
@@ -310,7 +319,7 @@ class Certification extends React.Component {
 											</label>
 											<textarea
 												type="textarea"
-												className="form-control form-input"
+												className="form-control asy-InputValues"
 												id="inputdegree"
 												placeholder="Description"
 												ref="description"
@@ -328,7 +337,7 @@ class Certification extends React.Component {
 											</label>
 											<input
 												type="File"
-												className="form-control form-input"
+												className="form-control asy-InputValues"
 												id="inputPassword"
 												ref="certificate"
 												onChange={(e) => {
@@ -340,34 +349,24 @@ class Certification extends React.Component {
 										</div>
 									</Row>
 
-									<div className="asy-button-class text-center d-flex justify-content-center">
+									<div className="text-center">
 										<Button
-											className="asy-primary-submit-button text-center col-sm-2 mr-1"
-											onClick={() => { this.submitHandler();	}} 	>
-										 <h6 className="text-center asy-button-heading"> {this.state.dyanamicBtnName} </h6>
+											className="asy-secondary-submit-button"
+											onClick={() => { this.submitHandler(); }} 	>
+											{this.state.dyanamicBtnName}
 										</Button>
 
 										<Button
-											id={styles.btnReset}
-											className="asy-primary-submit-button text-center col-sm-2 mr-1"
-											onClickCapture={this.handleManualReset}
-											value="reset" >
-											<h6 className="text-center asy-button-heading"> Reset </h6>
-										</Button>
-
-										<Button
-											id={styles.btnCancel}
-											className="asy-primary-submit-button text-center col-sm-2"
+											className="asy-secondary-cancle-button"
 											onClick={() => this.setState({ ListOpen: true, FormOpen: false })}
 											onClickCapture={this.handleManualReset}
 											value="reset" >
-											<h6 className="text-center asy-button-heading"> Cancel </h6>
+											Cancel
 										</Button>
 									</div>
 								</form>
 							</div>
-							</div>
-							</div>
+
 						</div>
 					) : null}
 				</div>
