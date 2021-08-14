@@ -3,6 +3,19 @@ import { Col, Row, Table, Modal, Button } from 'react-bootstrap';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import * as services from '../../../services/services';
 
+import trash1 from '../../../../src/assets/images/trashw.png';
+import trash2 from '../../../../src/assets/images/trashw@2x.png';
+import trash3 from '../../../../src/assets/images/trashw@3x.png';
+import trash11 from '../../../../src/assets/images/trash.png';
+import trash12 from '../../../../src/assets/images/trash@2x.png';
+import trash13 from '../../../../src/assets/images/trash@3x.png';
+import edit1 from '../../../../src/assets/images/edit (1).png';
+import edit2 from '../../../../src/assets/images/edit (1)@2x.png';
+import edit3 from '../../../../src/assets/images/edit (1)@3x.png';
+import edit11 from '../../../../src/assets/images/edit b(1).png';
+import edit12 from '../../../../src/assets/images/edit b(1)@2x.png';
+import edit13 from '../../../../src/assets/images/edit b(1)@3x.png';
+
 class Family extends Component {
 	constructor(props) {
 		super(props);
@@ -167,7 +180,7 @@ class Family extends Component {
 		return !this.state.onHideForm ? (
 			this.onHideForm()
 		) : (
-			<div className="form-container">
+			<div className="form-container asy-mainBoxBorder">
 				<form
 					onSubmit={() => this.setState({ onHideForm: false, dyanamicBtnName: 'Submit' })}
 					ref={(form) => (this.form = form)}
@@ -180,7 +193,7 @@ class Family extends Component {
 							</label>
 							<input
 								type="text"
-								className="form-control form-input"
+								className="form-control asy-InputValues"
 								id="inputdegree"
 								placeholder="Name"
 								onChange={(e) => {
@@ -201,7 +214,7 @@ class Family extends Component {
 							</label>
 							<input
 								type="text"
-								className="form-control form-input"
+								className="form-control asy-InputValues"
 								id="inputPassword"
 								placeholder="Accupation"
 								ref="inputOccupation"
@@ -223,7 +236,7 @@ class Family extends Component {
 							</label>
 							<input
 								type="text"
-								className="form-control form-input"
+								className="form-control asy-InputValues"
 								id="inputdegree"
 								placeholder="Relationship"
 								ref="inputRelationship"
@@ -243,7 +256,7 @@ class Family extends Component {
 							</label>
 							<input
 								type="text"
-								className="form-control form-input"
+								className="form-control asy-InputValues"
 								id="inputPassword"
 								placeholder="Address"
 								ref="inputAddress"
@@ -265,7 +278,7 @@ class Family extends Component {
 							</label>
 							<input
 								type="number"
-								className="form-control form-input"
+								className="form-control asy-InputValues"
 								id="inputdegree"
 								placeholder="Phone"
 								ref="inputPhone"
@@ -283,7 +296,7 @@ class Family extends Component {
 					<div className="text-center">
 						<button
 							type="button"
-							className="submit-button"
+							className="asy-secondary-submit-button"
 							onClick={() => {
 								this.onSubmitHandler();
 							}}
@@ -292,7 +305,7 @@ class Family extends Component {
 						</button>
 						<button
 							type="reset"
-							className="cancel-button"
+							className="asy-secondary-cancle-button"
 							onClick={() => {
 								this.setState({ onHideForm: !this.state.onHideForm });
 								this.handleManualReset();
@@ -308,17 +321,17 @@ class Family extends Component {
 	};
 	render() {
 		return (
-			<div className="jumbotron jumbo-form">
+			<div className="jumbotron asy-main-jumbotron">
 				<Row>
 					<Col>
-						<h5 className="page-heading align-middle">Family</h5>
+						<h5 className="asy-main-page-heading">Family</h5>
 					</Col>
 					<Col className="d-flex flex-row-reverse">
 						{this.state.onHideForm ? (
 							!this.onHideForm()
 						) : (
 							<button
-								className="submit-button"
+								className="add-button-flip"
 								onClick={() => this.setState({ onHideForm: true, dyanamicBtnName: 'Submit' })}
 							>
 								ADD
@@ -326,26 +339,26 @@ class Family extends Component {
 						)}
 					</Col>
 				</Row>
-				<hr className="hr-line" />
+				{/* <hr className="hr-line" /> */}
 				<div>
 					{this.state.onHideForm ? (
 						this.onHideForm()
 					) : (
-						<div className="table-responsive">
-							<Table striped bordered hover>
+						<div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
+							<Table className="asy-Table">
 								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Relationship</th>
-										<th>Phone</th>
-										<th>Accupation</th>
-										<th>Address</th>
-										<th>Action</th>
+									<tr className="asy-TableHeading">
+										<th className="asy-th">Name</th>
+										<th className="asy-th">Relationship</th>
+										<th className="asy-th">Phone</th>
+										<th className="asy-th">Accupation</th>
+										<th className="asy-th">Address</th>
+										<th className="asy-th">Action</th>
 									</tr>
 								</thead>
 								<tbody>
-									{this.state.data.map((data) => (
-										<tr key={data}>
+									{this.state.data.map((data, index) => (
+										<tr className="asy-TableData" key={index}>
 											<td>{data.name}</td>
 											<td>{data.relationship}</td>
 											<td>{data.phone}</td>
@@ -356,25 +369,54 @@ class Family extends Component {
 													className="editbutton"
 													onClick={this.onEditData.bind(this, data._id)}
 												>
-													<FaEdit
-														className="svgedit"
-														onClick={() => this.setState({ onHideForm: true })}
-													/>
+													{index % 2 === 0 ? (
+														<img
+															src={edit1}
+															srcset={(edit2, edit3)}
+															className="asy-Edit"
+															onClick={() => this.setState({ onHideForm: true })}
+														/>
+													) : (
+														<img
+															src={edit11}
+															srcset={(edit12, edit13)}
+															className="asy-Edit"
+															onClick={() => this.setState({ onHideForm: true })}
+														/>
+													)}
 												</button>
 												<button
 													className="deletebutton"
 													onClick={this.handleModalShow.bind(this, data._id)}
 												>
-													<FaTrash className="svgdelete" />
+													{index % 2 === 0 ? (
+														<img
+															src={trash1}
+															srcset={(trash2, trash3)}
+															className="asy-Trash"
+														/>
+													) : (
+														<img
+															src={trash11}
+															srcset={(trash12, trash13)}
+															className="asy-Trash"
+														/>
+													)}
 												</button>
 
-												<Modal show={this.state.showHide}>
+												<Modal show={this.state.showHide} className="text-center">
 													<Modal.Body>
 														<h6>Are you sure ! Delete this Data ?</h6>
 													</Modal.Body>
-													<Modal.Footer>
-														<Button onClick={this.onRemoveData}>Delete</Button>
-														<Button onClick={this.handleModalHide}>Close</Button>
+													<Modal.Footer className="asy-modal-footer">
+														<div className="row modal-Row ">
+															<div className="col modal-Row ">
+																<Button onClick={this.onRemoveData} className="asy-secondary-submit-button">Delete</Button>
+															</div>
+															<div className="col modal-Row ">
+																<Button onClick={this.handleModalHide} className="asy-secondary-cancle-button ">Close</Button>
+															</div>
+														</div>
 													</Modal.Footer>
 												</Modal>
 											</td>
