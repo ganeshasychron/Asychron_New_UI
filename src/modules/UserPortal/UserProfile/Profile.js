@@ -63,7 +63,7 @@ class Profiles extends Component {
 					left: '0px'
 				},
 				colors: ['red'],
-				labels: ['profile']
+				labels: ['Profile']
 			},
 		};
 
@@ -166,7 +166,7 @@ class Profiles extends Component {
 																</div>
 
 																<div className={`${styles['LabelArea']} form-group`}>
-																	<label htmlFor="inputdegree" className={`${styles['FirstLabel']} col-form-label`}>Doj</label>
+																	<label htmlFor="inputdegree" className={`${styles['FirstLabel']} col-form-label`}>DOJ</label>
 																	<label htmlFor="inputdegree" className={`${styles['SecondLabel']} col-form-label ml-1`}>
 																		<Moment format="D MMM YYYY">
 																			{this.state.data.doj}
@@ -189,7 +189,7 @@ class Profiles extends Component {
 												</div>
 											}
 
-											<div className={[styles.card, "ml-2", "col-md-3  justify-content-center col-md-12 asy-card-primary-design"].join(' ')}>
+											<div id={styles.ReamainingCard} className={[styles.card, "ml-2", "col-md-3  justify-content-center col-md-12 asy-card-primary-design"].join(' ')}>
 												<div className={styles['card-body']}>
 													<ListGroup className={[styles.news1, " mx-auto"].join(' ')}>
 														<ListGroup.Item className={styles.news2}>Do Submit Remaining Details Part ....</ListGroup.Item>
