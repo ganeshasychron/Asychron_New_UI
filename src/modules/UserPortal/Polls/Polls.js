@@ -231,8 +231,8 @@ class Polls extends Component {
                                                         <tbody>
                                                             {
                                                                 this.state.data.map((data) => (
-                                                                    <tr className="asy-TableData adjust" key={data._id}>
-                                                                        <td id="tabletd">
+                                                                    <tr className="asy-TableData" key={data._id}>
+                                                                        <td>
                                                                             {data.pollTitle}
                                                                         </td>
                                                                         <td>
@@ -246,12 +246,12 @@ class Polls extends Component {
                                                                         </td>
                                                                         <td className="btn-align">
 
-                                                                            <Button id="color" className="asy-primary-submit-button m-0" onClick={() => this.setState({ showResult: !this.state.showResult })}>
+                                                                            <Button className="asy-primary-submit-button m-0" onClick={() => this.setState({ showResult: !this.state.showResult })}>
                                                                                 <h6 className="text-center asy-button-heading">
                                                                                     View Result
                                                                                 </h6>
                                                                             </Button>
-                                                                            <Button id="color" className="asy-primary-submit-button m-0 " onClick={this.giveVoteHandler.bind(this, data._id)}>
+                                                                            <Button className="asy-primary-submit-button m-0 " onClick={this.giveVoteHandler.bind(this, data._id)}>
                                                                                 <h6 className="text-center asy-button-heading">
                                                                                     Give Vote
                                                                                 </h6>

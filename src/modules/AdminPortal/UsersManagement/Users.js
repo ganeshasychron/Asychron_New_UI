@@ -13,7 +13,7 @@ class Users extends Component {
     showAddUser = () => {
         return (
             <div className="mt-4" >
-                <div className="jumbotron jumbo-form">
+                <div className="jumbotron asy-main-jumbotron">
                     <div className="form-container">
                         <form>
                             <Row>
@@ -23,7 +23,7 @@ class Users extends Component {
                                     </label>
                                     <input
                                         type="text"
-                                        className="form-control form-input"
+                                        className="form-control asy-InputValues"
                                         id="UserName"
                                         placeholder=" Enter User Name"
                                     />
@@ -35,7 +35,7 @@ class Users extends Component {
                                     </label>
                                     <input
                                         type="number"
-                                        className="form-control form-input"
+                                        className="form-control asy-InputValues"
                                         id="empCode"
                                         placeholder=" Enter Emp Code"
                                     />
@@ -49,7 +49,7 @@ class Users extends Component {
                                     </label>
                                     <input
                                         type="text"
-                                        className="form-control form-input"
+                                        className="form-control asy-InputValues"
                                         id="empName"
                                         placeholder=" Enter Emp Name"
                                     />
@@ -61,7 +61,7 @@ class Users extends Component {
                                     </label>
                                     <input
                                         type="text"
-                                        className="form-control form-input"
+                                        className="form-control asy-InputValues"
                                         id="email"
                                         placeholder="Enter Email"
                                     />
@@ -75,7 +75,7 @@ class Users extends Component {
                                     </label>
                                     <input
                                         type="number"
-                                        className="form-control form-input"
+                                        className="form-control asy-InputValues"
                                         id="phone"
                                         placeholder=" Enter Phone Number"
                                     />
@@ -87,7 +87,7 @@ class Users extends Component {
                                     </label>
                                     <input
                                         type="date"
-                                        className="form-control form-input"
+                                        className="form-control asy-InputValues"
                                         id="doj"
                                     />
                                 </div>
@@ -98,7 +98,7 @@ class Users extends Component {
                                     <label for="departmentType" className="col-form-label">
                                         Department
                                     </label>
-                                    <select class="form-control" name="department">
+                                    <select class="form-control asy-InputValues" name="department">
 
                                         <option value="" disabled selected className="department">
                                             Select Department
@@ -122,7 +122,7 @@ class Users extends Component {
                                     </label>
                                     <input
                                         type="textarea"
-                                        className="form-control form-input"
+                                        className="form-control asy-InputValues"
                                         id="description"
                                         placeholder=" Enter Description"
                                     />
@@ -134,7 +134,7 @@ class Users extends Component {
                                     <label for="roleType" className="col-form-label">
                                         Role
                                     </label>
-                                    <select class="form-control" name="role">
+                                    <select class="form-control asy-InputValues" name="role">
 
                                         <option value="" disabled selected className="role">
                                             Select Role
@@ -150,9 +150,18 @@ class Users extends Component {
                                 </div>
                             </Row>
 
-                            <div align="center">
-                                <button type="button" className="submit-button">Submit</button>
-                                <button type="button" className="cancel-button" onClick={this.hideAddUserHandler}>Cancel</button>
+                            <div align="center" className="mt-3">
+                                <Button  className="asy-primary-submit-button width">
+                                    <h6 className="text-center asy-button-heading">
+                                        Submit
+                                    </h6>
+                                </Button>
+                                <Button className="asy-secondary-cancle-button cancel" onClick={this.hideAddUserHandler}>
+                                    <h6 className="text-center asy-button-heading">
+                                        Cancel
+                                    </h6>
+                                </Button>
+
                             </div>
 
                         </form>
@@ -179,58 +188,73 @@ class Users extends Component {
                 {
                     this.state.showAddUser ? this.showAddUser() :
 
-                        <div className="form-container">
-                            <form className="mt-5">
+                        <div className="form-container mt-4">
+                        <form>
 
-                                <button type="button" className="sub pull-right mb-4" onClick={this.showAddUserHandler}>Add New User</button>
-                                <div class="active-cyan-4 mb-4 pr-4  pull-right">
+                                <Button id="add_btn"  className="add-button-flip  mt-2 pull-right py-0 mb-4" onClick={this.showAddUserHandler}>
+                                    <h6 className="text-center asy-button-heading">
+                                        Add New User
+                                    </h6>
+                                </Button>
+                                <div class="active-cyan-4 mt-0 pr-4  pull-right">
                                     <input class="form-control" type="text" placeholder="Search" aria-label="Search" />
                                 </div>
 
-                                <div class="table-responsive" >
-                                    <Table class="table" striped bordered hover>
-                                        <thead className="border">
-                                            <tr>
-                                                <th>User Name</th>
-                                                <th>Emp Code</th>
-                                                <th>Emp Name</th>
-                                                <th>Email</th>
-                                                <th>Phone</th>
-                                                <th>DOJ</th>
-                                                <th>Department</th>
-                                                <th>Description</th>
-                                                <th>Role</th>
-                                                <th className="columnwidth"></th>
-                                            </tr>
-                                        </thead>
 
-                                        <tbody>
-                                            <tr>
-                                                <td>abc</td>
-                                                <td>273</td>
-                                                <td>abc</td>
-                                                <td>@gmail.com</td>
-                                                <td>9785264123</td>
-                                                <td>02/05/2021</td>
-                                                <td>abc</td>
-                                                <td>abc</td>
-                                                <td>abc</td>
-                                                <td className="btn-align">
-                                                    <Button outline="secondary">
-                                                        Edit
-                                                    </Button>
-                                                    <Button outline="secondary">
-                                                        View
-                                                    </Button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </Table>
+
+                                <div className="form-container">
+                                    <form>
+                                        <div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
+                                            <Table className="asy-Table">
+                                                <thead>
+                                                    <tr className="asy-TableHeading">
+                                                        <th className="asy-th">User Name</th>
+                                                        <th className="asy-th">Emp Code</th>
+                                                        <th className="asy-th">Emp Name</th>
+                                                        <th className="asy-th">Email</th>
+                                                        <th className="asy-th">Phone</th>
+                                                        <th className="asy-th">DOJ</th>
+                                                        <th className="asy-th">Department</th>
+                                                        <th className="asy-th">Description</th>
+                                                        <th className="asy-th">Role</th>
+                                                        <th className="asy-th"></th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr className="asy-TableData adjust">
+                                                        <td>abc</td>
+                                                        <td>273</td>
+                                                        <td>abc</td>
+                                                        <td>asychron@gmail.com</td>
+                                                        <td>9785264123</td>
+                                                        <td>02/05/2021</td>
+                                                        <td>abc</td>
+                                                        <td>abc</td>
+                                                        <td>abc</td>
+                                                        <td className="btn-align">
+                                                            <Button  className="asy-primary-submit-button m-0">
+                                                                <h6 className="text-center asy-button-heading">
+                                                                    Edit
+                                                                </h6>
+                                                            </Button>
+                                                            <Button  className="asy-primary-submit-button m-0 ">
+                                                                <h6 className="text-center asy-button-heading">
+                                                                    View
+                                                                </h6>
+                                                            </Button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </Table>
+
+                                        </div>
+                                    </form>
                                 </div>
-                            </form>
-
-                        </div>
+                                </form>
+                            </div>
                 }
+
             </div>
         );
     }

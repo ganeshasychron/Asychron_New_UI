@@ -197,7 +197,7 @@ class ManagePolls extends Component {
                                         <input
                                             onChange={(e) => { this.setState({ pollTitle: e.target.value }) }}
                                             type="text"
-                                            className="form-control form-input"
+                                            className="form-control asy-InputValues"
                                             id="inputPollTitle"
                                             placeholder="Poll Title"
                                             value={this.state.pollTitle}
@@ -208,7 +208,7 @@ class ManagePolls extends Component {
                                         <label for="priorityType" className="col-form-label">
                                             Priority
                                         </label>
-                                        <select class="form-control" name="priority" value={this.state.priority} onChange={(e) => { this.setState({ priority: e.target.value }) }}>
+                                        <select class="form-control asy-InputValues" name="priority" value={this.state.priority} onChange={(e) => { this.setState({ priority: e.target.value }) }}>
                                             <option value="" disabled selected className="priority">
                                                 Select Priority Type
                                             </option>
@@ -234,7 +234,7 @@ class ManagePolls extends Component {
                                         <input
                                             onChange={(e) => { this.setState({ startDate: e.target.value }) }}
                                             type="date"
-                                            className="form-control form-input"
+                                            className="form-control asy-InputValues"
                                             placeholder="Start Date (DD/MM/YYYY)"
                                             id="StartDate"
                                             value={this.state.startDate}
@@ -249,7 +249,7 @@ class ManagePolls extends Component {
                                         <input
                                             onChange={(e) => { this.setState({ endDate: e.target.value }) }}
                                             type="date"
-                                            className="form-control form-input"
+                                            className="form-control asy-InputValues"
                                             placeholder="End Date(DD/MM/YYYY)"
                                             id="EndDate"
                                             value={this.state.endDate}
@@ -266,7 +266,7 @@ class ManagePolls extends Component {
                                         <input
                                             onChange={(e) => { this.setState({ question: e.target.value }) }}
                                             type="text"
-                                            className="form-control form-input"
+                                            className="form-control asy-InputValues"
                                             id="inputQuestion"
                                             placeholder="Question"
                                             value={this.state.question}
@@ -278,7 +278,7 @@ class ManagePolls extends Component {
                                             Options Type
                                         </label>
 
-                                        <select class="form-control" name="options" value={this.state.voteType} onChange={(e) => { this.setState({ voteType: e.target.value }) }}>
+                                        <select class="form-control asy-InputValues" name="options" value={this.state.voteType} onChange={(e) => { this.setState({ voteType: e.target.value }) }}>
                                             <option value="" selected disabled className="option">
                                                 Select Options Type
                                             </option>
@@ -301,14 +301,14 @@ class ManagePolls extends Component {
 
                                         <input
                                             type="text"
-                                            className="form-control form-input"
+                                            className="form-control asy-InputValues"
                                             id="inputCompany"
                                             placeholder="Options"
                                             onChange={item => this.updateInput(item.target.value)}
                                         />
                                     </div>
 
-                                    <div className="form-group col-12 col-md-6 mt-3">
+                                    <div className="form-group col-12 col-md-6 mt-4">
                                         <Button className=" asy-primary-submit-button width py-0" onClick={() => this.addItem()}>
                                             <h6 className="text-center asy-button-heading font">
                                                 Add Options
@@ -372,7 +372,7 @@ class ManagePolls extends Component {
                                 </Col>
 
                                 <div align="right">
-                                    <Button className=" add-button-flip" onClick={this.handleReset}>
+                                    <Button id="add_btn" className="add-button-flip" onClick={this.handleReset}>
                                         <h6 className="text-center asy-button-heading">
                                             Add Poll
                                         </h6>
