@@ -151,7 +151,7 @@ class Users extends Component {
                             </Row>
 
                             <div align="center" className="mt-3">
-                                <Button  className="asy-primary-submit-button width">
+                                <Button className="asy-primary-submit-button width">
                                     <h6 className="text-center asy-button-heading">
                                         Submit
                                     </h6>
@@ -189,9 +189,9 @@ class Users extends Component {
                     this.state.showAddUser ? this.showAddUser() :
 
                         <div className="form-container mt-5">
-                        <form>
+                            <form>
 
-                                <Button id="add_btn"  className="add-button-flip  mt-2 pull-right py-0 mb-4" onClick={this.showAddUserHandler}>
+                                <Button id="add_btn" className="add-button-flip  mt-2 pull-right py-0 mb-4" onClick={this.showAddUserHandler}>
                                     <h6 className="text-center asy-button-heading">
                                         Add New User
                                     </h6>
@@ -233,12 +233,12 @@ class Users extends Component {
                                                         <td>abc</td>
                                                         <td>abc</td>
                                                         <td className="btn-align">
-                                                            <Button  className="asy-primary-submit-button m-0">
+                                                            <Button className="asy-primary-submit-button m-0">
                                                                 <h6 className="text-center asy-button-heading">
                                                                     Edit
                                                                 </h6>
                                                             </Button>
-                                                            <Button  className="asy-primary-submit-button m-0 ">
+                                                            <Button className="asy-primary-submit-button m-0 ">
                                                                 <h6 className="text-center asy-button-heading">
                                                                     View
                                                                 </h6>
@@ -251,8 +251,8 @@ class Users extends Component {
                                         </div>
                                     </form>
                                 </div>
-                                </form>
-                            </div>
+                            </form>
+                        </div>
                 }
 
             </div>
