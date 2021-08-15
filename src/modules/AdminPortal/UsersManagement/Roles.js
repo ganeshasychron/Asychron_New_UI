@@ -17,7 +17,7 @@ class Roles extends Component {
                         <form>
                             <Row>
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="roleName" className="col-form-label">
+                                    <label for="roleName" className="asy-FormLabel">
                                         Role Name
                                     </label>
                                     <input
@@ -29,7 +29,7 @@ class Roles extends Component {
                                 </div>
 
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="roleTitle" className="col-form-label">
+                                    <label for="roleTitle" className="asy-FormLabel">
                                         Role Title
                                     </label>
                                     <input
@@ -43,7 +43,7 @@ class Roles extends Component {
 
                             <Row>
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="description" className="col-form-label">
+                                    <label for="description" className="asy-FormLabel">
                                         Description
                                     </label>
                                     <input
@@ -55,7 +55,7 @@ class Roles extends Component {
                                 </div>
 
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="activityType" className="col-form-label">
+                                    <label for="activityType" className="asy-FormLabel">
                                         Activities
                                     </label>
                                     <select class="form-control asy-InputValues" name="activity">
@@ -80,7 +80,7 @@ class Roles extends Component {
 
                             <Row>
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="StartDate" className="col-form-label">
+                                    <label for="StartDate" className="asy-FormLabel">
                                         Start Date
                                     </label>
                                     <input
@@ -91,7 +91,7 @@ class Roles extends Component {
                                 </div>
 
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="EndDate" className="col-form-label">
+                                    <label for="EndDate" className="asy-FormLabel">
                                         EndDate
                                     </label>
                                     <input
@@ -145,18 +145,25 @@ class Roles extends Component {
 
                         <div className="form-container">
                             <form className="mt-5">
-
-                                <Button id="add_btn"  className="add-button-flip  mt-2 pull-right py-0 mb-4"  onClick={this.showAddRoleHandler}>
-                                    <h6 className="text-center asy-button-heading">
-                                        Add New Role
-                                    </h6>
-                                </Button>
-                                <div class="active-cyan-4 mt-0 pr-4  pull-right">
-                                    <input class="form-control" type="text" placeholder="Search" aria-label="Search" />
+                            <div>
+                                    <div class="row  mr-4">
+                                        <div class="col">
+                                            <div class="float-right">
+                                                <div className="active-cyan-4 mt-0">
+                                                    <input class="form-control" type="text" placeholder="Search" aria-label="Search" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="float-right">
+                                            <Button id="add_btn" className="add-button-flip py-0 width-auto" onClick={this.showAddRoleHandler}>
+                                                <h6 className="text-center asy-button-heading">
+                                                    Add New Role
+                                                </h6>
+                                            </Button>
+                                        </div>
+                                    </div>
                                 </div>
-
-
-
+                                
                                 <div className="form-container">
                                     <form>
                                         <div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
