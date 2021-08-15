@@ -523,14 +523,13 @@ class ProfileDetails extends React.Component {
                   <h5 className="asy-main-page-heading"> Profile Details </h5>
                 </Col>
               </div>
-              <div className="card asy-card-primary-design">
-              <div className="card-body">
-              <div className="form-container">
+
+              <div className="form-container asy-mainBoxBorder">
                 <form ref={(form) => (this.form = form)} onReset={this.handleReset} >
                   <Row>
                     <div className="form-group col-12 col-md-6">
                       <label for="inputdegree" className="col-form-label">First Name</label>
-                      <input type="text" className="form-control form-input" id="FirstName" placeholder=" Fname Name"
+                      <input type="text" className="form-control asy-InputValues" id="FirstName" placeholder=" Fname Name"
                         onChange={this.handleFirstNameChanged} value={this.state.firstName} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["firstName"]}
@@ -539,7 +538,7 @@ class ProfileDetails extends React.Component {
 
                     <div className="form-group col-12 col-md-6">
                       <label for="inputPassword" className="col-form-label">Marital Status</label>
-                      <input type="text" className="form-control form-input" id="MaritalStatus" placeholder="Marital Status" onChange={this.handleMaritialStatusChanged} value={this.state.maritialStatus} required />
+                      <input type="text" className="form-control asy-InputValues" id="MaritalStatus" placeholder="Marital Status" onChange={this.handleMaritialStatusChanged} value={this.state.maritialStatus} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["maritialStatus"]}
                       </div>
@@ -549,7 +548,7 @@ class ProfileDetails extends React.Component {
                   <Row>
                     <div className="form-group col-12 col-md-6">
                       <label for="inputdegree" className="col-form-label">Last Name</label>
-                      <input type="text" className="form-control form-input" id="LastName" placeholder="Last Name"
+                      <input type="text" className="form-control asy-InputValues" id="LastName" placeholder="Last Name"
                         onChange={this.handleLastNameChanged} value={this.state.lastName} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["lastName"]}
@@ -558,7 +557,7 @@ class ProfileDetails extends React.Component {
 
                     <div className="form-group col-12 col-md-6">
                       <label for="inputPassword" className="col-form-label">Pan</label>
-                      <input type="text" className="form-control form-input" id="Pan" placeholder="Pan"
+                      <input type="text" className="form-control asy-InputValues" id="Pan" placeholder="Pan"
                         onChange={this.handlePanCardChanged} value={this.state.panCard} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["panCard"]}
@@ -569,7 +568,7 @@ class ProfileDetails extends React.Component {
                   <Row>
                     <div className="form-group col-12 col-md-6">
                       <label for="inputdegree" className="col-form-label">DOB</label>
-                      <input type="text" className="form-control form-input" id="DOB" placeholder="DD/MM/YYYY"
+                      <input type="text" className="form-control asy-InputValues" id="DOB" placeholder="DD/MM/YYYY"
                         onChange={this.handleDobChanged} value={this.state.dob}
                         required />
                       <div style={{ color: "red" }}>
@@ -578,7 +577,7 @@ class ProfileDetails extends React.Component {
                     </div>
                     <div className="form-group col-12 col-md-6">
                       <label for="inputPassword" className="col-form-label">password</label>
-                      <input type="password" className="form-control form-input" id="password" placeholder="Password"
+                      <input type="password" className="form-control asy-InputValues" id="password" placeholder="Password"
                         onChange={this.handlePasswordChanged} value={this.state.password} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["password"]}
@@ -589,7 +588,7 @@ class ProfileDetails extends React.Component {
                   <Row>
                     <div className="form-group col-12 col-md-6">
                       <label for="inputdegree" className="col-form-label">Gender</label>
-                      <input type="text" className="form-control form-input" id="Gender" placeholder="Gender"
+                      <input type="text" className="form-control asy-InputValues" id="Gender" placeholder="Gender"
                         onChange={this.handleGenderChanged} value={this.state.gender} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["gender"]}
@@ -597,7 +596,7 @@ class ProfileDetails extends React.Component {
                     </div>
                     <div className="form-group col-12 col-md-6">
                       <label for="inputPassword" className="col-form-label">Driving License</label>
-                      <input type="text" className="form-control form-input" id="DrivingLicense" placeholder="Driving License" onChange={this.handleDrivingLycenceChanged} value={this.state.drivingLycence} required />
+                      <input type="text" className="form-control asy-InputValues" id="DrivingLicense" placeholder="Driving License" onChange={this.handleDrivingLycenceChanged} value={this.state.drivingLycence} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["drivingLycence"]}
                       </div>
@@ -607,7 +606,7 @@ class ProfileDetails extends React.Component {
                   <Row>
                     <div className="form-group col-12 col-md-6">
                       <label for="inputdegree" className="col-form-label">Blood Group</label>
-                      <input type="text" className="form-control form-input" id="BloodGroup" placeholder="Blood Group"
+                      <input type="text" className="form-control asy-InputValues" id="BloodGroup" placeholder="Blood Group"
                         onChange={this.handleBloodGrouChanged} value={this.state.bloodGroup} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["bloodGroup"]}
@@ -615,7 +614,7 @@ class ProfileDetails extends React.Component {
                     </div>
                     <div className="form-group col-12 col-md-6">
                       <label for="inputPassword" className="col-form-label">Adhar #</label>
-                      <input type="text" className="form-control form-input" id="Adhar" placeholder="Adhar #"
+                      <input type="text" className="form-control asy-InputValues" id="Adhar" placeholder="Adhar #"
                         onChange={this.handleAdharNumberChanged} value={this.state.adharNumber} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["adharNumber"]}
@@ -626,7 +625,7 @@ class ProfileDetails extends React.Component {
                   <Row>
                     <div className="form-group col-12 col-md-6">
                       <label for="inputdegree" className="col-form-label">Country</label>
-                      <input type="text" className="form-control form-input" id="Country" placeholder="Country"
+                      <input type="text" className="form-control asy-InputValues" id="Country" placeholder="Country"
                         onChange={this.handleCountryChanged} value={this.state.country} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["country"]}
@@ -640,7 +639,7 @@ class ProfileDetails extends React.Component {
                   <Row>
                     <div className="form-group col-12 col-md-6">
                       <label for="inputdegree" className="col-form-label">Mobile No</label>
-                      <input type="text" className="form-control form-input" id="MobileNo" placeholder="Mobile No"
+                      <input type="text" className="form-control asy-InputValues" id="MobileNo" placeholder="Mobile No"
                         onChange={this.handleMobileChanged} value={this.state.mobile} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["mobile"]}
@@ -648,7 +647,7 @@ class ProfileDetails extends React.Component {
                     </div>
                     <div className="form-group col-12 col-md-6">
                       <label for="inputPassword" className="col-form-label">Skype ID</label>
-                      <input type="text" className="form-control form-input" id="SkypeID" placeholder="Skype ID"
+                      <input type="text" className="form-control asy-InputValues" id="SkypeID" placeholder="Skype ID"
                         onChange={this.handleSkypeIdChanged} value={this.state.skypeId} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["skypeId"]}
@@ -658,7 +657,7 @@ class ProfileDetails extends React.Component {
                   <Row>
                     <div className="form-group col-12 col-md-6">
                       <label for="inputdegree" className="col-form-label">Work Phone</label>
-                      <input type="text" className="form-control form-input" id="WorkPhone" placeholder="Work Phone"
+                      <input type="text" className="form-control asy-InputValues" id="WorkPhone" placeholder="Work Phone"
                         onChange={this.handleWorkPhoneChanged} value={this.state.workPhone} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["workPhone"]}
@@ -666,7 +665,7 @@ class ProfileDetails extends React.Component {
                     </div>
                     <div className="form-group col-12 col-md-6">
                       <label for="inputPassword" className="col-form-label">Personal Address</label>
-                      <textarea type="text" className="form-control form-input" id="PersonalAddress" placeholder="Personal Address" onChange={this.handlePermanantAddChanged} value={this.state.permanantAdd} required />
+                      <textarea type="text" className="form-control asy-InputValues" id="PersonalAddress" placeholder="Personal Address" onChange={this.handlePermanantAddChanged} value={this.state.permanantAdd} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["permanantAdd"]}
                       </div>
@@ -676,14 +675,14 @@ class ProfileDetails extends React.Component {
                   <Row>
                     <div className="form-group col-12 col-md-6">
                       <label for="inputdegree" className="col-form-label">Presonal Email</label>
-                      <input type="email" className="form-control form-input" id="PresonalEmail" placeholder="Personal Email" onChange={this.handleEmailChanged} value={this.state.email} required />
+                      <input type="email" className="form-control asy-InputValues" id="PresonalEmail" placeholder="Personal Email" onChange={this.handleEmailChanged} value={this.state.email} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["email"]}
                       </div>
                     </div>
                     <div className="form-group col-12 col-md-6">
                       <label for="inputPassword" className="col-form-label">Current Address</label>
-                      <textarea type="text" className="form-control form-input" id="CurrentAddress" placeholder="Current Address" onChange={this.handleCurrentAddChanged} value={this.state.currentAdd} required />
+                      <textarea type="text" className="form-control asy-InputValues" id="CurrentAddress" placeholder="Current Address" onChange={this.handleCurrentAddChanged} value={this.state.currentAdd} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["currentAdd"]}
                       </div>
@@ -692,7 +691,7 @@ class ProfileDetails extends React.Component {
                   <Row>
                     <div className="form-group col-12 col-md-6">
                       <label for="inputdegree" className="col-form-label">Linkedin</label>
-                      <input type="text" className="form-control form-input" id="Linkedin" placeholder="Linkedin"
+                      <input type="text" className="form-control asy-InputValues" id="Linkedin" placeholder="Linkedin"
                         onChange={this.handleLinkedinChanged} value={this.state.Linkedin} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["Linkedin"]}
@@ -700,30 +699,21 @@ class ProfileDetails extends React.Component {
                     </div>
                   </Row>
 
-
-
-                  <div className="asy-button-class text-center d-flex justify-content-center g-4">
-                    <Button onClick={this.submitHandler.bind(this)} className="asy-primary-submit-button text-center  col-sm-2 mr-1">
-                      <h6 className="text-center asy-button-heading">
-                        Update
-                      </h6>
+                  <div className="text-center">
+                    <Button onClick={this.submitHandler.bind(this)} className="asy-secondary-submit-button">
+                      Update
                     </Button>
-                    <Button id={styles.btnReset} onClickCapture={this.handleManualReset} className="asy-primary-submit-button text-center col-sm-2 mr-1">
-                      <h6 className="text-center asy-button-heading">
-                        Reset
-                      </h6>
-                    </Button>
-                    <Button onClick={() => this.setState({ profilePage: true, detailsPage: false })} id={styles.btnCancel} className="asy-primary-submit-button text-center col-sm-2">
-                      <h6 className="text-center asy-button-heading">
-                        Cancel
-                      </h6>
+
+                    <Button onClick={() => this.setState({ profilePage: true, detailsPage: false })}
+                      onClickCapture={this.handleManualReset}
+                      className="asy-secondary-cancle-button">
+                      Cancel
                     </Button>
                   </div>
 
                 </form>
               </div>
-              </div>
-              </div>
+
             </div>
             : null
         }
@@ -739,6 +729,6 @@ export default ProfileDetails;
 
 /*
 import moment from 'moment';
- <input type="text" className="form-control form-input" id="DOB" placeholder="DD/MM/YYYY"
+ <input type="text" className="form-control asy-InputValues" id="DOB" placeholder="DD/MM/YYYY"
             onChange={this.handleDobChanged} value={moment(this.state.dob).format("DD/MM/YYYY")}  required />
   */

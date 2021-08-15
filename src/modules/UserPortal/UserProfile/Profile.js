@@ -63,7 +63,7 @@ class Profiles extends Component {
 					left: '0px'
 				},
 				colors: ['red'],
-				labels: ['profile']
+				labels: ['Profile']
 			},
 		};
 
@@ -107,20 +107,17 @@ class Profiles extends Component {
 
 															<Col>
 																<div className={styles.items}>
-																	<img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="" id="img" className="img" />
+																	<img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="" id="img" className={styles.UserImg} />
 																</div>
 
 																<div className={styles.items}>
-																	<label id={styles.SecondLabelId} htmlFor="inputdegree" className="col-form-label"> {this.state.data.userName} </label>
-
+																	<label htmlFor="inputdegree" className={`${styles['Displaylabel']} col-form-label text-center `}> {this.state.data.userName} </label>
 																</div>
 
 																<div className={styles.items}>
-																	<Button className="asy-primary-submit-button col-3" onClick={() => this.setState({ detailsPage: true, profilePage: false })} >
-																		<h6 className="text-center asy-button-heading">
-																			Edit
-																		</h6>
-																	</Button>
+																	<button className={styles['Edit-Button']} onClick={() => this.setState({ detailsPage: true, profilePage: false })} >
+																		Edit
+																	</button>
 																</div>
 
 																<div className={styles.items}>
@@ -134,7 +131,7 @@ class Profiles extends Component {
 																</div>
 
 																<div className={styles.items}>
-																	<label id={styles.SecondLabelId} htmlFor="inputdegree" className="col-form-label"> Profile Completed </label>
+																	<label htmlFor="inputdegree" className={`${styles['Displaylabel']} col-form-label text-center`}> Profile Completed </label>
 																</div>
 															</Col>
 														</div>
@@ -143,63 +140,63 @@ class Profiles extends Component {
 
 															<Col>
 
-																<div id={styles.LabelArea} className="form-group ">
-																	<label id={styles.FirstLabelId} htmlFor="inputdegree" className="col-form-label">Emp Code</label>
-																	<div className={styles.SecondLabel}>  <label id={styles.SecondLabelId} htmlFor="inputdegree" className="col-form-label"> {this.state.data.empCode} </label>
-																	</div>  </div>
+																<div className={`${styles['LabelArea']} form-group`}>
+																	<label htmlFor="inputdegree" className={`${styles['FirstLabel']} col-form-label`}>Emp Code</label>
+																	<label htmlFor="inputdegree" className={`${styles['SecondLabel']} col-form-label ml-1`}> {this.state.data.empCode} </label>
+																</div>
 
-																<div id={styles.LabelArea} className="form-group ">
-																	<label id={styles.FirstLabelId} htmlFor="inputdegree" className="col-form-label">Email</label>
-																	<div className={styles.SecondLabel}>  <label id={styles.SecondLabelId} htmlFor="inputdegree" className="col-form-label"> {this.state.data.email} </label>
-																	</div>  </div>
+																<div className={`${styles['LabelArea']} form-group`}>
+																	<label htmlFor="inputdegree" className={`${styles['FirstLabel']} col-form-label`}>Email</label>
+																	<label htmlFor="inputdegree" className={`${styles['SecondLabel']} col-form-label ml-1`}> {this.state.data.email} </label>
+																</div>
 
-																<div id={styles.LabelArea} className="form-group ">
-																	<label id={styles.FirstLabelId} htmlFor="inputdegree" className="col-form-label">Department</label>
-																	<div className={styles.SecondLabel}>  <label id={styles.SecondLabelId} htmlFor="inputdegree" className="col-form-label"> {this.state.data.department} </label>
-																	</div>  </div>
+																<div className={`${styles['LabelArea']} form-group`}>
+																	<label htmlFor="inputdegree" className={`${styles['FirstLabel']} col-form-label`}>Department</label>
+																	<label htmlFor="inputdegree" className={`${styles['SecondLabel']} col-form-label ml-1`}> {this.state.data.department} </label>
+																</div>
 
-																<div id={styles.LabelArea} className="form-group ">
-																	<label id={styles.FirstLabelId} htmlFor="inputdegree" className="col-form-label">Designation</label>
-																	<div className={styles.SecondLabel}>  <label id={styles.SecondLabelId} htmlFor="inputdegree" className="col-form-label"> {this.state.data.designation} </label>
-																	</div>  </div>
+																<div className={`${styles['LabelArea']} form-group`}>
+																	<label htmlFor="inputdegree" className={`${styles['FirstLabel']} col-form-label`}>Designation</label>
+																	<label htmlFor="inputdegree" className={`${styles['SecondLabel']} col-form-label ml-1`}> {this.state.data.designation} </label>
+																</div>
 
-																<div id={styles.LabelArea} className="form-group ">
-																	<label id={styles.FirstLabelId} htmlFor="inputdegree" className="col-form-label">Reporting Maneger</label>
-																	<div className={styles.SecondLabel}>  <label id={styles.SecondLabelId} htmlFor="inputdegree" className="col-form-label"> {this.state.data.reportManeger}  </label>
-																	</div>  </div>
+																<div className={`${styles['LabelArea']} form-group`}>
+																	<label htmlFor="inputdegree" className={`${styles['FirstLabel']} col-form-label`}>Reporting Maneger</label>
+																	<label htmlFor="inputdegree" className={`${styles['SecondLabel']} col-form-label ml-1`}> {this.state.data.reportManeger}  </label>
+																</div>
 
-																<div id={styles.LabelArea} className="form-group ">
-																	<label id={styles.FirstLabelId} htmlFor="inputdegree" className="col-form-label">Doj</label>
-																	<div className={styles.SecondLabel}>  <label id={styles.SecondLabelId} htmlFor="inputdegree" className="col-form-label">
+																<div className={`${styles['LabelArea']} form-group`}>
+																	<label htmlFor="inputdegree" className={`${styles['FirstLabel']} col-form-label`}>DOJ</label>
+																	<label htmlFor="inputdegree" className={`${styles['SecondLabel']} col-form-label ml-1`}>
 																		<Moment format="D MMM YYYY">
 																			{this.state.data.doj}
 																		</Moment>
 																	</label>
-																	</div>  </div>
+																</div>
 
-																<div id={styles.LabelArea} className="form-group ">
-																	<label id={styles.FirstLabelId} htmlFor="inputdegree" className="col-form-label">Employment type</label>
-																	<div className={styles.SecondLabel}>  <label id={styles.SecondLabelId} htmlFor="inputdegree" className="col-form-label"> {this.state.data.employeType} </label>
-																	</div>  </div>
+																<div className={`${styles['LabelArea']} form-group`}>
+																	<label htmlFor="inputdegree" className={`${styles['FirstLabel']} col-form-label`}>Employment type</label>
+																	<label htmlFor="inputdegree" className={`${styles['SecondLabel']} col-form-label ml-1`}> {this.state.data.employeType} </label>
+																</div>
 
-																<div id={styles.LabelArea} className="form-group ">
-																	<label id={styles.FirstLabelId} htmlFor="inputdegree" className="col-form-label">Shift</label>
-																	<div className={styles.SecondLabel}>  <label id={styles.SecondLabelId} htmlFor="inputdegree" className="col-form-label"> {this.state.data.shiftEmp}  </label>
-																	</div>  </div>
+																<div className={`${styles['LabelArea']} form-group`}>
+																	<label htmlFor="inputdegree" className={`${styles['FirstLabel']} col-form-label`}>Shift</label>
+																	<label htmlFor="inputdegree" className={`${styles['SecondLabel']} col-form-label ml-1`}> {this.state.data.shiftEmp}  </label>
+																</div>
 															</Col>
 														</div>
 													</div>
 												</div>
 											}
 
-											<div className={[styles.card, "ml-2", "col-md-3  justify-content-center col-md-12 asy-card-primary-design"].join(' ')}>
+											<div id={styles.ReamainingCard} className={[styles.card, "ml-2", "col-md-3  justify-content-center col-md-12 asy-card-primary-design"].join(' ')}>
 												<div className={styles['card-body']}>
 													<ListGroup className={[styles.news1, " mx-auto"].join(' ')}>
 														<ListGroup.Item className={styles.news2}>Do Submit Remaining Details Part ....</ListGroup.Item>
-														<ListGroup.Item > <Link to="./bank-details">  Bank Details </Link></ListGroup.Item>
-														<ListGroup.Item >  <Link to="../salary-details">Salary Details </Link></ListGroup.Item>
-														<ListGroup.Item ><Link to="./certifications">Certficate Details </Link></ListGroup.Item>
-														<ListGroup.Item >  <Link to="../Survey"> Survey Details </Link></ListGroup.Item>
+														<ListGroup.Item > <Link to="./bank-details" className={styles['Remaining-Link']}>  Bank Details </Link></ListGroup.Item>
+														<ListGroup.Item >  <Link to="../salary-details" className={styles['Remaining-Link']}>Salary Details </Link></ListGroup.Item>
+														<ListGroup.Item ><Link to="./certifications" className={styles['Remaining-Link']}>Certficate Details </Link></ListGroup.Item>
+														<ListGroup.Item >  <Link to="../Survey" className={styles['Remaining-Link']}> Survey Details </Link></ListGroup.Item>
 													</ListGroup>
 												</div>
 											</div>
