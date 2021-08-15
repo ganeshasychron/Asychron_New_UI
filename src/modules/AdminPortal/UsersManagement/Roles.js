@@ -157,7 +157,7 @@ class Roles extends Component {
                                         <div class="float-right">
                                             <Button id="add_btn" className="add-button-flip py-0 width-auto" onClick={this.showAddRoleHandler}>
                                                 <h6 className="text-center asy-button-heading">
-                                                    Add New Roles
+                                                    Add New Role
                                                 </h6>
                                             </Button>
                                         </div>
