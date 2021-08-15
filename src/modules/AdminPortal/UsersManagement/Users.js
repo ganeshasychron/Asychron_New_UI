@@ -18,7 +18,7 @@ class Users extends Component {
                         <form>
                             <Row>
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="userName" className="col-form-label">
+                                    <label for="userName" className="asy-FormLabel">
                                         User Name
                                     </label>
                                     <input
@@ -30,7 +30,7 @@ class Users extends Component {
                                 </div>
 
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="empCode" className="col-form-label">
+                                    <label for="empCode" className="asy-FormLabel">
                                         Emp Code
                                     </label>
                                     <input
@@ -44,7 +44,7 @@ class Users extends Component {
 
                             <Row>
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="empName" className="col-form-label">
+                                    <label for="empName" className="asy-FormLabel">
                                         Emp Name
                                     </label>
                                     <input
@@ -56,7 +56,7 @@ class Users extends Component {
                                 </div>
 
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="email" className="col-form-label">
+                                    <label for="email" className="asy-FormLabel">
                                         Email
                                     </label>
                                     <input
@@ -70,7 +70,7 @@ class Users extends Component {
 
                             <Row>
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="phone" className="col-form-label">
+                                    <label for="phone" className="asy-FormLabel">
                                         Phone
                                     </label>
                                     <input
@@ -82,7 +82,7 @@ class Users extends Component {
                                 </div>
 
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="doj" className="col-form-label">
+                                    <label for="doj" className="asy-FormLabel">
                                         DOJ
                                     </label>
                                     <input
@@ -95,7 +95,7 @@ class Users extends Component {
 
                             <Row>
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="departmentType" className="col-form-label">
+                                    <label for="departmentType" className="asy-FormLabel">
                                         Department
                                     </label>
                                     <select class="form-control asy-InputValues" name="department">
@@ -117,7 +117,7 @@ class Users extends Component {
                                 </div>
 
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="description" className="col-form-label">
+                                    <label for="description" className="asy-FormLabel">
                                         Description
                                     </label>
                                     <input
@@ -131,7 +131,7 @@ class Users extends Component {
 
                             <Row>
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="roleType" className="col-form-label">
+                                    <label for="roleType" className="asy-FormLabel">
                                         Role
                                     </label>
                                     <select class="form-control asy-InputValues" name="role">
@@ -190,18 +190,24 @@ class Users extends Component {
 
                         <div className="form-container mt-5">
                             <form>
-
-                                <Button id="add_btn" className="add-button-flip  mt-2 pull-right py-0 mb-4" onClick={this.showAddUserHandler}>
-                                    <h6 className="text-center asy-button-heading">
-                                        Add New User
-                                    </h6>
-                                </Button>
-                                <div class="active-cyan-4 mt-0 pr-4  pull-right">
-                                    <input class="form-control" type="text" placeholder="Search" aria-label="Search" />
+                                <div>
+                                    <div class="row mr-4">
+                                        <div class="col">
+                                            <div class="float-right">
+                                                <div className="active-cyan-3 mt-0">
+                                                    <input class="form-control" type="text" placeholder="Search" aria-label="Search" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="float-right">
+                                            <Button id="add_btn" className="add-button-flip py-0 width-auto" onClick={this.showAddUserHandler}>
+                                                <h6 className="text-center asy-button-heading">
+                                                    Add New User
+                                                </h6>
+                                            </Button>
+                                        </div>
+                                    </div>
                                 </div>
-
-
-
                                 <div className="form-container">
                                     <form>
                                         <div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">

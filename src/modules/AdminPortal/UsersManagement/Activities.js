@@ -18,7 +18,7 @@ class Activities extends Component {
                         <form>
                             <Row>
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="activityName" className="col-form-label">
+                                    <label for="activityName" className="asy-FormLabel">
                                         Activity Name
                                     </label>
                                     <input
@@ -30,7 +30,7 @@ class Activities extends Component {
                                 </div>
 
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="activityTitle" className="col-form-label">
+                                    <label for="activityTitle" className="asy-FormLabel">
                                         Activity Title
                                     </label>
                                     <input
@@ -44,7 +44,7 @@ class Activities extends Component {
 
                             <Row>
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="inputDescription" className="col-form-label">
+                                    <label for="inputDescription" className="asy-FormLabel">
                                         Description
                                     </label>
                                     <input
@@ -100,14 +100,23 @@ class Activities extends Component {
                     this.state.showAddActivity ? this.showAddActivity() :
                         <div className="form-container">
                             <form className="mt-5">
-
-                                <Button id="add_btn"  className="add-button-flip  mt-2 pull-right py-0 mb-4"  onClick={this.showAddActivityHandler}>
-                                    <h6 className="text-center asy-button-heading">
-                                        Add New Activity
-                                    </h6>
-                                </Button>
-                                <div class="active-cyan-4 mt-0 pr-4  pull-right">
-                                    <input class="form-control" type="text" placeholder="Search" aria-label="Search" />
+                            <div>
+                                    <div class="row mr-4">
+                                        <div class="col">
+                                            <div class="float-right">
+                                                <div className="active-cyan-4 mt-0">
+                                                    <input class="form-control" type="text" placeholder="Search" aria-label="Search" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="float-right">
+                                            <Button id="add_btn" className="add-button-flip py-0 width-auto " onClick={this.showAddActivityHandler}>
+                                                <h6 className="text-center asy-button-heading">
+                                                    Add New Activity
+                                                </h6>
+                                            </Button>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div className="form-container">
