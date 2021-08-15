@@ -188,7 +188,7 @@ class Users extends Component {
                 {
                     this.state.showAddUser ? this.showAddUser() :
 
-                        <div className="form-container mt-4">
+                        <div className="form-container mt-5">
                         <form>
 
                                 <Button id="add_btn"  className="add-button-flip  mt-2 pull-right py-0 mb-4" onClick={this.showAddUserHandler}>
