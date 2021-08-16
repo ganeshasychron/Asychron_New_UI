@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col, Button, } from 'react-bootstrap';
-import styles from './ProfileDetails.module.css';
+//import styles from './ProfileDetails.module.css';
 import * as services from "../../../services/services";
 import Profiles from "../UserProfile/Profile";
 class ProfileDetails extends React.Component {
@@ -260,7 +260,7 @@ class ProfileDetails extends React.Component {
       errors["skypeId"] = "Cannot be empty";
     } else if (typeof skypeId !== "undefined") {
       if (
-        !skypeId.match(/^[a-zA-Z][a-zA-Z0-9\.,\-_]{1,40}$/)
+        !skypeId.match(/^[a-zA-Z][a-zA-Z0-9.,-_]{1,40}$/)
       ) {
         formIsValid = false;
         errors["skypeId"] = "ex. asy.chron.soft123 or asychron123 or asychron.soft ";
@@ -273,7 +273,7 @@ class ProfileDetails extends React.Component {
       errors["permanantAdd"] = "Cannot be empty";
     } else if (typeof permanantAdd !== "undefined") {
       if (
-        !permanantAdd.match(/[A-Za-z0-9'\.\-\s\,]/)
+        !permanantAdd.match(/[A-Za-z0-9|.|\-|\s|,]/)
       ) {
         formIsValid = false;
         errors["permanantAdd"] = "Please Enter You Address, also use space or(.,-) ";
@@ -286,7 +286,7 @@ class ProfileDetails extends React.Component {
       errors["currentAdd"] = "Cannot be empty";
     } else if (typeof currentAdd !== "undefined") {
       if (
-        !currentAdd.match(/[A-Za-z0-9'\.\-\s\,]/)
+        !currentAdd.match(/[A-Za-z0-9|.|\-|\s|,]/)
       ) {
         formIsValid = false;
         errors["currentAdd"] = "Please Enter You Address, also use space or(.,-)";
@@ -518,17 +518,11 @@ class ProfileDetails extends React.Component {
           this.state.detailsPage ?
 
             <div className="jumbotron asy-main-jumbotron">
-              <div className="row asy-main-row">
-                <Col>
-                  <h5 className="asy-main-page-heading"> Profile Details </h5>
-                </Col>
-              </div>
-
               <div className="form-container asy-mainBoxBorder">
                 <form ref={(form) => (this.form = form)} onReset={this.handleReset} >
                   <Row>
                     <div className="form-group col-12 col-md-6">
-                      <label for="inputdegree" className="col-form-label">First Name</label>
+                      <label for="inputdegree" className="asy-FormLabel">First Name</label>
                       <input type="text" className="form-control asy-InputValues" id="FirstName" placeholder=" Fname Name"
                         onChange={this.handleFirstNameChanged} value={this.state.firstName} required />
                       <div style={{ color: "red" }}>
@@ -537,7 +531,7 @@ class ProfileDetails extends React.Component {
                     </div>
 
                     <div className="form-group col-12 col-md-6">
-                      <label for="inputPassword" className="col-form-label">Marital Status</label>
+                      <label for="inputPassword" className="asy-FormLabel">Marital Status</label>
                       <input type="text" className="form-control asy-InputValues" id="MaritalStatus" placeholder="Marital Status" onChange={this.handleMaritialStatusChanged} value={this.state.maritialStatus} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["maritialStatus"]}
@@ -547,7 +541,7 @@ class ProfileDetails extends React.Component {
                   </Row>
                   <Row>
                     <div className="form-group col-12 col-md-6">
-                      <label for="inputdegree" className="col-form-label">Last Name</label>
+                      <label for="inputdegree" className="asy-FormLabel">Last Name</label>
                       <input type="text" className="form-control asy-InputValues" id="LastName" placeholder="Last Name"
                         onChange={this.handleLastNameChanged} value={this.state.lastName} required />
                       <div style={{ color: "red" }}>
@@ -556,7 +550,7 @@ class ProfileDetails extends React.Component {
                     </div>
 
                     <div className="form-group col-12 col-md-6">
-                      <label for="inputPassword" className="col-form-label">Pan</label>
+                      <label for="inputPassword" className="asy-FormLabel">Pan</label>
                       <input type="text" className="form-control asy-InputValues" id="Pan" placeholder="Pan"
                         onChange={this.handlePanCardChanged} value={this.state.panCard} required />
                       <div style={{ color: "red" }}>
@@ -567,7 +561,7 @@ class ProfileDetails extends React.Component {
 
                   <Row>
                     <div className="form-group col-12 col-md-6">
-                      <label for="inputdegree" className="col-form-label">DOB</label>
+                      <label for="inputdegree" className="asy-FormLabel">DOB</label>
                       <input type="text" className="form-control asy-InputValues" id="DOB" placeholder="DD/MM/YYYY"
                         onChange={this.handleDobChanged} value={this.state.dob}
                         required />
@@ -576,7 +570,7 @@ class ProfileDetails extends React.Component {
                       </div>
                     </div>
                     <div className="form-group col-12 col-md-6">
-                      <label for="inputPassword" className="col-form-label">password</label>
+                      <label for="inputPassword" className="asy-FormLabel">password</label>
                       <input type="password" className="form-control asy-InputValues" id="password" placeholder="Password"
                         onChange={this.handlePasswordChanged} value={this.state.password} required />
                       <div style={{ color: "red" }}>
@@ -587,7 +581,7 @@ class ProfileDetails extends React.Component {
 
                   <Row>
                     <div className="form-group col-12 col-md-6">
-                      <label for="inputdegree" className="col-form-label">Gender</label>
+                      <label for="inputdegree" className="asy-FormLabel">Gender</label>
                       <input type="text" className="form-control asy-InputValues" id="Gender" placeholder="Gender"
                         onChange={this.handleGenderChanged} value={this.state.gender} required />
                       <div style={{ color: "red" }}>
@@ -595,7 +589,7 @@ class ProfileDetails extends React.Component {
                       </div>
                     </div>
                     <div className="form-group col-12 col-md-6">
-                      <label for="inputPassword" className="col-form-label">Driving License</label>
+                      <label for="inputPassword" className="asy-FormLabel">Driving License</label>
                       <input type="text" className="form-control asy-InputValues" id="DrivingLicense" placeholder="Driving License" onChange={this.handleDrivingLycenceChanged} value={this.state.drivingLycence} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["drivingLycence"]}
@@ -605,7 +599,7 @@ class ProfileDetails extends React.Component {
 
                   <Row>
                     <div className="form-group col-12 col-md-6">
-                      <label for="inputdegree" className="col-form-label">Blood Group</label>
+                      <label for="inputdegree" className="asy-FormLabel">Blood Group</label>
                       <input type="text" className="form-control asy-InputValues" id="BloodGroup" placeholder="Blood Group"
                         onChange={this.handleBloodGrouChanged} value={this.state.bloodGroup} required />
                       <div style={{ color: "red" }}>
@@ -613,7 +607,7 @@ class ProfileDetails extends React.Component {
                       </div>
                     </div>
                     <div className="form-group col-12 col-md-6">
-                      <label for="inputPassword" className="col-form-label">Adhar #</label>
+                      <label for="inputPassword" className="asy-FormLabel">Adhar #</label>
                       <input type="text" className="form-control asy-InputValues" id="Adhar" placeholder="Adhar #"
                         onChange={this.handleAdharNumberChanged} value={this.state.adharNumber} required />
                       <div style={{ color: "red" }}>
@@ -624,7 +618,7 @@ class ProfileDetails extends React.Component {
 
                   <Row>
                     <div className="form-group col-12 col-md-6">
-                      <label for="inputdegree" className="col-form-label">Country</label>
+                      <label for="inputdegree" className="asy-FormLabel">Country</label>
                       <input type="text" className="form-control asy-InputValues" id="Country" placeholder="Country"
                         onChange={this.handleCountryChanged} value={this.state.country} required />
                       <div style={{ color: "red" }}>
@@ -638,7 +632,7 @@ class ProfileDetails extends React.Component {
 
                   <Row>
                     <div className="form-group col-12 col-md-6">
-                      <label for="inputdegree" className="col-form-label">Mobile No</label>
+                      <label for="inputdegree" className="asy-FormLabel">Mobile No</label>
                       <input type="text" className="form-control asy-InputValues" id="MobileNo" placeholder="Mobile No"
                         onChange={this.handleMobileChanged} value={this.state.mobile} required />
                       <div style={{ color: "red" }}>
@@ -646,7 +640,7 @@ class ProfileDetails extends React.Component {
                       </div>
                     </div>
                     <div className="form-group col-12 col-md-6">
-                      <label for="inputPassword" className="col-form-label">Skype ID</label>
+                      <label for="inputPassword" className="asy-FormLabel">Skype ID</label>
                       <input type="text" className="form-control asy-InputValues" id="SkypeID" placeholder="Skype ID"
                         onChange={this.handleSkypeIdChanged} value={this.state.skypeId} required />
                       <div style={{ color: "red" }}>
@@ -656,7 +650,7 @@ class ProfileDetails extends React.Component {
                   </Row>
                   <Row>
                     <div className="form-group col-12 col-md-6">
-                      <label for="inputdegree" className="col-form-label">Work Phone</label>
+                      <label for="inputdegree" className="asy-FormLabel">Work Phone</label>
                       <input type="text" className="form-control asy-InputValues" id="WorkPhone" placeholder="Work Phone"
                         onChange={this.handleWorkPhoneChanged} value={this.state.workPhone} required />
                       <div style={{ color: "red" }}>
@@ -664,7 +658,7 @@ class ProfileDetails extends React.Component {
                       </div>
                     </div>
                     <div className="form-group col-12 col-md-6">
-                      <label for="inputPassword" className="col-form-label">Personal Address</label>
+                      <label for="inputPassword" className="asy-FormLabel">Personal Address</label>
                       <textarea type="text" className="form-control asy-InputValues" id="PersonalAddress" placeholder="Personal Address" onChange={this.handlePermanantAddChanged} value={this.state.permanantAdd} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["permanantAdd"]}
@@ -674,14 +668,14 @@ class ProfileDetails extends React.Component {
 
                   <Row>
                     <div className="form-group col-12 col-md-6">
-                      <label for="inputdegree" className="col-form-label">Presonal Email</label>
+                      <label for="inputdegree" className="asy-FormLabel">Presonal Email</label>
                       <input type="email" className="form-control asy-InputValues" id="PresonalEmail" placeholder="Personal Email" onChange={this.handleEmailChanged} value={this.state.email} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["email"]}
                       </div>
                     </div>
                     <div className="form-group col-12 col-md-6">
-                      <label for="inputPassword" className="col-form-label">Current Address</label>
+                      <label for="inputPassword" className="asy-FormLabel">Current Address</label>
                       <textarea type="text" className="form-control asy-InputValues" id="CurrentAddress" placeholder="Current Address" onChange={this.handleCurrentAddChanged} value={this.state.currentAdd} required />
                       <div style={{ color: "red" }}>
                         {this.state.errors["currentAdd"]}
@@ -690,7 +684,7 @@ class ProfileDetails extends React.Component {
                   </Row>
                   <Row>
                     <div className="form-group col-12 col-md-6">
-                      <label for="inputdegree" className="col-form-label">Linkedin</label>
+                      <label for="inputdegree" className="asy-FormLabel">Linkedin</label>
                       <input type="text" className="form-control asy-InputValues" id="Linkedin" placeholder="Linkedin"
                         onChange={this.handleLinkedinChanged} value={this.state.Linkedin} required />
                       <div style={{ color: "red" }}>

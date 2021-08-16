@@ -3,11 +3,7 @@ import { Col, Row, Table, Modal, Button } from 'react-bootstrap';
 import * as services from '../../../services/services';
 
 import trash1 from '../../../../src/assets/images/trashw.png';
-import trash2 from '../../../../src/assets/images/trashw@2x.png';
-import trash3 from '../../../../src/assets/images/trashw@3x.png';
 import edit1 from '../../../../src/assets/images/edit (1).png';
-import edit2 from '../../../../src/assets/images/edit (1)@2x.png';
-import edit3 from '../../../../src/assets/images/edit (1)@3x.png';
 
 class UserBankDetails extends Component {
 	constructor(props) {
@@ -49,7 +45,7 @@ class UserBankDetails extends Component {
 			formIsValid = false;
 			errors['inputBankName'] = 'Cannot be empty';
 		} else if (typeof bankName !== 'undefined') {
-			if (!bankName.match(/[a-zA-Z]+$/i)) {
+			if (!bankName.match(/^[a-zA-Z\s]*$/)) {
 				formIsValid = false;
 				errors['inputBankName'] = 'Only letters';
 			}
@@ -265,9 +261,6 @@ class UserBankDetails extends Component {
 		return (
 			<div className="jumbotron asy-main-jumbotron">
 				<Row>
-					<Col>
-						<h5 className="asy-main-page-heading">Bank Details</h5>
-					</Col>
 					<Col className="d-flex flex-row-reverse">
 						{this.state.onHideForm ? (
 							!this.onHideForm()
@@ -311,9 +304,9 @@ class UserBankDetails extends Component {
 												>
 													<img
 														src={edit1}
-														srcset={(edit2, edit3)}
 														className="asy-Edit"
 														onClick={() => this.setState({ onHideForm: true })}
+														alt="Edit-Icon Bank Page"
 													/>
 												</button>
 
@@ -321,7 +314,10 @@ class UserBankDetails extends Component {
 													className="deletebutton"
 													onClick={this.handleModalShow.bind(this, data._id)}
 												>
-													<img src={trash1} srcset={(trash2, trash3)} className="asy-Trash" />
+													<img src={trash1} className="asy-Trash" 
+														alt="Delete-Icon Bank Page"
+													/>
+													
 												</button>
 												<Modal show={this.state.showHide} className="text-center">
 													<Modal.Body>
