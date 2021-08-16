@@ -2,15 +2,15 @@
 	flex-shrink: 0;
 	width: 100%;
 	min-width: 326px;
-    /* max-width: fit-content; */
+	/* max-width: fit-content; */
 	padding: 20px;
 	border: none;
 	box-shadow: rgb(154 161 171 / 15%) 0px 0px 35px 0px;
 	-webkit-box-flex: 1;
 	flex: 1 1 auto;
-    background-color: white;
+	background-color: white;
 }
-.profilePendingApproval{
+.profilePendingApproval {
 	box-shadow: rgb(154 161 171 / 65%) 0px 0px 35px 0px;
 	-webkit-box-flex: 1;
 }
@@ -42,7 +42,7 @@
 }
 .profileLabel {
 	font-size: 14px;
-    color:#6c757d;
+	color: #6c757d;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
 		'Helvetica Neue', sans-serif;
 }
@@ -50,22 +50,34 @@
 	text-transform: capitalize;
 }
 .profileLabelValues {
-    display: inline;
-    margin-left: 0.75rem;
-    color:#98a6ad;
+	display: inline;
+	margin-left: 0.75rem;
+	color: #98a6ad;
 	font-size: 14px;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
 		'Helvetica Neue', sans-serif;
 }
-.headLine{
-    background-color: rgb(241, 109, 109);
-    color: white;
+.headLine {
+	background-color: rgb(241, 109, 109);
+	color: white;
 }
-.alertImg{
-    width: 20px;
-    height: 25px;
-    margin-left: 10px;
+.alertImg {
+	width: 20px;
+	height: 25px;
+	margin-left: 10px;
 }
-.mainTabBody{
-	
+nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+	color: #fff !important;
+	background-color: #1bdcff !important;
+}
+
+.scrollPanel {
+	height: 300px;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+::-webkit-scrollbar {
+	display: none;
 }

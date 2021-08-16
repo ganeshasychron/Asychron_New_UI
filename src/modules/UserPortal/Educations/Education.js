@@ -407,7 +407,7 @@ class education extends Component {
 
   render() {
     return (
-      <div className="jumbotron asy-main-jumbotron">
+      <div className="asy-main-jumbotron">
         <div className="row asy-main-row">
           <Col className="d-flex flex-row-reverse">
             {this.state.hideform ? (

@@ -259,7 +259,7 @@ class UserBankDetails extends Component {
 	};
 	render() {
 		return (
-			<div className="jumbotron asy-main-jumbotron">
+			<div className="asy-main-jumbotron">
 				<Row>
 					<Col className="d-flex flex-row-reverse">
 						{this.state.onHideForm ? (
@@ -314,10 +314,11 @@ class UserBankDetails extends Component {
 													className="deletebutton"
 													onClick={this.handleModalShow.bind(this, data._id)}
 												>
-													<img src={trash1} className="asy-Trash" 
+													<img
+														src={trash1}
+														className="asy-Trash"
 														alt="Delete-Icon Bank Page"
 													/>
-													
 												</button>
 												<Modal show={this.state.showHide} className="text-center">
 													<Modal.Body>
@@ -326,10 +327,20 @@ class UserBankDetails extends Component {
 													<Modal.Footer className="asy-modal-footer">
 														<div className="row modal-Row ">
 															<div className="col modal-Row">
-																<Button onClick={this.onRemoveData} className="asy-secondary-submit-button">Delete</Button>
+																<Button
+																	onClick={this.onRemoveData}
+																	className="asy-secondary-submit-button"
+																>
+																	Delete
+																</Button>
 															</div>
 															<div className="col modal-Row ">
-																<Button onClick={this.handleModalHide} className="asy-secondary-cancle-button ">Close</Button>
+																<Button
+																	onClick={this.handleModalHide}
+																	className="asy-secondary-cancle-button "
+																>
+																	Close
+																</Button>
 															</div>
 														</div>
 													</Modal.Footer>

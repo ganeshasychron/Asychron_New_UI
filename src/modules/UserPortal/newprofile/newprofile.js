@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Col, ListGroup, Row, Nav } from 'react-bootstrap';
 // import ReactApexChart from 'react-apexcharts';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import ProfileDetails from '../PersonalDetails/ProfileDetails';
 import styles from './newprofile.module.css';
 import * as services from '../../../services/services';
 import alert from '../../../../src/assets/images/alert.png';
 // import style from '../../AdminPortal/ManageVacancies/Vacancies.module.css';
-import Details from '../../../modules/UserPortal/PersonalDetails/ProfileDetails';
+// import Details from '../../../modules/UserPortal/PersonalDetails/ProfileDetails';
 import BankDetails from '../../../../src/modules/UserPortal/UserBankDetails/UserBankDetails';
 import Moment from 'react-moment';
 import References from '../../../../src/modules/UserPortal/UserReference/UserReference';
@@ -32,47 +32,6 @@ class Profiles extends Component {
 			employeType: '',
 			shiftEmp: '',
 			data: []
-
-			// options1: {
-			// 	chart: {
-			// 		height: 150,
-			// 		type: 'radialBar'
-			// 	},
-			// 	plotOptions: {
-			// 		radialBar: {
-			// 			hollow: {
-			// 				size: '55%'
-			// 			},
-			// 			dataLabels: {
-			// 				name: {
-			// 					offsetY: -10,
-			// 					show: true,
-			// 					color: 'Black',
-			// 					fontSize: '14px'
-			// 				}
-			// 			}
-			// 		}
-			// 	},
-
-			// 	fill: {
-			// 		background: 'red',
-			// 		type: 'gradient',
-			// 		gradient: {
-			// 			shade: 'dark',
-			// 			type: 'vertical',
-			// 			gradientToColors: [ '', '', '', '' ],
-			// 			stops: [ 0, 100 ]
-			// 		}
-			// 	},
-			// 	padding: {
-			// 		top: '0px',
-			// 		right: '0px',
-			// 		bottom: '0px',
-			// 		left: '0px'
-			// 	},
-			// 	colors: [ 'red' ],
-			// 	labels: [ 'profile' ]
-			// }
 		};
 	}
 
@@ -312,13 +271,13 @@ class Profiles extends Component {
 												<ListGroup.Item>
 													{/* <Link to="./certifications">Certficate Details</Link> */}
 													<Nav.Item>
-													<Nav.Link
+														<Nav.Link
 															data-bs-toggle="tab"
 															aria-expanded="true"
 															href="#Family"
 														>
 															Family
-															</Nav.Link>
+														</Nav.Link>
 													</Nav.Item>
 												</ListGroup.Item>
 											</ListGroup>
@@ -328,7 +287,7 @@ class Profiles extends Component {
 							</Col>
 						</Row>
 						<Row>
-							<div className={`${styles.mainTabBody} col-xl-12 col-lg-12 mt-4`}>
+							<div className="col-xl-12 col-lg-12 mt-4">
 								<div className="card">
 									<div className="card-body">
 										<Nav
@@ -397,26 +356,28 @@ class Profiles extends Component {
 												</Nav.Link>
 											</Nav.Item>
 										</Nav>
-										<div className="tab-content">
-											<div className="tab-pane active" id="Details">
-												<Details />
-											</div>
+										<div className={styles.scrollPanel}>
+											<div className="tab-content">
+												<div className="tab-pane active" id="Details">
+													<ProfileDetails />
+												</div>
 
-											<div className="tab-pane" id="BankDetails">
-												<BankDetails />
-											</div>
+												<div className="tab-pane" id="BankDetails">
+													<BankDetails />
+												</div>
 
-											<div className="tab-pane" id="References">
-												<References />
-											</div>
-											<div className="tab-pane" id="Certification">
-												<Certification />
-											</div>
-											<div className="tab-pane" id="Education">
-												<Education />
-											</div>
-											<div className="tab-pane" id="Family">
-												<Family />
+												<div className="tab-pane" id="References">
+													<References />
+												</div>
+												<div className="tab-pane" id="Certification">
+													<Certification />
+												</div>
+												<div className="tab-pane" id="Education">
+													<Education />
+												</div>
+												<div className="tab-pane" id="Family">
+													<Family />
+												</div>
 											</div>
 										</div>
 									</div>

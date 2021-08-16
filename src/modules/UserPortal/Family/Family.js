@@ -311,7 +311,7 @@ class Family extends Component {
 	};
 	render() {
 		return (
-			<div className="jumbotron asy-main-jumbotron">
+			<div className="asy-main-jumbotron">
 				<Row>
 					<Col className="d-flex flex-row-reverse">
 						{this.state.onHideForm ? (

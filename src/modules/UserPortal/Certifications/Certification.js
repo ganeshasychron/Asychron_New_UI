@@ -168,7 +168,7 @@ class Certification extends React.Component {
 	render() {
 		return (
 			<div>
-				<div className="jumbotron asy-main-jumbotron">
+				<div className="asy-main-jumbotron">
 					{this.state.ListOpen ? (
 						<div>
 							<Row className={styles.Row} >
