@@ -2,9 +2,12 @@ import React from 'react';
 import { Table, Row, Col, Modal, Button } from 'react-bootstrap';
 import styles from './Certification.module.css';
 import * as services from '../../../services/services';
-import moment from "moment";
-import trash1 from "../../../../src/assets/images/trash.png";
-import edit from "../../../../src/assets/images/edit (1).png";
+import Moment from 'react-moment';
+
+import trash1 from '../../../../src/assets/images/trashw.png';
+import trash11 from '../../../../src/assets/images/trash.png';
+import edit1 from '../../../../src/assets/images/edit (1).png';
+import edit11 from '../../../../src/assets/images/edit b(1).png';
 class Certification extends React.Component {
 	constructor(props) {
 		super(props);
@@ -22,8 +25,8 @@ class Certification extends React.Component {
 			name: "",
 			description: "",
 			typeCertificate: "",
-			uploadedOn:"",
-			Certificates:"",
+			uploadedOn: "",
+			Certificates: "",
 			userName: "admin123"
 		};
 	}
@@ -44,7 +47,7 @@ class Certification extends React.Component {
 			formIsValid = false;
 			errors['name'] = 'Cannot be empty';
 		} else if (typeof name !== 'undefined') {
-			if (!name.match(/[\D][a-zA-Z\Da-zA-Z][\D]+$/g)) {
+			if (!name.match(/[A-Za-z0-9|.|\-|\s|,]/)) {
 				formIsValid = false;
 				errors['name'] = 'Only letters & also check for any Space';
 			}
@@ -64,7 +67,7 @@ class Certification extends React.Component {
 			formIsValid = false;
 			errors['type'] = 'Cannot be empty';
 		} else if (typeof accountNum !== 'undefined') {
-			if (!typeCertificate.match(/[\D][a-zA-Z\Da-zA-Z][\D]+$/g)) {
+			if (!typeCertificate.match(/^[a-zA-Z\s]*$/)) {
 				formIsValid = false;
 				errors['type'] = 'Only letters';
 			}
@@ -165,19 +168,14 @@ class Certification extends React.Component {
 	render() {
 		return (
 			<div>
-				<div className="jumbotron asy-main-jumbotron">
+				<div className="asy-main-jumbotron">
 					{this.state.ListOpen ? (
 						<div>
 							<Row className={styles.Row} >
-								<div className="row asy-main-row">
-								<Col>
-									<h5 className="asy-main-page-heading"> Certification </h5>
-								</Col>
-								</div>
 								<Col>
 									<div align="right" className="row-col-4 " >
 										<Button
-											className="asy-primary-submit-button col-sm-2"
+											className="add-button-flip"
 											onClick={() =>
 												this.setState({
 													ListOpen: false,
@@ -185,12 +183,12 @@ class Certification extends React.Component {
 													dyanamicBtnName: 'Submit'
 												})}
 										>
-											<h6 className="text-center asy-button-heading "> Add 	</h6>
+											ADD
 										</Button>
 									</div>
 								</Col>
 							</Row>
-							
+
 							<div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
 								<Table className="asy-Table">
 									<thead>
@@ -202,37 +200,61 @@ class Certification extends React.Component {
 										</tr>
 									</thead>
 									<tbody>
-										{this.state.data.map((data) => (
-											<tr className="asy-TableData" key={data._id}>
+										{this.state.data.map((data, index) => (
+											<tr className="asy-TableData" key={index}>
 												<td> {data.name} </td>
 												<td> {data.typeCertificate} </td>
-												<td> {moment.utc(data.updatedOn).format("D MMM YYYY")} </td>
+												<td><Moment format="D MMM YYYY">
+													{data.updatedOn}
+												</Moment> </td>
 												<td>
-													<Button variant="none" update onClick={() => this.setState({ ListOpen: false, FormOpen: true })} >
-												<img src={edit} className="asy-Trash" onClick={this.handleUpdateData.bind(this, data._id)} 	/>
-													</Button>
-													<Button variant="none" onClick={this.handleModalShow.bind(this, data._id)} >
-														<img src={trash1} className="asy-Trash"/>
-													</Button>
+													<button className="editbutton" update onClick={() => this.setState({ ListOpen: false, FormOpen: true })} >
 
-													<Modal show={this.state.showHide}>
+														{index % 2 === 0 ? (
+															<img
+																src={edit1}
+																className="asy-Edit" onClick={this.handleUpdateData.bind(this, data._id)}
+																alt="Edit-Icon Certification Page" />
+														) : (
+															<img
+																src={edit11}
+																className="asy-Edit" onClick={this.handleUpdateData.bind(this, data._id)} 
+																alt="Edit-Icon Certification Page" />
+														)}
+													</button>
+													<button className="deletebutton" onClick={this.handleModalShow.bind(this, data._id)} >
+														{index % 2 === 0 ? (
+															<img
+																src={trash1}
+																className="asy-Trash"
+																alt="Delete-Icon Certification Page"
+															/>
+														) : (
+															<img
+																src={trash11}
+																className="asy-Trash"
+																alt="Delete-Icon Certification Page"
+															/>
+														)}
+													</button>
+
+													<Modal show={this.state.showHide} className="text-center">
 														<Modal.Body>
 															<h6> Are you Sure. Delete This Data? </h6>
 														</Modal.Body>
-														<Modal.Footer>
-															<div className="row">
-																<div className="col">
+														<Modal.Footer className="asy-modal-footer">
+															<div className="row modal-Row ">
+																<div className="col modal-Row ">
 																	<Button
-																		className="submit-button"
+																		className="asy-secondary-submit-button"
 																		onClick={this.handledeleteData}
 																	>
 																		Delete
 																	</Button>
 																</div>
-																<div className="col">
+																<div className="col modal-Row ">
 																	<Button
-																		id={styles.danger}
-																		className="danger-danger submit-button"
+																		className="asy-secondary-cancle-button"
 																		onClick={this.handleModalHide}
 																	>
 																		Cancel
@@ -251,14 +273,7 @@ class Certification extends React.Component {
 					) : null}
 					{this.state.FormOpen ? (
 						<div>
-						<div className="row asy-main-row">
-                <Col>
-                  <h5 className="asy-main-page-heading"> Certification </h5>
-                </Col>
-              </div>
-			                <div className="card asy-card-primary-design">
-								<div className="card-body">
-							<div className="form-container">
+							<div className="form-container asy-mainBoxBorder">
 								<form
 									onSubmit={() =>
 										this.setState({ ListOpen: true }) & this.setState({ FormOpen: false })}
@@ -267,12 +282,12 @@ class Certification extends React.Component {
 								>
 									<Row>
 										<div className="form-group col-12 col-md-6">
-											<label for="inputdegree" className="col-form-label">
+											<label for="inputdegree" className="asy-FormLabel">
 												Name
 											</label>
 											<input
 												type="text"
-												className="form-control form-input"
+												className="form-control asy-InputValues"
 												id="inputdegree"
 												placeholder="Name"
 												ref="name"
@@ -285,12 +300,12 @@ class Certification extends React.Component {
 											<div className="error-msg">{this.state.errors['name']}</div>
 										</div>
 										<div className="form-group col-12 col-md-6">
-											<label for="inputPassword" className="col-form-label">
+											<label for="inputPassword" className="asy-FormLabel">
 												Type of Certification
 											</label>
 											<input
 												type="text"
-												className="form-control form-input"
+												className="form-control asy-InputValues"
 												id="inputPassword"
 												placeholder="Type of Certification"
 												ref="type"
@@ -305,12 +320,12 @@ class Certification extends React.Component {
 									</Row>
 									<Row>
 										<div className="form-group col-12 col-md-6">
-											<label for="inputdegree" className="col-form-label">
+											<label for="inputdegree" className="asy-FormLabel">
 												Description
 											</label>
 											<textarea
 												type="textarea"
-												className="form-control form-input"
+												className="form-control asy-InputValues"
 												id="inputdegree"
 												placeholder="Description"
 												ref="description"
@@ -323,12 +338,12 @@ class Certification extends React.Component {
 											<div className="error-msg">{this.state.errors['description']}</div>
 										</div>
 										<div className="form-group col-12 col-md-6">
-											<label for="inputPassword" className="col-form-label">
+											<label for="inputPassword" className="asy-FormLabel">
 												Certificate
 											</label>
 											<input
 												type="File"
-												className="form-control form-input"
+												className="form-control asy-InputValues"
 												id="inputPassword"
 												ref="certificate"
 												onChange={(e) => {
@@ -340,34 +355,24 @@ class Certification extends React.Component {
 										</div>
 									</Row>
 
-									<div className="asy-button-class text-center d-flex justify-content-center">
+									<div className="text-center">
 										<Button
-											className="asy-primary-submit-button text-center col-sm-2 mr-1"
-											onClick={() => { this.submitHandler();	}} 	>
-										 <h6 className="text-center asy-button-heading"> {this.state.dyanamicBtnName} </h6>
+											className="asy-secondary-submit-button"
+											onClick={() => { this.submitHandler(); }} 	>
+											{this.state.dyanamicBtnName}
 										</Button>
 
 										<Button
-											id={styles.btnReset}
-											className="asy-primary-submit-button text-center col-sm-2 mr-1"
-											onClickCapture={this.handleManualReset}
-											value="reset" >
-											<h6 className="text-center asy-button-heading"> Reset </h6>
-										</Button>
-
-										<Button
-											id={styles.btnCancel}
-											className="asy-primary-submit-button text-center col-sm-2"
+											className="asy-secondary-cancle-button"
 											onClick={() => this.setState({ ListOpen: true, FormOpen: false })}
 											onClickCapture={this.handleManualReset}
 											value="reset" >
-											<h6 className="text-center asy-button-heading"> Cancel </h6>
+											Cancel
 										</Button>
 									</div>
 								</form>
 							</div>
-							</div>
-							</div>
+
 						</div>
 					) : null}
 				</div>

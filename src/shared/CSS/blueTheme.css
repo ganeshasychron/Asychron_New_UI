@@ -29,6 +29,7 @@ body {
 	height: auto;
 	position: relative;
 	background: none;
+	margin-top: 20px;
 }
 .asy-main-page-heading {
 	color: var(--page-heading-color);
@@ -129,7 +130,6 @@ body {
 	padding: 10px 16px;
 	margin-top: -20px !important;
 	border-radius: 8px;
-	margin-bottom: 30px !important;
 	font-weight: 600;
 	font-family: Poppins;
 	letter-spacing: 1px;
@@ -233,4 +233,38 @@ img.asy-Trash {
 .table td,
 .table th {
 	vertical-align: middle;
+}
+
+
+.editbutton {
+	outline: none;
+	margin: 0px;
+	background: none;
+	border: none;
+}
+.deletebutton {
+	border: none;
+	outline: none;
+	margin-left: 0px;
+	background: none;
+}
+
+.asy-modal-footer{
+    border-top: none;
+    display: inline-block;
+    padding-bottom: 16px;
+    padding-left: 24px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row.modal-Row{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	align-content: center;
+	flex-wrap: nowrap;
+   }
+   .nav-pills .nav-link {
+	background-color: #6c757d18 !important;
 }

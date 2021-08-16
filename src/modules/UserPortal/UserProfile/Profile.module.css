@@ -17,7 +17,8 @@
    width: auto;  
    height: auto;
   display: flex;
-  flex: auto;                
+  flex: auto;     
+  box-shadow: 8px 8px 10px 0px rgba(110, 132, 156, 0.58);           
 } 
 
 .card-body{
@@ -34,13 +35,13 @@
   flex-wrap: wrap;
 }
 
-/* img {
+.UserImg{
   width: auto;
   height: 90px;
   border-radius: 25%;
   margin-top:10px;
   border: 1px solid black;
-} */
+} 
 
 .apex_chart{
   align-content: center;
@@ -65,37 +66,58 @@
   padding-bottom: 0px;
 } 
 
-#LabelArea{
+.LabelArea{
   display:flex;
   margin-bottom: 5px;
   flex-wrap: wrap;
 }
 
-#FirstLabelId{
+.FirstLabel{
   display:flex;
-  width: 140px;
+  width: 140px; 
 }
 
 .SecondLabel{
-  display:flex;
-  width: 200px;   
- margin-left: 10px;
-}
-
-#SecondLabelId{
   color: var(--black-light-color);
     font-family: Poppins;
     font-weight: 700;
+    display:flex; 
+    width: 200px;  
+ }
+ .Displaylabel{
+  color: var(--black-light-color);
+  font-family: Poppins;
+  font-weight: 700; 
+  width: 200px;   
  }
 
+.news1 {
+	background-color:none;
+}
 .news2 {
 	background-color: rgb(240, 220, 223);
 }
 
-/* a{
+#ReamainingCard{                        
+  background-image: var(--card-gradient-color);  
+}
+
+.Remaining-Link{
   text-decoration: none;
   color: black ;   
-} */
+} 
+
+.Edit-Button{
+  background: var(--blue-color);
+	color: var(--black-light-color);
+	border-color: var(--white-color) !important;
+	border: 0;
+	padding: 10px 16px;
+	border-radius: 8px;
+	font-weight: 600;
+	font-family: Poppins;
+	letter-spacing: 1px;
+}
 
 @media screen and (max-width: 500px) {
   .news1{
@@ -137,6 +159,13 @@ width: auto;
   .row{
     display: flex;
     flex-wrap: wrap;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .card{
+   margin-top: 10px;
   }
 }
 

@@ -12,29 +12,29 @@ class Roles extends Component {
     showAddRole = () => {
         return (
             <div className="mt-4">
-                <div className="jumbotron jumbo-form">
+            <div className="jumbotron asy-main-jumbotron">
                     <div className="form-container">
                         <form>
                             <Row>
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="roleName" className="col-form-label">
+                                    <label for="roleName" className="asy-FormLabel">
                                         Role Name
                                     </label>
                                     <input
                                         type="text"
-                                        className="form-control form-input"
+                                        className="form-control asy-InputValues"
                                         id="roleName"
                                         placeholder="Enter Role Name"
                                     />
                                 </div>
 
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="roleTitle" className="col-form-label">
+                                    <label for="roleTitle" className="asy-FormLabel">
                                         Role Title
                                     </label>
                                     <input
                                         type="text"
-                                        className="form-control form-input"
+                                        className="form-control asy-InputValues"
                                         id="roleTitle"
                                         placeholder="Enter  Role Title"
                                     />
@@ -43,22 +43,22 @@ class Roles extends Component {
 
                             <Row>
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="description" className="col-form-label">
+                                    <label for="description" className="asy-FormLabel">
                                         Description
                                     </label>
                                     <input
                                         type="textarea"
-                                        className="form-control form-input"
+                                        className="form-control asy-InputValues"
                                         id="description"
                                         placeholder="Enter Description"
                                     />
                                 </div>
 
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="activityType" className="col-form-label">
+                                    <label for="activityType" className="asy-FormLabel">
                                         Activities
                                     </label>
-                                    <select class="form-control" name="activity">
+                                    <select class="form-control asy-InputValues" name="activity">
 
                                         <option value="" disabled selected className="activity">
                                             Select Activities
@@ -80,32 +80,43 @@ class Roles extends Component {
 
                             <Row>
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="StartDate" className="col-form-label">
+                                    <label for="StartDate" className="asy-FormLabel">
                                         Start Date
                                     </label>
                                     <input
                                         type="date"
-                                        className="form-control form-input"
+                                        className="form-control asy-InputValues"
                                         id="StartDate"
                                     />
                                 </div>
 
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="EndDate" className="col-form-label">
+                                    <label for="EndDate" className="asy-FormLabel">
                                         EndDate
                                     </label>
                                     <input
                                         type="date"
-                                        className="form-control form-input"
+                                        className="form-control asy-InputValues"
                                         id="EndDate"
                                     />
                                 </div>
                             </Row>
 
                             <div align="center">
-                                <button type="button" className="submit-button">Submit</button>
-                                <button type="button" className="cancel-button" onClick={this.hideAddRoleHandler}>Cancel</button>
-                            </div>
+                            <Button  className="asy-primary-submit-button width">
+                                <h6 className="text-center asy-button-heading">
+                                    Submit
+                                </h6>
+                            </Button>
+                            <Button className="asy-secondary-cancle-button cancel" onClick={this.hideAddRoleHandler}>
+                                <h6 className="text-center asy-button-heading">
+                                    Cancel
+                                </h6>
+                            </Button>
+
+                        </div>
+
+                          
 
                         </form>
                     </div>
@@ -134,45 +145,66 @@ class Roles extends Component {
 
                         <div className="form-container">
                             <form className="mt-5">
-
-                                <button type="button" className="sub pull-right mb-4" onClick={this.showAddRoleHandler}>Add New Role</button>
-                                <div class="active-cyan-4 mb-4 pr-4  pull-right">
-                                    <input class="form-control" type="text" placeholder="Search" aria-label="Search" />
+                            <div>
+                                    <div class="row  mr-4">
+                                        <div class="col">
+                                            <div class="float-right">
+                                                <div className="active-cyan-4 mt-0">
+                                                    <input class="form-control" type="text" placeholder="Search" aria-label="Search" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="float-right">
+                                            <Button id="add_btn" className="add-button-flip py-0 width-auto" onClick={this.showAddRoleHandler}>
+                                                <h6 className="text-center asy-button-heading">
+                                                    Add New Role
+                                                </h6>
+                                            </Button>
+                                        </div>
+                                    </div>
                                 </div>
+                                
+                                <div className="form-container">
+                                    <form>
+                                        <div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
+                                            <Table className="asy-Table">
+                                                <thead className="border">
+                                                    <tr className="asy-TableHeading">
+                                                        <th className="asy-th">Role Name</th>
+                                                        <th className="asy-th">Role Title</th>
+                                                        <th className="asy-th">Description</th>
+                                                        <th className="asy-th">Activities</th>
+                                                        <th className="asy-th">Start Date</th>
+                                                        <th className="asy-th">End Date</th>
+                                                        <th className="asy-th"></th>
+                                                    </tr>
+                                                </thead>
 
-                                <div class="table-responsive" >
-                                    <Table class="table" striped bordered hover>
-                                        <thead className="border">
-                                            <tr>
-                                                <th>Role Name</th>
-                                                <th>Role Title</th>
-                                                <th>Description</th>
-                                                <th>Activities</th>
-                                                <th>Start Date</th>
-                                                <th>End Date</th>
-                                                <th className="columnwidth"></th>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody>
-                                            <tr>
-                                                <td>abc</td>
-                                                <td>abc</td>
-                                                <td>abc</td>
-                                                <td>abc</td>
-                                                <td>05/07/2021</td>
-                                                <td>10/07/2021</td>
-                                                <td className="btn-align">
-                                                    <Button outline="secondary">
-                                                        Edit
-                                                    </Button>
-                                                    <Button outline="secondary">
-                                                        View
-                                                    </Button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </Table>
+                                                <tbody>
+                                                    <tr className="asy-TableData adjust">
+                                                        <td>abc</td>
+                                                        <td>abc</td>
+                                                        <td>abc</td>
+                                                        <td>abc</td>
+                                                        <td>05/07/2021</td>
+                                                        <td>10/07/2021</td>
+                                                        <td className="btn-align">
+                                                            <Button className="asy-primary-submit-button m-0">
+                                                                <h6 className="text-center asy-button-heading">
+                                                                    Edit
+                                                                </h6>
+                                                            </Button>
+                                                            <Button className="asy-primary-submit-button m-0">
+                                                                <h6 className="text-center asy-button-heading">
+                                                                    View
+                                                                </h6>
+                                                            </Button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </Table>
+                                        </div>
+                                    </form>
                                 </div>
                             </form>
                         </div>

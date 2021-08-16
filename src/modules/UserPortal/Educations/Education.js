@@ -4,12 +4,12 @@ import "./Education.css";
 import "../../../shared/CSS/blueTheme.css";
 import * as services from "../../../services/services";
 import Moment from "react-moment";
-import trash1 from "../../../../src/assets/images/trashw.png";
-import trash2 from "../../../../src/assets/images/trashw@2x.png";
-import trash3 from "../../../../src/assets/images/trashw@3x.png";
-import edit1 from "../../../../src/assets/images/edit (1).png";
-import edit2 from "../../../../src/assets/images/edit (1)@2x.png";
-import edit3 from "../../../../src/assets/images/edit (1)@3x.png";
+
+import trash1 from '../../../../src/assets/images/trashw.png';
+import trash11 from '../../../../src/assets/images/trash.png';
+import edit1 from '../../../../src/assets/images/edit (1).png';
+import edit11 from '../../../../src/assets/images/edit b(1).png';
+
 class education extends Component {
   state = {
     hideform: false,
@@ -46,7 +46,7 @@ class education extends Component {
       errors["degree"] = "Cannot be empty";
     } else if (typeof degree !== "undefined") {
       if (
-        !degree.match(/(([a-zA-Z]{1,30})+([a-zA-Z.]?)+([a-zA-Z.]?){2,30})/gi)
+        !degree.match(/((^[a-zA-Z]{1,30})+([a-zA-Z.]?)+([a-zA-Z.]?){2,30})/gi)
       ) {
         formIsValid = false;
         errors["degree"] = "Only letters & also check for any Space";
@@ -58,7 +58,7 @@ class education extends Component {
       formIsValid = false;
       errors["specialization"] = "Cannot be empty";
     } else if (typeof specialization !== "undefined") {
-      if (!specialization.match(/[a-zA-Z.]+$/i)) {
+      if (!specialization.match(/^[a-zA-Z.]+$/i)) {
         formIsValid = false;
         errors["specialization"] = "Only letters & also check for any Space";
       }
@@ -79,7 +79,7 @@ class education extends Component {
       formIsValid = false;
       errors["board"] = "Cannot be empty";
     } else if (typeof board !== "undefined") {
-      if (!board.match(/[a-zA-Z]+$/i)) {
+      if (!board.match(/^[a-zA-Z]+$/i)) {
         formIsValid = false;
         errors["board"] = "Only letters & also check for any Space";
       }
@@ -235,183 +235,180 @@ class education extends Component {
       this.hideform()
     ) : (
       <div>
-        <div className="jumbotron asy-main-jumbotron">
-          <div className="form-container">
-            <form
-              onSubmit={() =>
-                this.setState({
-                  hideform: false,
-                })
-              }
-              ref={(form) => (this.form = form)}
-              onReset={this.handleReset}
-            >
-              <div className="card asy-card-primary-design asy-education-primary-card">
-                <div className="card-body">
-                  <Row>
-                    <div className="form-group col-12 col-md-6">
-                      <label for="inputdegree" className="col-form-label">
-                        Degree
-                      </label>
-                      <input
-                        onChange={(e) => {
-                          this.setState({ degree: e.target.value });
-                        }}
-                        value={this.state.degree}
-                        type="text"
-                        className="form-control asy-InputValues"
-                        id="inputdegree"
-                        placeholder="Degree"
-                        required
-                      />
-                      <div className="error-msg" style={{ color: "red" }}>
-                        {this.state.errors["degree"]}
-                      </div>
-                    </div>
-
-                    <div className="form-group col-12 col-md-6">
-                      <label for="inputPassword" className="col-form-label">
-                        Specialization
-                      </label>
-                      <input
-                        onChange={(e) => {
-                          this.setState({ specialization: e.target.value });
-                        }}
-                        value={this.state.specialization}
-                        type="text"
-                        className="form-control asy-InputValues"
-                        id="inputPassword"
-                        placeholder="Specialization"
-                        required
-                      />
-                      <div style={{ color: "red" }}>
-                        {this.state.errors["specialization"]}
-                      </div>
-                    </div>
-                  </Row>
-
-                  <Row>
-                    <div className="form-group col-12 col-md-6">
-                      <label for="inputdegree" className="col-form-label">
-                        College / School
-                      </label>
-                      <input
-                        onChange={(e) => {
-                          this.setState({ college: e.target.value });
-                        }}
-                        value={this.state.college}
-                        type="text"
-                        className="form-control asy-InputValues"
-                        id="inputdegree"
-                        placeholder="College/School"
-                        required
-                      />
-                      <div style={{ color: "red" }}>
-                        {this.state.errors["college"]}
-                      </div>
-                    </div>
-
-                    <div className="form-group col-12 col-md-6">
-                      <label for="inputPassword" className="col-form-label">
-                        University / Board
-                      </label>
-                      <input
-                        onChange={(e) => {
-                          this.setState({ board: e.target.value });
-                        }}
-                        value={this.state.board}
-                        type="text"
-                        className="form-control asy-InputValues"
-                        id="inputPassword"
-                        placeholder="University/Board"
-                        required
-                      />
-                      <div style={{ color: "red" }}>
-                        {this.state.errors["board"]}
-                      </div>
-                    </div>
-                  </Row>
-
-                  <Row>
-                    <div className="form-group col-12 col-md-6">
-                      <label for="inputdegree" className="col-form-label">
-                        Year Of Passing
-                      </label>
-                      <input
-                        onChange={(e) => {
-                          this.setState({ datePassing: e.target.value });
-                        }}
-                        value={this.state.datePassing}
-                        type="text"
-                        className="form-control asy-InputValues"
-                        id="inputdegree"
-                        placeholder="Year of Passing(DD/MM/YYYY)"
-                        required
-                      />
-                      <div style={{ color: "red" }}>
-                        {this.state.errors["datePassing"]}
-                      </div>
-                    </div>
-
-                    <div className="form-group col-12 col-md-6">
-                      <label for="inputPassword" className="col-form-label">
-                        Percentage
-                      </label>
-                      <input
-                        onChange={(e) => {
-                          this.setState({ percentage: e.target.value });
-                        }}
-                        value={this.state.percentage}
-                        type="text"
-                        className="form-control asy-InputValues"
-                        id="inputPassword"
-                        placeholder="percentage"
-                        required
-                      />
-                      <div style={{ color: "red" }}>
-                        {this.state.errors["percentage"]}
-                      </div>
-                    </div>
-                  </Row>
-
-                  <div className="text-center">
-                    <button
-                      onClick={this.submitHandler.bind(this)}
-                      type="button"
-                      className="asy-secondary-submit-button"
-                    >
-                      {this.state.dyanamicBtnName}
-                    </button>
-                    <button
-                      type="button"
-                      className="asy-secondary-cancle-button"
-                      onClick={() =>
-                        this.setState({
-                          hideform: !this.state.hideform,
-                        })
-                      }
-                      onClickCapture={this.handleManualReset}
-                      value="reset"
-                    >
-                      Cancel
-                    </button>
-                  </div>
+        {/* <div className="jumbotron asy-main-jumbotron"> */}
+        <div className="form-container asy-mainBoxBorder">
+          <form
+            onSubmit={() =>
+              this.setState({
+                hideform: false,
+              })
+            }
+            ref={(form) => (this.form = form)}
+            onReset={this.handleReset}
+          >
+            {/* <div className="card asy-card-primary-design asy-education-primary-card">
+                <div className="card-body"> */}
+            <Row>
+              <div className="form-group col-12 col-md-6">
+                <label for="inputdegree" className="asy-FormLabel">
+                  Degree
+                </label>
+                <input
+                  onChange={(e) => {
+                    this.setState({ degree: e.target.value });
+                  }}
+                  value={this.state.degree}
+                  type="text"
+                  className="form-control asy-InputValues"
+                  id="inputdegree"
+                  placeholder="Degree"
+                  required
+                />
+                <div className="error-msg" style={{ color: "red" }}>
+                  {this.state.errors["degree"]}
                 </div>
               </div>
-            </form>
-          </div>
+
+              <div className="form-group col-12 col-md-6">
+                <label for="inputPassword" className="asy-FormLabel">
+                  Specialization
+                </label>
+                <input
+                  onChange={(e) => {
+                    this.setState({ specialization: e.target.value });
+                  }}
+                  value={this.state.specialization}
+                  type="text"
+                  className="form-control asy-InputValues"
+                  id="inputPassword"
+                  placeholder="Specialization"
+                  required
+                />
+                <div style={{ color: "red" }}>
+                  {this.state.errors["specialization"]}
+                </div>
+              </div>
+            </Row>
+
+            <Row>
+              <div className="form-group col-12 col-md-6">
+                <label for="inputdegree" className="asy-FormLabel">
+                  College / School
+                </label>
+                <input
+                  onChange={(e) => {
+                    this.setState({ college: e.target.value });
+                  }}
+                  value={this.state.college}
+                  type="text"
+                  className="form-control asy-InputValues"
+                  id="inputdegree"
+                  placeholder="College/School"
+                  required
+                />
+                <div style={{ color: "red" }}>
+                  {this.state.errors["college"]}
+                </div>
+              </div>
+
+              <div className="form-group col-12 col-md-6">
+                <label for="inputPassword" className="asy-FormLabel">
+                  University / Board
+                </label>
+                <input
+                  onChange={(e) => {
+                    this.setState({ board: e.target.value });
+                  }}
+                  value={this.state.board}
+                  type="text"
+                  className="form-control asy-InputValues"
+                  id="inputPassword"
+                  placeholder="University/Board"
+                  required
+                />
+                <div style={{ color: "red" }}>
+                  {this.state.errors["board"]}
+                </div>
+              </div>
+            </Row>
+
+            <Row>
+              <div className="form-group col-12 col-md-6">
+                <label for="inputdegree" className="asy-FormLabel">
+                  Year Of Passing
+                </label>
+                <input
+                  onChange={(e) => {
+                    this.setState({ datePassing: e.target.value });
+                  }}
+                  value={this.state.datePassing}
+                  type="text"
+                  className="form-control asy-InputValues"
+                  id="inputdegree"
+                  placeholder="Year of Passing(DD/MM/YYYY)"
+                  required
+                />
+                <div style={{ color: "red" }}>
+                  {this.state.errors["datePassing"]}
+                </div>
+              </div>
+
+              <div className="form-group col-12 col-md-6">
+                <label for="inputPassword" className="asy-FormLabel">
+                  Percentage
+                </label>
+                <input
+                  onChange={(e) => {
+                    this.setState({ percentage: e.target.value });
+                  }}
+                  value={this.state.percentage}
+                  type="text"
+                  className="form-control asy-InputValues"
+                  id="inputPassword"
+                  placeholder="percentage"
+                  required
+                />
+                <div style={{ color: "red" }}>
+                  {this.state.errors["percentage"]}
+                </div>
+              </div>
+            </Row>
+
+            <div className="text-center">
+              <button
+                onClick={this.submitHandler.bind(this)}
+                type="button"
+                className="asy-secondary-submit-button"
+              >
+                {this.state.dyanamicBtnName}
+              </button>
+              <button
+                type="button"
+                className="asy-secondary-cancle-button"
+                onClick={() =>
+                  this.setState({
+                    hideform: !this.state.hideform,
+                  })
+                }
+                onClickCapture={this.handleManualReset}
+                value="reset"
+              >
+                Cancel
+              </button>
+            </div>
+            {/* </div>
+              </div> */}
+          </form>
         </div>
+        {/* </div> */}
       </div>
     );
   };
 
   render() {
     return (
-      <div className="jumbotron asy-main-jumbotron">
+      <div className="asy-main-jumbotron">
         <div className="row asy-main-row">
-          <Col>
-            <h5 className="asy-main-page-heading"> Education </h5>
-          </Col>
           <Col className="d-flex flex-row-reverse">
             {this.state.hideform ? (
               !this.hideform()
@@ -447,8 +444,8 @@ class education extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.data.map((data) => (
-                  <tr className="asy-TableData" key={data._id}>
+                {this.state.data.map((data, index) => (
+                  <tr className="asy-TableData" key={index}>
                     <td> {data.degree} </td>
                     <td> {data.specialization} </td>
                     <td> {data.college} </td>
@@ -463,36 +460,55 @@ class education extends Component {
                         update
                         onClick={this.handleUpdateData.bind(this, data._id)}
                       >
-                        <img
-                          src={edit1}
-                          srcset={(edit2, edit3)}
-                          className="asy-Edit"
-                          onClick={() =>
-                            this.setState({
-                              hideform: true,
-                            })
-                          }
-                          alt="Edit-Icon Education Page"
-                        />
+                        {index % 2 === 0 ? (
+                          <img
+                            src={edit1}
+                            className="asy-Edit"
+                            onClick={() =>
+                              this.setState({
+                                hideform: true,
+                              })
+                            }
+                            alt="Edit-Icon Education Page"
+                          />
+                        ) : (
+                          <img
+                            src={edit11}
+                            className="asy-Edit"
+                            onClick={() =>
+                              this.setState({
+                                hideform: true,
+                              })
+                            }
+                            alt="Edit-Icon Education Page"
+                          />
+                        )}
                       </button>
                       <button
-                        className="button delete-education"
+                        className="deletebutton"
                         onClick={this.handleModalShow.bind(this, data._id)}
                       >
-                        <img
-                          src={trash1}
-                          srcset={(trash2, trash3)}
-                          className="asy-Trash"
-                          alt="Delete-Icon Education Page"
-                        />
+                        {index % 2 === 0 ? (
+                          <img
+                            src={trash1}
+                            className="asy-Trash"
+                            alt="Delete-Icon Education Page"
+                          />
+                        ) : (
+                          <img
+                            src={trash11}
+                            className="asy-Trash"
+                            alt="Delete-Icon Education Page"
+                          />
+                        )}
                       </button>
                       <Modal show={this.state.showHide} className="text-center">
                         <Modal.Body>
                           <h6> Are you Sure.Delete This Data ? </h6>
                         </Modal.Body>
                         <Modal.Footer className="asy-modal-footer">
-                          <div className="row modal-education ">
-                            <div className="col modal-education ">
+                          <div className="row modal-Row ">
+                            <div className="col modal-Row ">
                               <Button
                                 className="asy-secondary-submit-button"
                                 onClick={this.handledeleteData}
@@ -500,7 +516,7 @@ class education extends Component {
                                 Delete
                               </Button>
                             </div>
-                            <div className="col modal-education ">
+                            <div className="col modal-Row">
                               <Button
                                 className="asy-secondary-cancle-button "
                                 onClick={this.handleModalHide}

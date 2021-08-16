@@ -69,7 +69,7 @@ class Polls extends Component {
                     </Col>
                 </div>
 
-                <hr className="hr-line" />
+
                 <div className="form-container ">
                     <div className="card asy-polls-page-card" >
                         <form className="h-100 d-inline-block mt-2">
@@ -121,30 +121,33 @@ class Polls extends Component {
                                         this.state.activePoll.options.map((data) => (
                                             <div key={data.id}>
                                                 <div id="submitid">
-
-                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value={data.value} onChange={(e) => { this.setState({ vote: e.target.value }) }} />
-                                                    <label class="form-check-label" for="inlineRadio1">{data.value}</label>
+                                                    <label class="container">{data.value}
+                                                        <input type="radio" name="radio" value={data.value} onChange={(e) => { this.setState({ vote: e.target.value }) }} />
+                                                        <div class="check"></div>
+                                                    </label>
                                                 </div>
                                             </div>
                                         ))
                                     }
+
                                 </div>
+
                             </Row>
+
+                            <div className=" text-center mt-3">
+                                <Button className=" asy-primary-submit-button width" onClick={this.submitVoteHandler}>
+                                    <h6 className="text-center asy-button-heading">
+                                        Submit Vote
+                                    </h6>
+                                </Button>
+                                <Button className="asy-secondary-cancle-button cancel" onClick={() => this.setState({ showForm: !this.state.showForm })}>
+                                    <h6 className="text-center asy-button-heading">
+                                        Cancel
+                                    </h6>
+                                </Button>
+                            </div>
                         </form>
                     </div>
-                </div>
-
-                <div className=" text-center mt-3">
-                    <Button className=" asy-primary-submit-button width" onClick={this.submitVoteHandler}>
-                        <h6 className="text-center asy-button-heading">
-                            Submit Vote
-                        </h6>
-                    </Button>
-                    <Button className=" asy-primary-submit-button width" onClick={() => this.setState({ showForm: !this.state.showForm })}>
-                        <h6 className="text-center asy-button-heading">
-                            Cancel
-                        </h6>
-                    </Button>
                 </div>
             </div>
         );
@@ -158,19 +161,19 @@ class Polls extends Component {
                     <Col>
                         <h5 className="asy-main-page-heading"> Polls</h5>
                     </Col>
+
+
+                    <Col className="d-flex flex-row-reverse">
+                        <Button className="add-button-flip" onClick={() => this.setState({ showResult: !this.state.showResult })}>
+                            <h6 className="text-center asy-button-heading">
+                                Back
+                            </h6>
+                        </Button>
+                    </Col>
                 </div>
 
-                <Col className="d-flex flex-row-reverse">
-                    <Button className="asy-primary-submit-button width" onClick={() => this.setState({ showResult: !this.state.showResult })}>
-                        <h6 className="text-center asy-button-heading">
-                            Back
-                        </h6>
-                    </Button>
-                </Col>
 
-                <hr className="hr-line" />
-
-                <div className="text-center" >
+                <div className="text-center">
                     <div className='CardArea' >
                         <div className='card polls'>
                             <p className="asy-card-page-heading  text-center mt-3 font-weight-bold">Section Wise Analysis</p>
@@ -210,7 +213,7 @@ class Polls extends Component {
                                             </Col>
                                         </div>
 
-                                        <hr className="hr-line" />
+
                                         <div className="form-container">
                                             <form>
                                                 <div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
@@ -243,12 +246,12 @@ class Polls extends Component {
                                                                         </td>
                                                                         <td className="btn-align">
 
-                                                                            <Button className="asy-primary-submit-button w-2" onClick={() => this.setState({ showResult: !this.state.showResult })}>
+                                                                            <Button className="asy-primary-submit-button m-0" onClick={() => this.setState({ showResult: !this.state.showResult })}>
                                                                                 <h6 className="text-center asy-button-heading">
                                                                                     View Result
                                                                                 </h6>
                                                                             </Button>
-                                                                            <Button className="asy-primary-submit-button w-2" onClick={this.giveVoteHandler.bind(this, data._id)}>
+                                                                            <Button className="asy-primary-submit-button m-0 " onClick={this.giveVoteHandler.bind(this, data._id)}>
                                                                                 <h6 className="text-center asy-button-heading">
                                                                                     Give Vote
                                                                                 </h6>

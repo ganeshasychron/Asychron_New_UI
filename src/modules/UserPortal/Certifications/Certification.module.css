@@ -1,16 +1,9 @@
 
-input[type="file" i] {
+input[type="file"] {
     height: auto;
 }
-
-#btnReset{
-	background: #6d80d6;
-}
-
-#btnCancel{
-	background: #a5ada9;
-}
-
+/*
 .Row{
-    margin-left: 0px;
+    margin-left: 0px;  
 }
+*/
