@@ -1,13 +1,13 @@
 import React from 'react';
 import { Row, Button } from 'react-bootstrap';
 import * as services from '../../../services/services';
-import NewProfile from '../../../../src/modules/UserPortal/newprofile/newprofile';
+// import NewProfile from '../../../../src/modules/UserPortal/newprofile/newprofile';
+import { Link } from 'react-router-dom';
+import styles from './ProfileDetails.module.css';
 class ProfileDetails extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			profilePage: false,
-			detailsPage: true,
 			editId: '',
 			data: [],
 			errors: {},
@@ -325,7 +325,6 @@ class ProfileDetails extends React.Component {
 				services.postService('users', data).then((res) => {
 					console.log(res.data);
 					this.getUsersData();
-					this.setState({ profilePage: true, detailsPage: false });
 				});
 			}
 		} else {
@@ -333,7 +332,7 @@ class ProfileDetails extends React.Component {
 				await services.patchService('users', this.state.editId, data).then((res) => {
 					console.log(res.data);
 					this.getUsersData();
-					this.setState({ profilePage: true, detailsPage: false, editId: '' });
+					this.setState({ editId: '' });
 				});
 			}
 		}
@@ -473,10 +472,10 @@ class ProfileDetails extends React.Component {
 			currentAdd: e.target.value
 		});
 	};
+
 	render() {
 		return (
 			<div>
-				{this.state.detailsPage ? (
 					<div>
 						<div className="asy-mainBoxBorder">
 							<form ref={(form) => (this.form = form)} onReset={this.handleReset}>
@@ -788,23 +787,26 @@ class ProfileDetails extends React.Component {
 										onClick={this.submitHandler.bind(this)}
 										className="asy-secondary-submit-button"
 									>
-										Update
+										Update 
 									</Button>
 
-									{/* <Button
-										onClick={() => this.setState({ profilePage: true, detailsPage: false })}
+									<Button
 										onClickCapture={this.handleManualReset}
 										className="asy-secondary-cancle-button"
 									>
-										Cancel
-									</Button> */}
+									Reset
+									</Button>
+                                  
+									<Button	className="asy-secondary-cancle-button ml-1" >
+									<Link className={styles.link} to="./profile">
+										Conform Back
+										</Link>
+									</Button>
+                                  
 								</div>
 							</form>
 						</div>
 					</div>
-				) : null}
-
-				{this.state.profilePage ? <NewProfile /> : null}
 			</div>
 		);
 	}
