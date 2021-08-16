@@ -11,31 +11,31 @@ class Activities extends Component {
 
     showAddActivity = () => {
         return (
-            
+
             <div className="mt-4" >
-                <div className="jumbotron jumbo-form">
+                <div className="jumbotron asy-main-jumbotron">
                     <div className="form-container">
                         <form>
                             <Row>
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="activityName" className="col-form-label">
+                                    <label for="activityName" className="asy-FormLabel">
                                         Activity Name
                                     </label>
                                     <input
                                         type="text"
-                                        className="form-control form-input"
+                                        className="form-control asy-InputValues"
                                         id="activityName"
                                         placeholder="Enter Activity Name"
                                     />
                                 </div>
 
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="activityTitle" className="col-form-label">
+                                    <label for="activityTitle" className="asy-FormLabel">
                                         Activity Title
                                     </label>
                                     <input
                                         type="text"
-                                        className="form-control form-input"
+                                        className="form-control asy-InputValues"
                                         id="activityTitle"
                                         placeholder="Enter Activity Title"
                                     />
@@ -44,12 +44,12 @@ class Activities extends Component {
 
                             <Row>
                                 <div className="form-group col-12 col-md-6">
-                                    <label for="inputDescription" className="col-form-label">
+                                    <label for="inputDescription" className="asy-FormLabel">
                                         Description
                                     </label>
                                     <input
                                         type="textarea"
-                                        className="form-control form-input"
+                                        className="form-control asy-InputValues"
                                         id="inputDescription"
                                         placeholder="Enter Description"
                                         required
@@ -58,9 +58,20 @@ class Activities extends Component {
                             </Row>
 
                             <div align="center">
-                                <button type="button" className="submit-button">Submit</button>
-                                <button type="button" className="cancel-button" onClick={this.hideAddActivityHandler}>Cancel</button>
+                                <Button  className="asy-primary-submit-button width">
+                                    <h6 className="text-center asy-button-heading">
+                                        Submit
+                                    </h6>
+                                </Button>
+                                <Button  className="asy-secondary-cancle-button cancel" onClick={this.hideAddActivityHandler}>
+                                    <h6 className="text-center asy-button-heading">
+                                        Cancel
+                                    </h6>
+                                </Button>
+
                             </div>
+
+
 
                         </form>
                     </div>
@@ -89,48 +100,71 @@ class Activities extends Component {
                     this.state.showAddActivity ? this.showAddActivity() :
                         <div className="form-container">
                             <form className="mt-5">
-
-                                <button type="button" className="sub pull-right mb-4" onClick={this.showAddActivityHandler}>Add New Activity</button>
-                                <div class="active-cyan-4 mb-4 pr-4 pull-right">
-                                    <input class="form-control" type="text" placeholder="Search" aria-label="Search" />
+                            <div>
+                                    <div class="row mr-4">
+                                        <div class="col">
+                                            <div class="float-right">
+                                                <div className="active-cyan-4 mt-0">
+                                                    <input class="form-control" type="text" placeholder="Search" aria-label="Search" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="float-right">
+                                            <Button id="add_btn" className="add-button-flip py-0 width-auto " onClick={this.showAddActivityHandler}>
+                                                <h6 className="text-center asy-button-heading">
+                                                    Add New Activity
+                                                </h6>
+                                            </Button>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="table-responsive" >
-                                    <Table class="table" striped bordered hover>
-                                        <thead className="border">
-                                            <tr>
-                                                <th>Activity Name</th>
-                                                <th>Activity Title</th>
-                                                <th>Description</th>
-                                                <th className="columnwidth"></th>
-                                            </tr>
-                                        </thead>
+                                <div className="form-container">
+                                    <form>
+                                        <div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
+                                            <Table className="asy-Table">
+                                                <thead>
+                                                    <tr className="asy-TableHeading">
+                                                        <th className="asy-th">Activity Name</th>
+                                                        <th className="asy-th">Activity Title</th>
+                                                        <th className="asy-th">Description</th>
+                                                        <th className="asy-th"></th>
+                                                    </tr>
+                                                </thead>
 
-                                        <tbody>
-                                            <tr>
-                                                <td>abc</td>
-                                                <td>abc</td>
-                                                <td>abc</td>
-                                                <td className="btn-align">
-                                                    <Button outline="secondary">
-                                                        Edit
+                                                <tbody>
+                                                    <tr className="asy-TableData adjust">
+                                                        <td>abc</td>
+                                                        <td>abc</td>
+                                                        <td>abc</td>
+                                                        <td className="btn-align">
+                                                        <Button className="asy-primary-submit-button m-0">
+                                                        <h6 className="text-center asy-button-heading">
+                                                            Edit
+                                                        </h6>
                                                     </Button>
-                                                    <Button outline="secondary">
-                                                        View
+                                                    <Button className="asy-primary-submit-button m-0">
+                                                        <h6 className="text-center asy-button-heading">
+                                                            View
+                                                        </h6>
                                                     </Button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </Table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </Table>
+                                        </div>
+                                    </form>
                                 </div>
-                            </form>
-                        </div>
-                }
+                
+                                </form>
+                            </div>            }
+                
+
             </div>
 
 
-        );
+                            );
     }
 }
 
-export default Activities;
+                            export default Activities;

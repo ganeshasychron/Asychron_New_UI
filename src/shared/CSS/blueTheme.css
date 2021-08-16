@@ -234,3 +234,35 @@ img.asy-Trash {
 .table th {
 	vertical-align: middle;
 }
+
+
+.editbutton {
+	outline: none;
+	margin: 0px;
+	background: none;
+	border: none;
+}
+.deletebutton {
+	border: none;
+	outline: none;
+	margin-left: 0px;
+	background: none;
+}
+
+.asy-modal-footer{
+    border-top: none;
+    display: inline-block;
+    padding-bottom: 16px;
+    padding-left: 24px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row.modal-Row{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	align-content: center;
+	flex-wrap: nowrap;
+   }
+   

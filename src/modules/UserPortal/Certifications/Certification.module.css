@@ -4,9 +4,9 @@ input[type="file"] {
 }
 
 .Row{
-    margin-left: 0px;
+    margin-left: 0px;  
 }
-
+/*
 .EditButton {
 	outline: none;
 	margin: 0px;
@@ -19,4 +19,4 @@ input[type="file"] {
 	margin-left: 0px;
 	background: none;
 }
-
+*/

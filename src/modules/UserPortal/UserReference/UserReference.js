@@ -336,7 +336,7 @@ export default class UserReference extends Component {
 					</Col>
 				</Row>
 
-				<hr className="asy-hr-line" />
+				{/* <hr className="asy-hr-line" /> */}
 				<div>
 					{this.state.onHideForm ? (
 						this.onHideForm()
@@ -401,13 +401,19 @@ export default class UserReference extends Component {
 													)}
 												</button>
 
-												<Modal show={this.state.showHide}>
+												<Modal show={this.state.showHide} className="text-center">
 													<Modal.Body>
 														<h6>Are you sure ! Delete this Data ?</h6>
 													</Modal.Body>
-													<Modal.Footer>
-														<Button onClick={this.onRemoveData}>Delete</Button>
-														<Button onClick={this.handleModalHide}>Close</Button>
+													<Modal.Footer className="asy-modal-footer">
+														<div className="row modal-Row ">
+															<div className="col modal-Row">
+																<Button onClick={this.onRemoveData} className="asy-secondary-submit-button">Delete</Button>
+															</div>
+															<div className="col modal-Row ">
+																<Button onClick={this.handleModalHide} className="asy-secondary-cancle-button ">Close</Button>
+															</div>
+														</div>
 													</Modal.Footer>
 												</Modal>
 											</td>

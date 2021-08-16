@@ -9,18 +9,18 @@ import { Col } from "reactstrap";
 class UsersManagement extends Component {
   render() {
     return (
-      <div className="jumbotron jumbo-form">
-        <div className="row educations">
-          <Col>
-            <h5 className="page-heading"> User Management </h5>
-          </Col>
-        </div>
-        <hr className="hr-line" />
+      <div className="jumbotron asy-main-jumbotron">
+
+                <div className="row asy-main-row">
+                    <Col>
+                        <h5 className="asy-main-page-heading"> Users Management</h5>
+                    </Col>
+                </div>
 
         <div className="row">
           <div className="col-xl-12 col-lg-12">
-            <div className="card hiring">
-              <div className="card-body hiring">
+            <div className="card asy-polls-page-card">
+              <div className="card-body">
                 <ul className="nav nav-pills bg-nav-pills nav-justified mb-6 hiring">
                   <li className="nav-item">
                     <a
