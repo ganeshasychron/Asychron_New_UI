@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Table } from 'react-bootstrap';
+import { Table, Col } from 'react-bootstrap';
 //import { FaEdit, FaTrash } from 'react-icons/fa';
 import './policies.css';
 import '../../../shared/CSS/FormStyles.css';
@@ -25,44 +25,49 @@ class Policies extends React.Component {
 
     render() {
         return (
-            <div className="jumbotron jumbo-form">
-                <h5 className="page-heading">Policies</h5>
-                <hr className="hr-line" />
-                <div className="table-responsive">
-                    <Table striped bordered hover>
+            <div className="jumbotron asy-main-jumbotron">
 
-                        <thead>
-                            <tr>
-                                <th>
-                                    <div className="ColumnWidth"> Name </div>
-                                </th>
-                                <th> Download </th>
-                            </tr>
-                        </thead>
+                <div className="row asy-main-row">
+                    <Col>
+                        <h5 className="asy-main-page-heading"> Policies</h5>
+                    </Col>
+                </div>
+                <div className="form-container">
+                    <form>
+                        <div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
+                            <Table className="asy-Table">
 
-                        <tbody>
-                            {
-                                this.state.data.map((data) => (
-                                    <tr key={data._id}>
-                                        <td>
-                                            {data.name}
-                                        </td>
-                                        <td>
-                                            <button className="button edit-education">
-                                                <FaDownload className="svgdownload" />
-                                            </button>
-                                        </td>
+                                <thead>
+                                    <tr className="asy-TableHeading">
+                                        <th className="asy-th ColumnWidth">Name</th>
+                                        <th className="asy-th"> Download </th>
                                     </tr>
-                                ))
-                            }
-                        </tbody>
+                                </thead>
 
-                    </Table>
+                                <tbody>
+                                    {
+                                        this.state.data.map((data) => (
+                                            <tr className="asy-TableData" key={data._id}>
+                                                <td>
+                                                    {data.name}
+                                                </td>
+                                                <td>
+                                                    <button id="no" className="asy-primary-submit-button width">
+                                                        <FaDownload id="no" className="svgdownload" />
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        ))
+                                    }
+                                </tbody>
+
+                            </Table>
+                        </div>
+                    </form>
                 </div>
             </div>
         )
     }
-
 }
 export default Policies;
 
