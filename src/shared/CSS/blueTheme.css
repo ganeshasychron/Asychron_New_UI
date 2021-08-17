@@ -34,8 +34,9 @@ body {
 .asy-main-page-heading {
 	color: var(--page-heading-color);
 	font-family: Roboto;
-	margin-top: -15px;
-	margin-bottom: 30px;
+	margin-top: 5px;
+	margin-left: 35px;
+	margin-bottom: 10px;
 	font-size: 30px;
 	font-weight: 500;
 	font-style: normal;
@@ -123,16 +124,16 @@ body {
 }
 
 .add-button-flip {
-	background: var(--blue-color);
+	background: transparent;
 	color: var(--black-light-color);
 	border-color: var(--white-color) !important;
 	border: 0;
-	padding: 10px 16px;
-	margin-top: -20px !important;
+	/* padding: 10px 16px; */
 	border-radius: 8px;
 	font-weight: 600;
 	font-family: Poppins;
 	letter-spacing: 1px;
+	text-align: left;
 }
 
 .asy-card-primary-design {
@@ -143,7 +144,6 @@ body {
 }
 .asy-mainBoxBorder {
 	padding: 10px 20px;
-	margin-top: 20px;
 	opacity: 1;
 	border-radius: 5px;
 	border: solid 1px var(--border-color);
@@ -156,8 +156,9 @@ body {
 	font-weight: 500;
 	padding: 0px;
 	margin: 0px;
+	text-align: center;
 }
-.asy-TableData {
+.asy-TableDataRow {
 	box-shadow: 3px 1px 13px 0 var(--box-shadow) !important;
 	background-color: var(--blue-color);
 	color: var(--black-light-color);
@@ -166,6 +167,10 @@ body {
 	font-weight: 600;
 	border-radius: 8px !important;
 	padding: 1000px 1000px !important;
+	text-align: center;
+}
+.asy-TableData {
+	padding: 0 !important;
 }
 .asy-InputValues {
 	height: 47px;
@@ -235,7 +240,6 @@ img.asy-Trash {
 	vertical-align: middle;
 }
 
-
 .editbutton {
 	outline: none;
 	margin: 0px;
@@ -249,22 +253,22 @@ img.asy-Trash {
 	background: none;
 }
 
-.asy-modal-footer{
-    border-top: none;
-    display: inline-block;
-    padding-bottom: 16px;
-    padding-left: 24px;
-    margin-left: 0;
-    margin-right: 0;
+.asy-modal-footer {
+	border-top: none;
+	display: inline-block;
+	padding-bottom: 16px;
+	padding-left: 24px;
+	margin-left: 0;
+	margin-right: 0;
 }
 
-.row.modal-Row{
+.row.modal-Row {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	align-content: center;
 	flex-wrap: nowrap;
-   }
-   .nav-pills .nav-link {
+}
+.nav-pills .nav-link {
 	background-color: #6c757d18 !important;
 }
