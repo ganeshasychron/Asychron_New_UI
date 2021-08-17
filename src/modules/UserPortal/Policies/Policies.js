@@ -52,12 +52,9 @@ class Policies extends React.Component {
                                                     {data.name}
                                                 </td>
                                                 <td>
-
                                                     <button id="no" className="asy-primary-submit-button width">
-                                                        <div class="section">
-                                                            <div>
-                                                                <FaDownload id="no" className="svgdownload"></FaDownload>
-                                                            </div></div> </button>
+                                                        <FaDownload id="no" className="svgdownload" />
+                                                    </button>
                                                 </td>
                                             </tr>
                                         ))

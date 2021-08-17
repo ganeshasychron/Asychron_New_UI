@@ -33,11 +33,12 @@ cursor: pointer;
 }
 
 .svgdownload {
-color:white;
-width: 25px;
-height: 25px;
+    color:white;
+    width:25px;
+    height:25px;
+    margin:10px
 }
 
 .asy-Tablestriped tbody tr:nth-of-type(even) .svgdownload {
-	color:#1bdcff
+	color:#c5c5c5
 }
