@@ -1,7 +1,8 @@
-import { Table } from 'react-bootstrap';
+import { Table, Col } from 'react-bootstrap';
 import '../../../shared/CSS/FormStyles.css';
 import * as services from '../../../services/services';
 import React, { Component } from 'react';
+import Moment from 'react-moment';
 
 export default class Assets extends Component {
 	constructor(props) {
@@ -26,26 +27,35 @@ export default class Assets extends Component {
 	};
 	render() {
 		return (
-			<div className="jumbotron jumbo-form">
-				<h5 className="page-heading">Assets</h5>
-				<hr className="hr-line" />
+			<div className="jumbotron asy-main-jumbotron ">
+
+				<div className="row asy-main-row">
+					<Col>
+						<h5 className="asy-main-page-heading"> Assests</h5>
+					</Col>
+				</div>
+
+
 				<div className="form-container">
 					<form>
-						<div className="table-responsive">
-							<Table striped bordered hover>
+						<div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
+							<Table className="asy-Table">
 								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Type</th>
-										<th>Date Of Issue</th>
+									<tr className="asy-TableHeading">
+										<th className="asy-th">Name</th>
+										<th className="asy-th">Type</th>
+										<th className="asy-th">Date Of Issue</th>
 									</tr>
 								</thead>
 								<tbody>
 									{this.state.data.map((data) => (
-										<tr key={data}>
+										<tr className="asy-TableData" key={data}>
 											<td>{data.assetName}</td>
 											<td>{data.assetType}</td>
-											<td>{data.issueDate}</td>
+											<td>
+												<Moment format="D MMM YYYY">{data.issueDate}</Moment>
+											</td>
+
 										</tr>
 									))}
 								</tbody>
