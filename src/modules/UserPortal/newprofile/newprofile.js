@@ -14,14 +14,13 @@ import References from '../../../../src/modules/UserPortal/UserReference/UserRef
 import Certification from '../../../../src/modules/UserPortal/Certifications/Certification';
 import Education from '../../../../src/modules/UserPortal/Educations/Education';
 import Family from '../../../../src/modules/UserPortal/Family/Family';
+
 class Profiles extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			series1: [ 69 ],
-			detailsPage: false,
-			profilePage: true,
-
+			
 			userName: 'admin123',
 			empCode: '',
 			email: '',
@@ -49,7 +48,6 @@ class Profiles extends Component {
 	render() {
 		return (
 			<div>
-				{this.state.profilePage ? (
 					<div className="jumbotron asy-main-jumbotron">
 						<div className="row asy-main-row">
 							<Col>
@@ -76,10 +74,8 @@ class Profiles extends Component {
 									</div>
 									<div className="text-center">
 										<button
-											className={styles.profileEditButton}
-											onClick={() => this.setState({ detailsPage: true, profilePage: false })}
-										>
-											Edit
+											className={styles.profileEditButton} > <a className={styles.link} href="#detailspage">
+											Edit </a>
 										</button>
 										<div className="text-left">
 											<div className="mt-4">
@@ -359,7 +355,8 @@ class Profiles extends Component {
 										<div className={styles.scrollPanel}>
 											<div className="tab-content">
 												<div className="tab-pane active" id="Details">
-													<ProfileDetails />
+												<a name="detailspage">
+													<ProfileDetails /></a>
 												</div>
 
 												<div className="tab-pane" id="BankDetails">
@@ -385,8 +382,6 @@ class Profiles extends Component {
 							</div>
 						</Row>
 					</div>
-				) : null}
-				{this.state.detailsPage ? <ProfileDetails /> : null}
 			</div>
 		);
 	}
