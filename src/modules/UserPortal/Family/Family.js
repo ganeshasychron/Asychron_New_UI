@@ -1,21 +1,11 @@
 import React, { Component } from 'react';
 import { Col, Row, Table, Modal, Button } from 'react-bootstrap';
-import { FaEdit, FaTrash } from 'react-icons/fa';
 import * as services from '../../../services/services';
 
 import trash1 from '../../../../src/assets/images/trashw.png';
-import trash2 from '../../../../src/assets/images/trashw@2x.png';
-import trash3 from '../../../../src/assets/images/trashw@3x.png';
 import trash11 from '../../../../src/assets/images/trash.png';
-import trash12 from '../../../../src/assets/images/trash@2x.png';
-import trash13 from '../../../../src/assets/images/trash@3x.png';
 import edit1 from '../../../../src/assets/images/edit (1).png';
-import edit2 from '../../../../src/assets/images/edit (1)@2x.png';
-import edit3 from '../../../../src/assets/images/edit (1)@3x.png';
 import edit11 from '../../../../src/assets/images/edit b(1).png';
-import edit12 from '../../../../src/assets/images/edit b(1)@2x.png';
-import edit13 from '../../../../src/assets/images/edit b(1)@3x.png';
-
 class Family extends Component {
 	constructor(props) {
 		super(props);
@@ -53,7 +43,7 @@ class Family extends Component {
 			formIsValid = false;
 			errors['inputName'] = 'Cannot be empty';
 		} else if (typeof name !== 'undefined') {
-			if (!name.match(/[\D][a-zA-Z\Da-zA-Z][\D]+$/g)) {
+			if (!name.match(/^[a-zA-Z\Da-zA-Z][\D]+$/g)) {
 				formIsValid = false;
 				errors['inputName'] = 'Only letters & also check for any Space';
 			}
@@ -63,7 +53,7 @@ class Family extends Component {
 			formIsValid = false;
 			errors['inputOccupation'] = 'Cannot be empty';
 		} else if (typeof occupation !== 'undefined') {
-			if (!occupation.match(/[\D][a-zA-Z\Da-zA-Z][\D]+$/g)) {
+			if (!occupation.match(/^[a-zA-Z\Da-zA-Z][\D]+$/g)) {
 				formIsValid = false;
 				errors['inputOccupation'] = 'Only characters are allowed';
 			}
@@ -73,7 +63,7 @@ class Family extends Component {
 			formIsValid = false;
 			errors['inputRelationship'] = 'Cannot be empty';
 		} else if (typeof relationship !== 'undefined') {
-			if (!relationship.match(/[\D][a-zA-Z\Da-zA-Z][\D]+$/g)) {
+			if (!relationship.match(/^[a-zA-Z\Da-zA-Z][\D]+$/g)) {
 				formIsValid = false;
 				errors['inputRelationship'] = 'Only characters are allowed';
 			}
@@ -188,7 +178,7 @@ class Family extends Component {
 				>
 					<Row>
 						<div className="form-group col-12 col-md-6">
-							<label for="inputdegree" className="col-form-label">
+							<label for="inputdegree" className="asy-FormLabel">
 								Name
 							</label>
 							<input
@@ -209,8 +199,8 @@ class Family extends Component {
 						</div>
 
 						<div className="form-group col-12 col-md-6">
-							<label for="inputPassword" className="col-form-label">
-								Accupation
+							<label for="inputPassword" className="asy-FormLabel">
+								Occupation
 							</label>
 							<input
 								type="text"
@@ -231,7 +221,7 @@ class Family extends Component {
 					</Row>
 					<Row>
 						<div className="form-group col-12 col-md-6">
-							<label for="inputdegree" className="col-form-label">
+							<label for="inputdegree" className="asy-FormLabel">
 								Relationship
 							</label>
 							<input
@@ -251,7 +241,7 @@ class Family extends Component {
 							<div className="error-msg">{this.state.errors['inputRelationship']}</div>
 						</div>
 						<div className="form-group col-12 col-md-6">
-							<label for="inputPassword" className="col-form-label">
+							<label for="inputPassword" className="asy-FormLabel">
 								Address
 							</label>
 							<input
@@ -273,7 +263,7 @@ class Family extends Component {
 					</Row>
 					<Row>
 						<div className="form-group col-12 col-md-6">
-							<label for="inputdegree" className="col-form-label">
+							<label for="inputdegree" className="asy-FormLabel">
 								Phone
 							</label>
 							<input
@@ -321,11 +311,8 @@ class Family extends Component {
 	};
 	render() {
 		return (
-			<div className="jumbotron asy-main-jumbotron">
+			<div className="asy-main-jumbotron">
 				<Row>
-					<Col>
-						<h5 className="asy-main-page-heading">Family</h5>
-					</Col>
 					<Col className="d-flex flex-row-reverse">
 						{this.state.onHideForm ? (
 							!this.onHideForm()
@@ -372,16 +359,16 @@ class Family extends Component {
 													{index % 2 === 0 ? (
 														<img
 															src={edit1}
-															srcset={(edit2, edit3)}
 															className="asy-Edit"
 															onClick={() => this.setState({ onHideForm: true })}
+															alt="Edit-Icon Family Page"
 														/>
 													) : (
 														<img
 															src={edit11}
-															srcset={(edit12, edit13)}
 															className="asy-Edit"
 															onClick={() => this.setState({ onHideForm: true })}
+															alt="Edit-Icon Family Page"
 														/>
 													)}
 												</button>
@@ -392,14 +379,14 @@ class Family extends Component {
 													{index % 2 === 0 ? (
 														<img
 															src={trash1}
-															srcset={(trash2, trash3)}
 															className="asy-Trash"
+															alt="Delete-Icon Family Page"
 														/>
 													) : (
 														<img
 															src={trash11}
-															srcset={(trash12, trash13)}
 															className="asy-Trash"
+															alt="Delete-Icon Family Page"
 														/>
 													)}
 												</button>

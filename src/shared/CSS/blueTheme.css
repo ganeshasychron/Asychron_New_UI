@@ -29,6 +29,7 @@ body {
 	height: auto;
 	position: relative;
 	background: none;
+	margin-top: 20px;
 }
 .asy-main-page-heading {
 	color: var(--page-heading-color);
@@ -129,7 +130,6 @@ body {
 	padding: 10px 16px;
 	margin-top: -20px !important;
 	border-radius: 8px;
-	margin-bottom: 30px !important;
 	font-weight: 600;
 	font-family: Poppins;
 	letter-spacing: 1px;
@@ -265,4 +265,6 @@ img.asy-Trash {
 	align-content: center;
 	flex-wrap: nowrap;
    }
-   
+   .nav-pills .nav-link {
+	background-color: #6c757d18 !important;
+}

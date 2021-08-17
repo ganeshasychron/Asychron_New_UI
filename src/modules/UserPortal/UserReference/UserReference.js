@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
 import { Row, Table, Col, Modal, Button } from 'react-bootstrap';
 import * as services from '../../../services/services';
-import trash1 from '../../../../src/assets/images/trashw.png';
-import trash2 from '../../../../src/assets/images/trashw@2x.png';
-import trash3 from '../../../../src/assets/images/trashw@3x.png';
-import trash11 from '../../../../src/assets/images/trash.png';
-import trash12 from '../../../../src/assets/images/trash@2x.png';
-import trash13 from '../../../../src/assets/images/trash@3x.png';
+import trash1 from '../../../../src/assets/images/trashw.png'; 
+import trash11 from '../../../../src/assets/images/trash.png'; 
 import edit1 from '../../../../src/assets/images/edit (1).png';
-import edit2 from '../../../../src/assets/images/edit (1)@2x.png';
-import edit3 from '../../../../src/assets/images/edit (1)@3x.png';
 import edit11 from '../../../../src/assets/images/edit b(1).png';
-import edit12 from '../../../../src/assets/images/edit b(1)@2x.png';
-import edit13 from '../../../../src/assets/images/edit b(1)@3x.png';
+
 export default class UserReference extends Component {
 	constructor(props) {
 		super(props);
@@ -50,7 +43,7 @@ export default class UserReference extends Component {
 			formIsValid = false;
 			errors['name'] = 'Cannot be empty';
 		} else if (typeof name !== 'undefined') {
-			if (!name.match(/([a-zA-Z]{3,50})+$/i)) {
+			if (!name.match(/(^[a-zA-Z]{3,50})+$/i)) {
 				formIsValid = false;
 				errors['name'] = 'Only letters & also check for any Space';
 			}
@@ -60,7 +53,7 @@ export default class UserReference extends Component {
 			formIsValid = false;
 			errors['title'] = 'Cannot be empty';
 		} else if (typeof title !== 'undefined') {
-			if (!title.match(/([a-zA-Z]{3,50})+$/i)) {
+			if (!title.match(/(^[a-zA-Z]{3,50})+$/i)) {
 				formIsValid = false;
 				errors['title'] = 'Only letters & also check for any Space';
 			}
@@ -70,7 +63,7 @@ export default class UserReference extends Component {
 			formIsValid = false;
 			errors['company'] = 'Cannot be empty';
 		} else if (typeof company !== 'undefined') {
-			if (!company.match(/([a-zA-Z]{3,50})+$/i)) {
+			if (!company.match(/(^[a-zA-Z]{3,50})+$/i)) {
 				formIsValid = false;
 				errors['company'] = 'Only letters';
 			}
@@ -80,7 +73,7 @@ export default class UserReference extends Component {
 			formIsValid = false;
 			errors['email'] = 'Cannot be empty';
 		} else if (typeof email !== 'undefined') {
-			if (!email.match(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
+			if (!email.match(/^[a-z0-9._+-]+@[a-z0-9.-]+\.[a-z]{0,8}$/)) {
 				formIsValid = false;
 				errors['email'] = 'Please Enter A Valid Email Address';
 			}
@@ -317,11 +310,8 @@ export default class UserReference extends Component {
 	};
 	render() {
 		return (
-			<div className="jumbotron asy-main-jumbotron">
+			<div className="asy-main-jumbotron">
 				<Row>
-					<Col>
-						<h5 className="asy-main-page-heading">References</h5>
-					</Col>
 					<Col className="d-flex flex-row-reverse">
 						{this.state.onHideForm ? (
 							!this.onHideForm()
@@ -369,16 +359,16 @@ export default class UserReference extends Component {
 													{index % 2 === 0 ? (
 														<img
 															src={edit1}
-															srcset={(edit2, edit3)}
 															className="asy-Edit"
 															onClick={() => this.setState({ onHideForm: true })}
+															alt="Edit-Icon Reference Page"
 														/>
 													) : (
 														<img
 															src={edit11}
-															srcset={(edit12, edit13)}
 															className="asy-Edit"
 															onClick={() => this.setState({ onHideForm: true })}
+															alt="Edit-Icon Reference Page"
 														/>
 													)}
 												</button>
@@ -389,14 +379,14 @@ export default class UserReference extends Component {
 													{index % 2 === 0 ? (
 														<img
 															src={trash1}
-															srcset={(trash2, trash3)}
 															className="asy-Trash"
+															alt="Delete-Icon Reference Page"
 														/>
-													) : (
+												 	) : (
 														<img
 															src={trash11}
-															srcset={(trash12, trash13)}
 															className="asy-Trash"
+															alt="Delete-Icon Reference Page"
 														/>
 													)}
 												</button>

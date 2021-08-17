@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Profile from '../modules/UserPortal/UserProfile/Profile';
+import Profile from '../modules/UserPortal/newprofile/newprofile';
 import Education from '../modules/UserPortal/Educations/Education';
 import Dashboard from '../modules/UserPortal/Dashboard/Dashboard';
 import UserReference from '../modules/UserPortal/UserReference/UserReference';

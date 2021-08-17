@@ -5,18 +5,9 @@ import * as services from '../../../services/services';
 import Moment from 'react-moment';
 
 import trash1 from '../../../../src/assets/images/trashw.png';
-import trash2 from '../../../../src/assets/images/trashw@2x.png';
-import trash3 from '../../../../src/assets/images/trashw@3x.png';
 import trash11 from '../../../../src/assets/images/trash.png';
-import trash12 from '../../../../src/assets/images/trash@2x.png';
-import trash13 from '../../../../src/assets/images/trash@3x.png';
 import edit1 from '../../../../src/assets/images/edit (1).png';
-import edit2 from '../../../../src/assets/images/edit (1)@2x.png';
-import edit3 from '../../../../src/assets/images/edit (1)@3x.png';
 import edit11 from '../../../../src/assets/images/edit b(1).png';
-import edit12 from '../../../../src/assets/images/edit b(1)@2x.png';
-import edit13 from '../../../../src/assets/images/edit b(1)@3x.png';
-
 class Certification extends React.Component {
 	constructor(props) {
 		super(props);
@@ -56,7 +47,7 @@ class Certification extends React.Component {
 			formIsValid = false;
 			errors['name'] = 'Cannot be empty';
 		} else if (typeof name !== 'undefined') {
-			if (!name.match(/[\D][a-zA-Z\Da-zA-Z][\D]+$/g)) {
+			if (!name.match(/[A-Za-z0-9|.|\-|\s|,]/)) {
 				formIsValid = false;
 				errors['name'] = 'Only letters & also check for any Space';
 			}
@@ -76,7 +67,7 @@ class Certification extends React.Component {
 			formIsValid = false;
 			errors['type'] = 'Cannot be empty';
 		} else if (typeof accountNum !== 'undefined') {
-			if (!typeCertificate.match(/[\D][a-zA-Z\Da-zA-Z][\D]+$/g)) {
+			if (!typeCertificate.match(/^[a-zA-Z\s]*$/)) {
 				formIsValid = false;
 				errors['type'] = 'Only letters';
 			}
@@ -177,15 +168,10 @@ class Certification extends React.Component {
 	render() {
 		return (
 			<div>
-				<div className="jumbotron asy-main-jumbotron">
+				<div className="asy-main-jumbotron">
 					{this.state.ListOpen ? (
 						<div>
 							<Row className={styles.Row} >
-								<div className="row asy-main-row">
-									<Col>
-										<h5 className="asy-main-page-heading"> Certification </h5>
-									</Col>
-								</div>
 								<Col>
 									<div align="right" className="row-col-4 " >
 										<Button
@@ -227,27 +213,27 @@ class Certification extends React.Component {
 														{index % 2 === 0 ? (
 															<img
 																src={edit1}
-																srcset={(edit2, edit3)}
-																className="asy-Edit" onClick={this.handleUpdateData.bind(this, data._id)} />
+																className="asy-Edit" onClick={this.handleUpdateData.bind(this, data._id)}
+																alt="Edit-Icon Certification Page" />
 														) : (
 															<img
 																src={edit11}
-																srcset={(edit12, edit13)}
-																className="asy-Edit" onClick={this.handleUpdateData.bind(this, data._id)} />
+																className="asy-Edit" onClick={this.handleUpdateData.bind(this, data._id)} 
+																alt="Edit-Icon Certification Page" />
 														)}
 													</button>
 													<button className="deletebutton" onClick={this.handleModalShow.bind(this, data._id)} >
 														{index % 2 === 0 ? (
 															<img
 																src={trash1}
-																srcset={(trash2, trash3)}
 																className="asy-Trash"
+																alt="Delete-Icon Certification Page"
 															/>
 														) : (
 															<img
 																src={trash11}
-																srcset={(trash12, trash13)}
 																className="asy-Trash"
+																alt="Delete-Icon Certification Page"
 															/>
 														)}
 													</button>
@@ -287,12 +273,6 @@ class Certification extends React.Component {
 					) : null}
 					{this.state.FormOpen ? (
 						<div>
-							<div className="row asy-main-row">
-								<Col>
-									<h5 className="asy-main-page-heading"> Certification </h5>
-								</Col>
-							</div>
-
 							<div className="form-container asy-mainBoxBorder">
 								<form
 									onSubmit={() =>
@@ -302,7 +282,7 @@ class Certification extends React.Component {
 								>
 									<Row>
 										<div className="form-group col-12 col-md-6">
-											<label for="inputdegree" className="col-form-label">
+											<label for="inputdegree" className="asy-FormLabel">
 												Name
 											</label>
 											<input
@@ -320,7 +300,7 @@ class Certification extends React.Component {
 											<div className="error-msg">{this.state.errors['name']}</div>
 										</div>
 										<div className="form-group col-12 col-md-6">
-											<label for="inputPassword" className="col-form-label">
+											<label for="inputPassword" className="asy-FormLabel">
 												Type of Certification
 											</label>
 											<input
@@ -340,7 +320,7 @@ class Certification extends React.Component {
 									</Row>
 									<Row>
 										<div className="form-group col-12 col-md-6">
-											<label for="inputdegree" className="col-form-label">
+											<label for="inputdegree" className="asy-FormLabel">
 												Description
 											</label>
 											<textarea
@@ -358,7 +338,7 @@ class Certification extends React.Component {
 											<div className="error-msg">{this.state.errors['description']}</div>
 										</div>
 										<div className="form-group col-12 col-md-6">
-											<label for="inputPassword" className="col-form-label">
+											<label for="inputPassword" className="asy-FormLabel">
 												Certificate
 											</label>
 											<input
