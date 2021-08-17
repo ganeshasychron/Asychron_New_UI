@@ -94,4 +94,6 @@ nav-pills .nav-link.active,
 	display: block;
 	background-color: #fff;
 	color: aqua;
+	padding: 0;
+	margin:0;
 }

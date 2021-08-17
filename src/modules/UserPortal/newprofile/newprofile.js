@@ -206,38 +206,38 @@ class Profiles extends Component {
 											<ListGroup.Item>
 												{/* <Link to="./bank-details">Bank Details</Link> */}
 												{/* <a href="#BankDetails"> Bank Details </a> */}
-												<div className={`${styles.pendingApprovals}`} data-bs-toggle="tab" aria-expanded="true" href="#BankDetails">
+												<Nav.Link className={styles.pendingApprovals} data-bs-toggle="tab" aria-expanded="true" href="#BankDetails">
 													Bank Details
-												</div>
+												</Nav.Link>
 											</ListGroup.Item>
 
 											<ListGroup.Item>
 												{/* <Link to="./certifications">Certficate Details</Link> */}
-												<div className={styles.pendingApprovals} data-bs-toggle="tab" aria-expanded="true" href="#Certification">
+												<Nav.Link className={styles.pendingApprovals} data-bs-toggle="tab" aria-expanded="true" href="#Certification">
 													Certification
-												</div>
+												</Nav.Link>
 											</ListGroup.Item>
 
 											<ListGroup.Item>
 												{/* <Link to="./certifications">Certficate Details</Link> */}
-												<div className={styles.pendingApprovals} data-bs-toggle="tab" aria-expanded="true" href="#References">
+												<Nav.Link className={styles.pendingApprovals} data-bs-toggle="tab" aria-expanded="true" href="#References">
 													References
-												</div>
+												</Nav.Link>
 											</ListGroup.Item>
 
 											<ListGroup.Item>
 												{/* <Link to="./certifications">Certficate Details</Link> */}
-												<div className={`${styles.pendingApprovals} Nav-Link`} data-bs-toggle="tab" aria-expanded="true" href="#Education">
+												<Nav.Link className={styles.pendingApprovals	} data-bs-toggle="tab" aria-expanded="true" href="#Education">
 													Education
-												</div>
+												</Nav.Link>
 											</ListGroup.Item>
 
 											<ListGroup.Item>
 												{/* <Link to="./certifications">Certficate Details</Link> */}
 												<Nav.Item>
-													<div className={`${styles.pendingApprovals} Nav-Link`} data-bs-toggle="tab" aria-expanded="true" href="#Family">
+													<Nav.Link className={styles.pendingApprovals} data-bs-toggle="tab" aria-expanded="true" href="#Family">
 														Family
-													</div>
+													</Nav.Link>
 												</Nav.Item>
 											</ListGroup.Item>
 										</ListGroup>
@@ -259,7 +259,7 @@ class Profiles extends Component {
 											<Nav.Link
 												data-bs-toggle="tab"
 												aria-expanded="true"
-												className="nav-link rounded-0"
+												className="nav.link rounded-0"
 												href="#Details"
 											>
 												Profile Details
@@ -269,7 +269,7 @@ class Profiles extends Component {
 											<Nav.Link
 												data-bs-toggle="tab"
 												aria-expanded="true"
-												className="nav-link rounded-0"
+												className="nav.link rounded-0"
 												href="#BankDetails"
 											>
 												Bank Details
@@ -279,7 +279,7 @@ class Profiles extends Component {
 											<Nav.Link
 												data-bs-toggle="tab"
 												aria-expanded="true"
-												className="nav-link rounded-0"
+												className="nav.link rounded-0"
 												href="#References"
 											>
 												References
@@ -289,7 +289,7 @@ class Profiles extends Component {
 											<Nav.Link
 												data-bs-toggle="tab"
 												aria-expanded="true"
-												className="nav-link rounded-0"
+												className="nav.link rounded-0"
 												href="#Certification"
 											>
 												Certification
@@ -299,7 +299,7 @@ class Profiles extends Component {
 											<Nav.Link
 												data-bs-toggle="tab"
 												aria-expanded="true"
-												className="nav-link rounded-0"
+												className="nav.link rounded-0"
 												href="#Education"
 											>
 												Education
@@ -309,7 +309,7 @@ class Profiles extends Component {
 											<Nav.Link
 												data-bs-toggle="tab"
 												aria-expanded="true"
-												className="nav-link rounded-0"
+												className="nav.link rounded-0"
 												href="#Family"
 											>
 												Family

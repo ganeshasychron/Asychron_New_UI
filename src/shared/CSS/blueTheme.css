@@ -34,8 +34,9 @@ body {
 .asy-main-page-heading {
 	color: var(--page-heading-color);
 	font-family: Roboto;
-	margin-top: -15px;
-	margin-bottom: 30px;
+	margin-top: 5px;
+	margin-left: 35px;
+	margin-bottom: 10px;
 	font-size: 30px;
 	font-weight: 500;
 	font-style: normal;
