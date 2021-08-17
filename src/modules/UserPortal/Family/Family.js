@@ -327,7 +327,26 @@ class Family extends Component {
 										<th className="asy-th">Accupation</th>
 										<th className="asy-th">Address</th>
 										<th className="asy-th">Action</th>
-										<th className="asy-th">ADD</th>
+										<th className="asy-th">
+												<Row>
+													<Col	>
+														{this.state.onHideForm ? (
+															!this.onHideForm()
+														) : (
+															<button
+																className="add-button-flip"
+																onClick={() =>
+																	this.setState({
+																		onHideForm: true,
+																		dyanamicBtnName: 'Submit'
+																	})}
+															>
+																ADD
+															</button>
+														)}
+													</Col>
+												</Row>
+											</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -404,26 +423,7 @@ class Family extends Component {
 													</Modal.Footer>
 												</Modal>
 											</td>
-											<td className="asy-TableData">
-												<Row>
-													<Col	>
-														{this.state.onHideForm ? (
-															!this.onHideForm()
-														) : (
-															<button
-																className="add-button-flip"
-																onClick={() =>
-																	this.setState({
-																		onHideForm: true,
-																		dyanamicBtnName: 'Submit'
-																	})}
-															>
-																ADD
-															</button>
-														)}
-													</Col>
-												</Row>
-											</td>
+											<td></td>
 										</tr>
 									))}
 								</tbody>

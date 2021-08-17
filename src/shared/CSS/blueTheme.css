@@ -124,11 +124,12 @@ body {
 }
 
 .add-button-flip {
-	background: transparent;
+	background: var(--blue-color);
 	color: var(--black-light-color);
 	border-color: var(--white-color) !important;
 	border: 0;
-	/* padding: 10px 16px; */
+	border-radius: 2 !important;
+	padding: 6px;
 	border-radius: 8px;
 	font-weight: 600;
 	font-family: Poppins;

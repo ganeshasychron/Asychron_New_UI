@@ -326,7 +326,26 @@ export default class UserReference extends Component {
 										<th className="asy-th">Email</th>
 										<th className="asy-th">Mobile</th>
 										<th className="asy-th">Edit/Delete</th>
-										<th className="asy-th">ADD</th>
+										<th className="asy-th">
+												<Row>
+													<Col>
+														{this.state.onHideForm ? (
+															!this.onHideForm()
+														) : (
+															<button
+																className="add-button-flip"
+																onClick={() =>
+																	this.setState({
+																		onHideForm: true,
+																		dyanamicBtnName: 'Submit'
+																	})}
+															>
+																ADD
+															</button>
+														)}
+													</Col>
+												</Row>
+											</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -403,26 +422,7 @@ export default class UserReference extends Component {
 													</Modal.Footer>
 												</Modal>
 											</td>
-											<td className="asy-TableData">
-												<Row>
-													<Col>
-														{this.state.onHideForm ? (
-															!this.onHideForm()
-														) : (
-															<button
-																className="add-button-flip"
-																onClick={() =>
-																	this.setState({
-																		onHideForm: true,
-																		dyanamicBtnName: 'Submit'
-																	})}
-															>
-																ADD
-															</button>
-														)}
-													</Col>
-												</Row>
-											</td>
+											<td></td>
 										</tr>
 									))}
 								</tbody>
