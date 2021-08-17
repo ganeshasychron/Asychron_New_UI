@@ -179,7 +179,25 @@ class Certification extends React.Component {
 											<th className="asy-th">Certificate Type</th>
 											<th className="asy-th">Uploaded On</th>
 											<th className="asy-th">Action</th>
-											<th className="asy-th">ADD</th>
+											<th className="asy-th">
+													<Row>
+														<Col>
+															<div className="row-col-4 ">
+																<Button
+																	className="add-button-flip"
+																	onClick={() =>
+																		this.setState({
+																			ListOpen: false,
+																			FormOpen: true,
+																			dyanamicBtnName: 'Submit'
+																		})}
+																>
+																	ADD
+																</Button>
+															</div>
+														</Col>
+													</Row>
+												</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -258,25 +276,7 @@ class Certification extends React.Component {
 														</Modal.Footer>
 													</Modal>
 												</td>
-												<td className="asy-TableData">
-													<Row>
-														<Col>
-															<div className="row-col-4 ">
-																<Button
-																	className="add-button-flip"
-																	onClick={() =>
-																		this.setState({
-																			ListOpen: false,
-																			FormOpen: true,
-																			dyanamicBtnName: 'Submit'
-																		})}
-																>
-																	ADD
-																</Button>
-															</div>
-														</Col>
-													</Row>
-												</td>
+												<td></td>
 											</tr>
 										))}
 									</tbody>

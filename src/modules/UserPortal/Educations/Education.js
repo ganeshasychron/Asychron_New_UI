@@ -400,7 +400,24 @@ class education extends Component {
 									<th className="asy-th"> Year of Passing </th>
 									<th className="asy-th"> Percentage </th>
 									<th className="asy-th"> Action </th>
-									<th className="asy-th">ADD</th>
+									<th className="asy-th">
+											<Col>
+												{this.state.hideform ? (
+													!this.hideform()
+												) : (
+													<button
+														className="add-button-flip"
+														onClick={() =>
+															this.setState({
+																hideform: true,
+																dyanamicBtnName: 'Submit'
+															})}
+													>
+														ADD
+													</button>
+												)}
+											</Col>
+										</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -486,24 +503,7 @@ class education extends Component {
 												</Modal.Footer>
 											</Modal>
 										</td>
-										<td className="asy-TableData">
-											<Col>
-												{this.state.hideform ? (
-													!this.hideform()
-												) : (
-													<button
-														className="add-button-flip"
-														onClick={() =>
-															this.setState({
-																hideform: true,
-																dyanamicBtnName: 'Submit'
-															})}
-													>
-														ADD
-													</button>
-												)}
-											</Col>
-										</td>
+										<td></td>
 									</tr>
 								))}
 							</tbody>
