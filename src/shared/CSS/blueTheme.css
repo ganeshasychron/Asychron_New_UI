@@ -35,7 +35,7 @@ body {
 	color: var(--page-heading-color);
 	font-family: Roboto;
 	margin-top: 5px;
-	margin-left: 35px;
+	/*margin-left: 35px;*/
 	margin-bottom: 10px;
 	font-size: 30px;
 	font-weight: 500;
@@ -183,7 +183,7 @@ body {
 
 .asy-FormLabel {
 	height: 20px;
-	margin: 29px 90px 6px 5px;
+	/*margin: 29px 90px 6px 5px;*/
 	font-family: Roboto;
 	font-size: 15px;
 	font-weight: normal;
