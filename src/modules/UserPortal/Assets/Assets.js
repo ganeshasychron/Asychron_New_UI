@@ -49,7 +49,7 @@ export default class Assets extends Component {
 								</thead>
 								<tbody>
 									{this.state.data.map((data) => (
-										<tr className="asy-TableData" key={data}>
+										<tr className="asy-TableDataRow" key={data}>
 											<td>{data.assetName}</td>
 											<td>{data.assetType}</td>
 											<td>

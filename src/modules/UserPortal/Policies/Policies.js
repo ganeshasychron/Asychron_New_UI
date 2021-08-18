@@ -34,12 +34,11 @@ class Policies extends React.Component {
                 </div>
                 <div className="form-container">
                     <form>
-                        <div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
-                            <Table className="asy-Table">
-
-                                <thead>
-                                    <tr className="asy-TableHeading">
-                                        <th className="asy-th ColumnWidth">Name</th>
+                    <div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
+                    <Table className="asy-Table">
+                        <thead>
+                            <tr className="asy-TableHeading">
+                                        <th className="asy-th text-left ml-2">Name</th>
                                         <th className="asy-th"> Download </th>
                                     </tr>
                                 </thead>
@@ -47,12 +46,12 @@ class Policies extends React.Component {
                                 <tbody>
                                     {
                                         this.state.data.map((data) => (
-                                            <tr className="asy-TableData" key={data._id}>
-                                                <td>
+                                            <tr className="asy-TableDataRow " key={data._id}>
+                                                <td className="asy-TableData text-left ml-2">
                                                     {data.name}
                                                 </td>
-                                                <td>
-                                                    <button id="no" className="asy-primary-submit-button width">
+                                                <td className="asy-TableData">
+                                                    <button id="back_color" className="asy-primary-submit-button width">
                                                         <FaDownload id="no" className="svgdownload" />
                                                     </button>
                                                 </td>

@@ -6,61 +6,69 @@ import Button from "./Chart Select/SelectChart";
 //import  {useState} from "react";
 
 const Survey = () => {
-    const [status, setStatus] = React.useState(true)
-    const [status1, setStatus1] = React.useState(false)
-    const [status2, setStatus2] = React.useState(false)
+  const [status, setStatus] = React.useState(true)
+  const [status1, setStatus1] = React.useState(false)
+  const [status2, setStatus2] = React.useState(false)
 
-    return (
-      <div className="App">
-        <div className="jumbotron jumbo-form">
-          <h5 className="page-heading">Survey</h5>
-          <hr className="hr-line" />
-          <div className="form-container">
-            {status ? (
-              <div className="table-responsive">
-                <Table striped bordered hover>
+  return (
+    <div className="App">
+      <div className="jumbotron asy-main-jumbotron ">
+
+        <div className="row asy-main-row">
+          <Col>
+            <h5 className="asy-main-page-heading"> Survey</h5>
+          </Col>
+        </div>
+        <div className="form-container">
+          {status ? (
+            <form>
+              <div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
+                <Table className="asy-Table">
                   <thead>
-                    <tr>
-                      <th>Survey Title</th>
-                      <th>Initiated By</th>
-                      <th>Priority</th>
-                      <th>Status</th>
-                      <th></th>
+                    <tr className="asy-TableHeading">
+
+
+                      <th className="asy-th">Survey Title</th>
+                      <th className="asy-th">Initiated By</th>
+                      <th className="asy-th">Priority</th>
+                      <th className="asy-th">Status</th>
+                      <th className="asy-th columnwidth"></th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <tr className="asy-TableDataRow">
                       <td>Covid 19 Internal</td>
                       <td>abcd</td>
                       <td>High</td>
                       <td>Pending</td>
-                      <td>
+                      <td className="btn-align">
                         {" "}
-                        <div align="right" className="ColumnButtons">
-                          <input
-                            type="submit"
-                            value="View Result"
-                            className="submit-btn"
-                            onClick={() => setStatus(false) & setStatus2(true)}
-                          />
-                          <input
-                            type="submit"
-                            value="Complete"
-                            className="submit-btn"
-                            onClick={() => setStatus(false) & setStatus1(true)}
-                          />
-                        </div>
+
+                        <button className="asy-primary-submit-button" onClick={() => setStatus(false) & setStatus2(true)}>
+                          <h6 className="text-center asy-button-heading">
+                            View Result
+                          </h6></button>
+
+
+                        <button className="asy-primary-submit-button width" onClick={() => setStatus(false) & setStatus1(true)}>
+                          <h6 className="text-center asy-button-heading">
+                            complete
+                          </h6></button>
+
+
                       </td>
                     </tr>
                   </tbody>
                 </Table>
               </div>
-            ) : null}
+            </form>
+          ) : null}
 
-            {status1 ? (
-              <div>
-                <div className="form-container">
-                  <form>
+          {status1 ? (
+            <div>
+              <div className="form-container">
+                <form>
+                  <div className="asy-card-primary-design">
                     <Row>
                       <div id="LabelArea" className="form-group ">
                         <label
@@ -165,106 +173,116 @@ const Survey = () => {
                           </label>
                         </div>{" "}
                       </div>
-                    </Row>
-                  </form>
+                    </Row></div>
+
+                </form>
+              </div>
+
+              <div align="right">
+                <button className="asy-primary-submit-button width my-2" type="submit">
+                  <h6 className="text-center asy-button-heading">
+                    Submit Survey
+                  </h6></button>
+
+                <button className="asy-primary-submit-button width my-2" type="submit">
+                  <h6 className="text-center asy-button-heading">
+                    Save
+                  </h6></button><button className="asy-primary-submit-button width my-2" type="submit">
+                  <h6 className="text-center asy-button-heading">
+                    Reset
+                  </h6></button>
+
+
+              </div>
+
+              <div className="asy-card-primary-design">
+                <div className="row asy-main-row">
+                  <Col>
+                    <h4 className="asy-main-page-heading mt-4 ml-3"> Section Name</h4>
+                  </Col>
                 </div>
 
-                <hr className="hr-line-2" />
-
-                <div align="right">
-                  <input
-                    type="submit"
-                    value="submit Survey"
-                    className="submit-button"
-                  />
-                  <input type="submit" value="Save" className="submit-button" />
-                  <input
-                    type="submit"
-                    value="Reset"
-                    className="submit-button"
-                  />
-                </div>
-
-                <div className="card">
-                  <h5 className="page-heading1">Section Name</h5>
-                  <hr className="hr-line-2" />
-
-                  <div className="card-body">
-                    <div className="form-container">
-                      <form>
-                        <Row>
-                          <div className="form-group col-12 col-md-6">
-                            <label for="inputdegree" className="col-form-label">
-                              1 Question Name/Title
-                            </label>
-                            <input
-                              type="text"
-                              className="form-control form-input"
-                              id="inputdegree"
-                              placeholder="1 Question Name/Title"
-                              required
-                            />
-                          </div>
-                        </Row>
-                        <Row>
-                          <div className="form-group col-12 col-md-6">
-                            <label for="inputdegree" className="col-form-label">
-                              2 Question Name/Title
-                            </label>
-                            <input
-                              type="text"
-                              className="form-control form-input"
-                              id="inputdegree"
-                              placeholder="2 Question Name/Title"
-                              required
-                            />
-                          </div>
-                        </Row>
-                        <Row>
-                          <div className="form-group col-12 col-md-6">
-                            <label for="inputdegree" className="col-form-label">
-                              3 Question Name/Title
-                            </label>
-                            <input
-                              type="text"
-                              className="form-control form-input"
-                              id="inputdegree"
-                              placeholder="3 Question Name/Title"
-                              required
-                            />
-                          </div>
-                        </Row>
-                      </form>
-                    </div>
+                <div className="card-body">
+                  <div className="form-container">
+                    <form>
+                      <Row>
+                        <div className="form-group col-12 col-md-6">
+                          <label for="inputdegree" className="asy-FormLabel">
+                            1 Question Name/Title
+                          </label>
+                          <input
+                            type="text"
+                            className="form-control asy-InputValues"
+                            id="inputdegree"
+                            placeholder="1 Question Name/Title"
+                            required
+                          />
+                        </div>
+                      </Row>
+                      <Row>
+                        <div className="form-group col-12 col-md-6">
+                          <label for="inputdegree" className="asy-FormLabel">
+                            2 Question Name/Title
+                          </label>
+                          <input
+                            type="text"
+                            className="form-control asy-InputValues"
+                            id="inputdegree"
+                            placeholder="2 Question Name/Title"
+                            required
+                          />
+                        </div>
+                      </Row>
+                      <Row>
+                        <div className="form-group col-12 col-md-6">
+                          <label for="inputdegree" className="asy-FormLabel">
+                            3 Question Name/Title
+                          </label>
+                          <input
+                            type="text"
+                            className="form-control asy-InputValues"
+                            id="inputdegree"
+                            placeholder="3 Question Name/Title"
+                            required
+                          />
+                        </div>
+                      </Row>
+                    </form>
                   </div>
                 </div>
               </div>
-            ) : null}
+            </div>
+          ) : null}
 
-            {status2 ? (
-              <div className="text-center center">
-                <div className="CardArea">
-                  <div className="card survey">
-                    <h5 className="page-heading1">Section Wise Analysis</h5>
-                    <hr className="hr-line-2" />
-                    <div className="card-body survey">
-                      <Button />
-                    </div>
-                  </div>
+          {status2 ? (
 
-                  <div className="card survey">
-                    <h5 className="page-heading1">Complete Analysis</h5>
-                    <hr className="hr-line-2" />
-                    <div className="card-body survey">
-                      <Button />
+                <div className="text-center">
+                    <div className='CardArea' >
+                        <div className='card survey'>
+                            <p className="asy-card-page-heading  text-center mt-3 font-weight-bold">Section Wise Analysis</p>
+                            <hr className="hr-line-2" />
+                            <div className="card-body survey">
+                                <Button />
+                            </div>
+                        </div>
+
+                        <div className='card survey'>
+                            <p className="asy-card-page-heading text-center mt-3 font-weight-bold">Complete Analysis</p>
+                            <hr className="hr-line-2" />
+                            <div className="card-body survey">
+                                <Button />
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-            ) : null}
-          </div>
-        </div>
+            
+              
+          ) : null}
+            </div>
+        
       </div>
-    );
+
+      </div>
+      );
 }
-export default Survey;
+      export default Survey;
