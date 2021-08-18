@@ -236,7 +236,7 @@ class education extends Component {
     ) : (
       <div>
         {/* <div className="jumbotron asy-main-jumbotron"> */}
-        <div className="form-container asy-mainBoxBorder">
+        <div className=" asy-mainBoxBorder">
           <form
             onSubmit={() =>
               this.setState({
@@ -408,11 +408,12 @@ class education extends Component {
   render() {
     return (
       <div className="asy-main-jumbotron">
-        <div className="row asy-main-row">
-          <Col className="d-flex flex-row-reverse">
+        <div className="row asy-main-row ">
+          <Col className="d-flex flex-row-reverse  ">
             {this.state.hideform ? (
               !this.hideform()
             ) : (
+              <div className="mb-1 mt-2">
               <button
                 className="add-button-flip"
                 onClick={() =>
@@ -424,6 +425,7 @@ class education extends Component {
               >
                 ADD
               </button>
+              </div>
             )}
           </Col>
         </div>

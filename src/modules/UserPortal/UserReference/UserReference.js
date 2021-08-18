@@ -154,7 +154,7 @@ export default class UserReference extends Component {
 		return !this.state.onHideForm ? (
 			this.onHideForm()
 		) : (
-			<div className="form-container asy-mainBoxBorder">
+			<div className=" asy-mainBoxBorder">
 				<form
 					onSubmit={() => this.setState({ onHideForm: false })}
 					ref={(form) => (this.form = form)}
@@ -312,16 +312,18 @@ export default class UserReference extends Component {
 		return (
 			<div className="asy-main-jumbotron">
 				<Row>
-					<Col className="d-flex flex-row-reverse">
+					<Col className="d-flex flex-row-reverse ">
 						{this.state.onHideForm ? (
 							!this.onHideForm()
 						) : (
+							<div className="mb-1 mt-2">
 							<button
 								className="add-button-flip"
 								onClick={() => this.setState({ onHideForm: true, dyanamicBtnName: 'Submit' })}
 							>
 								ADD
 							</button>
+							</div>
 						)}
 					</Col>
 				</Row>

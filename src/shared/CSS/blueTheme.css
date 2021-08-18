@@ -29,7 +29,7 @@ body {
 	height: auto;
 	position: relative;
 	background: none;
-	margin-top: 20px;
+	/*margin-top: 20px;*/
 }
 .asy-main-page-heading {
 	color: var(--page-heading-color);
@@ -143,7 +143,7 @@ body {
 }
 .asy-mainBoxBorder {
 	padding: 10px 20px;
-	margin-top: 20px;
+	/*margin-top: 20px; */
 	opacity: 1;
 	border-radius: 5px;
 	border: solid 1px var(--border-color);

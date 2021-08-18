@@ -265,12 +265,14 @@ class UserBankDetails extends Component {
 						{this.state.onHideForm ? (
 							!this.onHideForm()
 						) : (
+							<div className="mb-1 mt-2">
 							<button
 								className="add-button-flip"
 								onClick={() => this.setState({ onHideForm: true, dyanamicBtnName: 'Submit' })}
 							>
 								ADD
 							</button>
+							</div>
 						)}
 					</Col>
 				</Row>

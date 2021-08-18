@@ -173,7 +173,8 @@ class Certification extends React.Component {
 						<div>
 							<Row className={styles.Row} >
 								<Col>
-									<div align="right" className="row-col-4 " >
+									<div align="right" >
+									<div className="mb-1 mt-3">
 										<Button
 											className="add-button-flip"
 											onClick={() =>
@@ -185,6 +186,7 @@ class Certification extends React.Component {
 										>
 											ADD
 										</Button>
+										</div>
 									</div>
 								</Col>
 							</Row>
@@ -273,7 +275,7 @@ class Certification extends React.Component {
 					) : null}
 					{this.state.FormOpen ? (
 						<div>
-							<div className="form-container asy-mainBoxBorder">
+							<div className="asy-mainBoxBorder">
 								<form
 									onSubmit={() =>
 										this.setState({ ListOpen: true }) & this.setState({ FormOpen: false })}
