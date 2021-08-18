@@ -476,337 +476,330 @@ class ProfileDetails extends React.Component {
 	render() {
 		return (
 			<div>
-					<div>
-						<div className="asy-mainBoxBorder">
-							<form ref={(form) => (this.form = form)} onReset={this.handleReset}>
-								<Row>
-									<div className="form-group col-12 col-md-6">
-										<label for="inputdegree" className="col-form-label">
-											First Name
-										</label>
-										<input
-											type="text"
-											className="form-control asy-InputValues"
-											id="FirstName"
-											placeholder=" Fname Name"
-											onChange={this.handleFirstNameChanged}
-											value={this.state.firstName}
-											required
-										/>
-										<div style={{ color: 'red' }}>{this.state.errors['firstName']}</div>
-									</div>
+				<div>
+					<div className="asy-mainBoxBorder mt-0">
+						<form ref={(form) => (this.form = form)} onReset={this.handleReset}>
+							<Row>
+								<div className="form-group col-12 col-md-6">
+									<label for="inputdegree" className="col-form-label">
+										First Name
+									</label>
+									<input
+										type="text"
+										className="form-control asy-InputValues"
+										id="FirstName"
+										placeholder=" Fname Name"
+										onChange={this.handleFirstNameChanged}
+										value={this.state.firstName}
+										required
+									/>
+									<div style={{ color: 'red' }}>{this.state.errors['firstName']}</div>
+								</div>
 
-									<div className="form-group col-12 col-md-6">
-										<label for="inputPassword" className="col-form-label">
-											Marital Status
-										</label>
-										<input
-											type="text"
-											className="form-control asy-InputValues"
-											id="MaritalStatus"
-											placeholder="Marital Status"
-											onChange={this.handleMaritialStatusChanged}
-											value={this.state.maritialStatus}
-											required
-										/>
-										<div style={{ color: 'red' }}>{this.state.errors['maritialStatus']}</div>
-									</div>
-								</Row>
-								<Row>
-									<div className="form-group col-12 col-md-6">
-										<label for="inputdegree" className="col-form-label">
-											Last Name
-										</label>
-										<input
-											type="text"
-											className="form-control asy-InputValues"
-											id="LastName"
-											placeholder="Last Name"
-											onChange={this.handleLastNameChanged}
-											value={this.state.lastName}
-											required
-										/>
-										<div style={{ color: 'red' }}>{this.state.errors['lastName']}</div>
-									</div>
+								<div className="form-group col-12 col-md-6">
+									<label for="inputPassword" className="col-form-label">
+										Marital Status
+									</label>
+									<input
+										type="text"
+										className="form-control asy-InputValues"
+										id="MaritalStatus"
+										placeholder="Marital Status"
+										onChange={this.handleMaritialStatusChanged}
+										value={this.state.maritialStatus}
+										required
+									/>
+									<div style={{ color: 'red' }}>{this.state.errors['maritialStatus']}</div>
+								</div>
+							</Row>
+							<Row>
+								<div className="form-group col-12 col-md-6">
+									<label for="inputdegree" className="col-form-label">
+										Last Name
+									</label>
+									<input
+										type="text"
+										className="form-control asy-InputValues"
+										id="LastName"
+										placeholder="Last Name"
+										onChange={this.handleLastNameChanged}
+										value={this.state.lastName}
+										required
+									/>
+									<div style={{ color: 'red' }}>{this.state.errors['lastName']}</div>
+								</div>
 
-									<div className="form-group col-12 col-md-6">
-										<label for="inputPassword" className="col-form-label">
-											Pan
-										</label>
-										<input
-											type="text"
-											className="form-control asy-InputValues"
-											id="Pan"
-											placeholder="Pan"
-											onChange={this.handlePanCardChanged}
-											value={this.state.panCard}
-											required
-										/>
-										<div style={{ color: 'red' }}>{this.state.errors['panCard']}</div>
-									</div>
-								</Row>
+								<div className="form-group col-12 col-md-6">
+									<label for="inputPassword" className="col-form-label">
+										Pan
+									</label>
+									<input
+										type="text"
+										className="form-control asy-InputValues"
+										id="Pan"
+										placeholder="Pan"
+										onChange={this.handlePanCardChanged}
+										value={this.state.panCard}
+										required
+									/>
+									<div style={{ color: 'red' }}>{this.state.errors['panCard']}</div>
+								</div>
+							</Row>
 
-								<Row>
-									<div className="form-group col-12 col-md-6">
-										<label for="inputdegree" className="col-form-label">
-											DOB
-										</label>
-										<input
-											type="text"
-											className="form-control asy-InputValues"
-											id="DOB"
-											placeholder="DD/MM/YYYY"
-											onChange={this.handleDobChanged}
-											value={this.state.dob}
-											required
-										/>
-										<div style={{ color: 'red' }}>{this.state.errors['dob']}</div>
-									</div>
-									<div className="form-group col-12 col-md-6">
-										<label for="inputPassword" className="col-form-label">
-											password
-										</label>
-										<input
-											type="password"
-											className="form-control asy-InputValues"
-											id="password"
-											placeholder="Password"
-											onChange={this.handlePasswordChanged}
-											value={this.state.password}
-											required
-										/>
-										<div style={{ color: 'red' }}>{this.state.errors['password']}</div>
-									</div>
-								</Row>
+							<Row>
+								<div className="form-group col-12 col-md-6">
+									<label for="inputdegree" className="col-form-label">
+										DOB
+									</label>
+									<input
+										type="text"
+										className="form-control asy-InputValues"
+										id="DOB"
+										placeholder="DD/MM/YYYY"
+										onChange={this.handleDobChanged}
+										value={this.state.dob}
+										required
+									/>
+									<div style={{ color: 'red' }}>{this.state.errors['dob']}</div>
+								</div>
+								<div className="form-group col-12 col-md-6">
+									<label for="inputPassword" className="col-form-label">
+										password
+									</label>
+									<input
+										type="password"
+										className="form-control asy-InputValues"
+										id="password"
+										placeholder="Password"
+										onChange={this.handlePasswordChanged}
+										value={this.state.password}
+										required
+									/>
+									<div style={{ color: 'red' }}>{this.state.errors['password']}</div>
+								</div>
+							</Row>
 
-								<Row>
-									<div className="form-group col-12 col-md-6">
-										<label for="inputdegree" className="col-form-label">
-											Gender
-										</label>
-										<input
-											type="text"
-											className="form-control asy-InputValues"
-											id="Gender"
-											placeholder="Gender"
-											onChange={this.handleGenderChanged}
-											value={this.state.gender}
-											required
-										/>
-										<div style={{ color: 'red' }}>{this.state.errors['gender']}</div>
-									</div>
-									<div className="form-group col-12 col-md-6">
-										<label for="inputPassword" className="col-form-label">
-											Driving License
-										</label>
-										<input
-											type="text"
-											className="form-control asy-InputValues"
-											id="DrivingLicense"
-											placeholder="Driving License"
-											onChange={this.handleDrivingLycenceChanged}
-											value={this.state.drivingLycence}
-											required
-										/>
-										<div style={{ color: 'red' }}>{this.state.errors['drivingLycence']}</div>
-									</div>
-								</Row>
+							<Row>
+								<div className="form-group col-12 col-md-6">
+									<label for="inputdegree" className="col-form-label">
+										Gender
+									</label>
+									<input
+										type="text"
+										className="form-control asy-InputValues"
+										id="Gender"
+										placeholder="Gender"
+										onChange={this.handleGenderChanged}
+										value={this.state.gender}
+										required
+									/>
+									<div style={{ color: 'red' }}>{this.state.errors['gender']}</div>
+								</div>
+								<div className="form-group col-12 col-md-6">
+									<label for="inputPassword" className="col-form-label">
+										Driving License
+									</label>
+									<input
+										type="text"
+										className="form-control asy-InputValues"
+										id="DrivingLicense"
+										placeholder="Driving License"
+										onChange={this.handleDrivingLycenceChanged}
+										value={this.state.drivingLycence}
+										required
+									/>
+									<div style={{ color: 'red' }}>{this.state.errors['drivingLycence']}</div>
+								</div>
+							</Row>	
 
-								<Row>
-									<div className="form-group col-12 col-md-6">
-										<label for="inputdegree" className="col-form-label">
-											Blood Group
-										</label>
-										<input
-											type="text"
-											className="form-control asy-InputValues"
-											id="BloodGroup"
-											placeholder="Blood Group"
-											onChange={this.handleBloodGrouChanged}
-											value={this.state.bloodGroup}
-											required
-										/>
-										<div style={{ color: 'red' }}>{this.state.errors['bloodGroup']}</div>
-									</div>
-									<div className="form-group col-12 col-md-6">
-										<label for="inputPassword" className="col-form-label">
-											Adhar #
-										</label>
-										<input
-											type="text"
-											className="form-control asy-InputValues"
-											id="Adhar"
-											placeholder="Adhar #"
-											onChange={this.handleAdharNumberChanged}
-											value={this.state.adharNumber}
-											required
-										/>
-										<div style={{ color: 'red' }}>{this.state.errors['adharNumber']}</div>
-									</div>
-								</Row>
+							<Row>
+								<div className="form-group col-12 col-md-6">
+									<label for="inputdegree" className="col-form-label">
+										Blood Group
+									</label>
+									<input
+										type="text"
+										className="form-control asy-InputValues"
+										id="BloodGroup"
+										placeholder="Blood Group"
+										onChange={this.handleBloodGrouChanged}
+										value={this.state.bloodGroup}
+										required
+									/>
+									<div style={{ color: 'red' }}>{this.state.errors['bloodGroup']}</div>
+								</div>
+								<div className="form-group col-12 col-md-6">
+									<label for="inputPassword" className="col-form-label">
+										Adhar #
+									</label>
+									<input
+										type="text"
+										className="form-control asy-InputValues"
+										id="Adhar"
+										placeholder="Adhar #"
+										onChange={this.handleAdharNumberChanged}
+										value={this.state.adharNumber}
+										required
+									/>
+									<div style={{ color: 'red' }}>{this.state.errors['adharNumber']}</div>
+								</div>
+							</Row>
 
-								<Row>
-									<div className="form-group col-12 col-md-6">
-										<label for="inputdegree" className="col-form-label">
-											Country
-										</label>
-										<input
-											type="text"
-											className="form-control asy-InputValues"
-											id="Country"
-											placeholder="Country"
-											onChange={this.handleCountryChanged}
-											value={this.state.country}
-											required
-										/>
-										<div style={{ color: 'red' }}>{this.state.errors['country']}</div>
-									</div>
-								</Row>
+							<Row>
+								<div className="form-group col-12 col-md-6">
+									<label for="inputdegree" className="col-form-label">
+										Country
+									</label>
+									<input
+										type="text"
+										className="form-control asy-InputValues"
+										id="Country"
+										placeholder="Country"
+										onChange={this.handleCountryChanged}
+										value={this.state.country}
+										required
+									/>
+									<div style={{ color: 'red' }}>{this.state.errors['country']}</div>
+								</div>
+							</Row>
 
-								<h5 className="page-heading">Contact Details</h5>
-								<hr className="hr-line" />
+							<h5 className="page-heading">Contact Details</h5>
+							<hr className="hr-line" />
 
-								<Row>
-									<div className="form-group col-12 col-md-6">
-										<label for="inputdegree" className="col-form-label">
-											Mobile No
-										</label>
-										<input
-											type="text"
-											className="form-control asy-InputValues"
-											id="MobileNo"
-											placeholder="Mobile No"
-											onChange={this.handleMobileChanged}
-											value={this.state.mobile}
-											required
-										/>
-										<div style={{ color: 'red' }}>{this.state.errors['mobile']}</div>
-									</div>
-									<div className="form-group col-12 col-md-6">
-										<label for="inputPassword" className="col-form-label">
-											Skype ID
-										</label>
-										<input
-											type="text"
-											className="form-control asy-InputValues"
-											id="SkypeID"
-											placeholder="Skype ID"
-											onChange={this.handleSkypeIdChanged}
-											value={this.state.skypeId}
-											required
-										/>
-										<div style={{ color: 'red' }}>{this.state.errors['skypeId']}</div>
-									</div>
-								</Row>
-								<Row>
-									<div className="form-group col-12 col-md-6">
-										<label for="inputdegree" className="col-form-label">
-											Work Phone
-										</label>
-										<input
-											type="text"
-											className="form-control asy-InputValues"
-											id="WorkPhone"
-											placeholder="Work Phone"
-											onChange={this.handleWorkPhoneChanged}
-											value={this.state.workPhone}
-											required
-										/>
-										<div style={{ color: 'red' }}>{this.state.errors['workPhone']}</div>
-									</div>
+							<Row>
+								<div className="form-group col-12 col-md-6">
+									<label for="inputdegree" className="col-form-label">
+										Mobile No
+									</label>
+									<input
+										type="text"
+										className="form-control asy-InputValues"
+										id="MobileNo"
+										placeholder="Mobile No"
+										onChange={this.handleMobileChanged}
+										value={this.state.mobile}
+										required
+									/>
+									<div style={{ color: 'red' }}>{this.state.errors['mobile']}</div>
+								</div>
+								<div className="form-group col-12 col-md-6">
+									<label for="inputPassword" className="col-form-label">
+										Skype ID
+									</label>
+									<input
+										type="text"
+										className="form-control asy-InputValues"
+										id="SkypeID"
+										placeholder="Skype ID"
+										onChange={this.handleSkypeIdChanged}
+										value={this.state.skypeId}
+										required
+									/>
+									<div style={{ color: 'red' }}>{this.state.errors['skypeId']}</div>
+								</div>
+							</Row>
+							<Row>
+								<div className="form-group col-12 col-md-6">
+									<label for="inputdegree" className="col-form-label">
+										Work Phone
+									</label>
+									<input
+										type="text"
+										className="form-control asy-InputValues"
+										id="WorkPhone"
+										placeholder="Work Phone"
+										onChange={this.handleWorkPhoneChanged}
+										value={this.state.workPhone}
+										required
+									/>
+									<div style={{ color: 'red' }}>{this.state.errors['workPhone']}</div>
+								</div>
 
-									<div className="form-group col-12 col-md-6">
-										<label for="inputdegree" className="col-form-label">
-											Presonal Email
-										</label>
-										<input
-											type="email"
-											className="form-control asy-InputValues"
-											id="PresonalEmail"
-											placeholder="Personal Email"
-											onChange={this.handleEmailChanged}
-											value={this.state.email}
-											required
-										/>
-										<div style={{ color: 'red' }}>{this.state.errors['email']}</div>
-									</div>
-								</Row>
+								<div className="form-group col-12 col-md-6">
+									<label for="inputdegree" className="col-form-label">
+										Presonal Email
+									</label>
+									<input
+										type="email"
+										className="form-control asy-InputValues"
+										id="PresonalEmail"
+										placeholder="Personal Email"
+										onChange={this.handleEmailChanged}
+										value={this.state.email}
+										required
+									/>
+									<div style={{ color: 'red' }}>{this.state.errors['email']}</div>
+								</div>
+							</Row>
 
-								<Row>
-									<div className="form-group col-12 col-md-6">
-										<label for="inputPassword" className="col-form-label">
-											Personal Address
-										</label>
-										<textarea
-											type="text"
-											className="form-control asy-InputValues"
-											id="PersonalAddress"
-											placeholder="Personal Address"
-											onChange={this.handlePermanantAddChanged}
-											value={this.state.permanantAdd}
-											required
-										/>
-										<div style={{ color: 'red' }}>{this.state.errors['permanantAdd']}</div>
-									</div>
-									<div className="form-group col-12 col-md-6">
-										<label for="inputPassword" className="col-form-label">
-											Current Address
-										</label>
-										<textarea
-											type="text"
-											className="form-control asy-InputValues"
-											id="CurrentAddress"
-											placeholder="Current Address"
-											onChange={this.handleCurrentAddChanged}
-											value={this.state.currentAdd}
-											required
-										/>
-										<div style={{ color: 'red' }}>{this.state.errors['currentAdd']}</div>
-									</div>
-								</Row>
-								<Row>
-									<div className="form-group col-12 col-md-6">
-										<label for="inputdegree" className="col-form-label">
-											Linkedin
-										</label>
-										<input
-											type="text"
-											className="form-control asy-InputValues"
-											id="Linkedin"
-											placeholder="Linkedin"
-											onChange={this.handleLinkedinChanged}
-											value={this.state.Linkedin}
-											required
-										/>
-										<div style={{ color: 'red' }}>{this.state.errors['Linkedin']}</div>
-									</div>
-								</Row>
+							<Row>
+								<div className="form-group col-12 col-md-6">
+									<label for="inputPassword" className="col-form-label">
+										Personal Address
+									</label>
+									<textarea
+										type="text"
+										className="form-control asy-InputValues"
+										id="PersonalAddress"
+										placeholder="Personal Address"
+										onChange={this.handlePermanantAddChanged}
+										value={this.state.permanantAdd}
+										required
+									/>
+									<div style={{ color: 'red' }}>{this.state.errors['permanantAdd']}</div>
+								</div>
+								<div className="form-group col-12 col-md-6">
+									<label for="inputPassword" className="col-form-label">
+										Current Address
+									</label>
+									<textarea
+										type="text"
+										className="form-control asy-InputValues"
+										id="CurrentAddress"
+										placeholder="Current Address"
+										onChange={this.handleCurrentAddChanged}
+										value={this.state.currentAdd}
+										required
+									/>
+									<div style={{ color: 'red' }}>{this.state.errors['currentAdd']}</div>
+								</div>
+							</Row>
+							<Row>
+								<div className="form-group col-12 col-md-6">
+									<label for="inputdegree" className="col-form-label">
+										Linkedin
+									</label>
+									<input
+										type="text"
+										className="form-control asy-InputValues"
+										id="Linkedin"
+										placeholder="Linkedin"
+										onChange={this.handleLinkedinChanged}
+										value={this.state.Linkedin}
+										required
+									/>
+									<div style={{ color: 'red' }}>{this.state.errors['Linkedin']}</div>
+								</div>
+							</Row>
 
-								<div className="text-center">
-									<Button
-										onClick={this.submitHandler.bind(this)}
-										className="asy-secondary-submit-button"
-									>
-										Update 
-									</Button>
+							<div className="text-center">
+								<Button onClick={this.submitHandler.bind(this)} className="asy-secondary-submit-button">
+									Update
+								</Button>
 
-									<Button
-										onClickCapture={this.handleManualReset}
-										className="asy-secondary-cancle-button"
-									>
+								<Button onClickCapture={this.handleManualReset} className="asy-secondary-cancle-button">
 									Reset
-									</Button>
-                                  
-									<Button	className="asy-secondary-cancle-button ml-1" >
+								</Button>
+
+								<Button className="asy-secondary-cancle-button ml-1">
 									<Link className={styles.link} to="./profile">
 										Conform Back
-										</Link>
-									</Button>
-                                  
-								</div>
-							</form>
-						</div>
+									</Link>
+								</Button>
+							</div>
+						</form>
 					</div>
+				</div>
 			</div>
 		);
 	}

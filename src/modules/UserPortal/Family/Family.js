@@ -311,21 +311,7 @@ class Family extends Component {
 	};
 	render() {
 		return (
-			<div className="asy-main-jumbotron">
-				<Row>
-					<Col className="d-flex flex-row-reverse">
-						{this.state.onHideForm ? (
-							!this.onHideForm()
-						) : (
-							<button
-								className="add-button-flip"
-								onClick={() => this.setState({ onHideForm: true, dyanamicBtnName: 'Submit' })}
-							>
-								ADD
-							</button>
-						)}
-					</Col>
-				</Row>
+			<div>
 				{/* <hr className="hr-line" /> */}
 				<div>
 					{this.state.onHideForm ? (
@@ -341,17 +327,37 @@ class Family extends Component {
 										<th className="asy-th">Accupation</th>
 										<th className="asy-th">Address</th>
 										<th className="asy-th">Action</th>
+										<th className="asy-th">
+												<Row>
+													<Col	>
+														{this.state.onHideForm ? (
+															!this.onHideForm()
+														) : (
+															<button
+																className="add-button-flip"
+																onClick={() =>
+																	this.setState({
+																		onHideForm: true,
+																		dyanamicBtnName: 'Submit'
+																	})}
+															>
+																ADD
+															</button>
+														)}
+													</Col>
+												</Row>
+											</th>
 									</tr>
 								</thead>
 								<tbody>
 									{this.state.data.map((data, index) => (
-										<tr className="asy-TableData" key={index}>
-											<td>{data.name}</td>
-											<td>{data.relationship}</td>
-											<td>{data.phone}</td>
-											<td>{data.occupation}</td>
-											<td>{data.address}</td>
-											<td>
+										<tr className="asy-TableDataRow" key={index}>
+											<td className="asy-TableData">{data.name}</td>
+											<td className="asy-TableData">{data.relationship}</td>
+											<td className="asy-TableData">{data.phone}</td>
+											<td className="asy-TableData">{data.occupation}</td>
+											<td className="asy-TableData">{data.address}</td>
+											<td className="asy-TableData">
 												<button
 													className="editbutton"
 													onClick={this.onEditData.bind(this, data._id)}
@@ -398,15 +404,26 @@ class Family extends Component {
 													<Modal.Footer className="asy-modal-footer">
 														<div className="row modal-Row ">
 															<div className="col modal-Row ">
-																<Button onClick={this.onRemoveData} className="asy-secondary-submit-button">Delete</Button>
+																<Button
+																	onClick={this.onRemoveData}
+																	className="asy-secondary-submit-button"
+																>
+																	Delete
+																</Button>
 															</div>
 															<div className="col modal-Row ">
-																<Button onClick={this.handleModalHide} className="asy-secondary-cancle-button ">Close</Button>
+																<Button
+																	onClick={this.handleModalHide}
+																	className="asy-secondary-cancle-button "
+																>
+																	Close
+																</Button>
 															</div>
 														</div>
 													</Modal.Footer>
 												</Modal>
 											</td>
+											<td></td>
 										</tr>
 									))}
 								</tbody>

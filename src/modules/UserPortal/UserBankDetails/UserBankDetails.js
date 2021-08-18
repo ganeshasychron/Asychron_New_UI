@@ -259,21 +259,7 @@ class UserBankDetails extends Component {
 	};
 	render() {
 		return (
-			<div className="asy-main-jumbotron">
-				<Row>
-					<Col className="d-flex flex-row-reverse">
-						{this.state.onHideForm ? (
-							!this.onHideForm()
-						) : (
-							<button
-								className="add-button-flip"
-								onClick={() => this.setState({ onHideForm: true, dyanamicBtnName: 'Submit' })}
-							>
-								ADD
-							</button>
-						)}
-					</Col>
-				</Row>
+			<div>
 				{/* <hr className="asy-hr-line" /> */}
 				<div>
 					{this.state.onHideForm ? (
@@ -288,16 +274,37 @@ class UserBankDetails extends Component {
 										<th className="asy-th">Branch Address</th>
 										<th className="asy-th">Account Number</th>
 										<th className="asy-th">Edit / Delete</th>
+
+										<th className="asy-th">
+											<Row>
+												<Col>
+													{this.state.onHideForm ? (
+														!this.onHideForm()
+													) : (
+														<button
+															className="add-button-flip"
+															onClick={() =>
+																this.setState({
+																	onHideForm: true,
+																	dyanamicBtnName: 'Submit'
+																})}
+														>
+															ADD
+														</button>
+													)}
+												</Col>
+											</Row>
+										</th>
 									</tr>
 								</thead>
 								<tbody>
 									{this.state.data.map((data) => (
-										<tr className="asy-TableData" key={this.state.id}>
-											<td>{data.bankName}</td>
-											<td>{data.ifscCode}</td>
-											<td>{data.branchName}</td>
-											<td>{data.accountNum}</td>
-											<td>
+										<tr className="asy-TableDataRow" key={this.state.id}>
+											<td className="asy-TableData">{data.bankName}</td>
+											<td className="asy-TableData">{data.ifscCode}</td>
+											<td className="asy-TableData">{data.branchName}</td>
+											<td className="asy-TableData">{data.accountNum}</td>
+											<td className="asy-TableData">
 												<button
 													className="editbutton"
 													onClick={this.onEditData.bind(this, data._id)}
@@ -346,6 +353,7 @@ class UserBankDetails extends Component {
 													</Modal.Footer>
 												</Modal>
 											</td>
+											<td />
 										</tr>
 									))}
 								</tbody>
