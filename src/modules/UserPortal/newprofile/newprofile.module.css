@@ -1,7 +1,8 @@
 .profileMainCardBorder {
 	flex-shrink: 0;
-	width: 100%;
+	width: 80%;
 	min-width: 326px;
+	margin-left: 20px;
 	/* max-width: fit-content; */
 	padding: 20px;
 	border: none;
@@ -13,6 +14,7 @@
 .profilePendingApproval {
 	box-shadow: rgb(154 161 171 / 65%) 0px 0px 35px 0px;
 	-webkit-box-flex: 1;
+	width: 70%;
 }
 .profileImage {
 	max-width: 6rem;
@@ -26,7 +28,8 @@
 	font-size: 0.875rem;
 	border-radius: 0.15rem;
 	color: rgb(255, 255, 255);
-	background-color: #1bdcff;
+	background-color: #f01111;
+	/*background-color: #1bdcff;*/
 	border-color: rgb(252, 255, 254);
 	font-weight: 400;
 	line-height: 1.5;
@@ -80,4 +83,17 @@ nav-pills .nav-link.active,
 }
 ::-webkit-scrollbar {
 	display: none;
+}
+
+.link {
+	/*	text-decoration: none;*/
+	color: black;
+}
+.pendingApprovals {
+	position: relative;
+	display: block;
+	background-color: #fff;
+	color: aqua;
+	padding: 0;
+	margin:0;
 }
