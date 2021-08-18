@@ -170,7 +170,7 @@ class Family extends Component {
 		return !this.state.onHideForm ? (
 			this.onHideForm()
 		) : (
-			<div className="form-container asy-mainBoxBorder">
+			<div className=" asy-mainBoxBorder">
 				<form
 					onSubmit={() => this.setState({ onHideForm: false, dyanamicBtnName: 'Submit' })}
 					ref={(form) => (this.form = form)}
@@ -206,7 +206,7 @@ class Family extends Component {
 								type="text"
 								className="form-control asy-InputValues"
 								id="inputPassword"
-								placeholder="Accupation"
+								placeholder="Occupation"
 								ref="inputOccupation"
 								onChange={(e) => {
 									this.setState({

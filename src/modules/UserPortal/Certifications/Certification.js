@@ -286,7 +286,7 @@ class Certification extends React.Component {
 					) : null}
 					{this.state.FormOpen ? (
 						<div>
-							<div className="form-container asy-mainBoxBorder">
+							<div className="asy-mainBoxBorder">
 								<form
 									onSubmit={() =>
 										this.setState({ ListOpen: true }) & this.setState({ FormOpen: false })}

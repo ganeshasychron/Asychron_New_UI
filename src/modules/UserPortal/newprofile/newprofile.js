@@ -47,7 +47,7 @@ class Profiles extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className={styles.profileContent}>
 				<div>
 					<div className="row asy-main-row">
 						<Col>
