@@ -154,7 +154,7 @@ export default class UserReference extends Component {
 		return !this.state.onHideForm ? (
 			this.onHideForm()
 		) : (
-			<div className="form-container asy-mainBoxBorder">
+			<div className=" asy-mainBoxBorder">
 				<form
 					onSubmit={() => this.setState({ onHideForm: false })}
 					ref={(form) => (this.form = form)}
