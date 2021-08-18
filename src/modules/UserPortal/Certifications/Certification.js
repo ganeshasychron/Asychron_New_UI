@@ -22,12 +22,12 @@ class Certification extends React.Component {
 			errors: {},
 			data: [],
 
-			name: "",
-			description: "",
-			typeCertificate: "",
-			uploadedOn: "",
-			Certificates: "",
-			userName: "admin123"
+			name: '',
+			description: '',
+			typeCertificate: '',
+			uploadedOn: '',
+			Certificates: '',
+			userName: 'admin123'
 		};
 	}
 
@@ -168,29 +168,9 @@ class Certification extends React.Component {
 	render() {
 		return (
 			<div>
-				<div className="asy-main-jumbotron">
+				<div>
 					{this.state.ListOpen ? (
 						<div>
-							<Row className={styles.Row} >
-								<Col>
-									<div align="right" >
-									<div className="mb-1 mt-3">
-										<Button
-											className="add-button-flip"
-											onClick={() =>
-												this.setState({
-													ListOpen: false,
-													FormOpen: true,
-													dyanamicBtnName: 'Submit'
-												})}
-										>
-											ADD
-										</Button>
-										</div>
-									</div>
-								</Col>
-							</Row>
-
 							<div className="table-sm asy-mainBoxBorder asy-Tablestriped table-responsive">
 								<Table className="asy-Table">
 									<thead>
@@ -199,32 +179,62 @@ class Certification extends React.Component {
 											<th className="asy-th">Certificate Type</th>
 											<th className="asy-th">Uploaded On</th>
 											<th className="asy-th">Action</th>
+											<th className="asy-th">
+													<Row>
+														<Col>
+															<div className="row-col-4 ">
+																<Button
+																	className="add-button-flip"
+																	onClick={() =>
+																		this.setState({
+																			ListOpen: false,
+																			FormOpen: true,
+																			dyanamicBtnName: 'Submit'
+																		})}
+																>
+																	ADD
+																</Button>
+															</div>
+														</Col>
+													</Row>
+												</th>
 										</tr>
 									</thead>
 									<tbody>
 										{this.state.data.map((data, index) => (
-											<tr className="asy-TableData" key={index}>
-												<td> {data.name} </td>
-												<td> {data.typeCertificate} </td>
-												<td><Moment format="D MMM YYYY">
-													{data.updatedOn}
-												</Moment> </td>
-												<td>
-													<button className="editbutton" update onClick={() => this.setState({ ListOpen: false, FormOpen: true })} >
-
+											<tr className="asy-TableDataRow" key={index}>
+												<td className="asy-TableData"> {data.name} </td>
+												<td className="asy-TableData"> {data.typeCertificate} </td>
+												<td className="asy-TableData">
+													<Moment format="D MMM YYYY">{data.updatedOn}</Moment>{' '}
+												</td>
+												<td className="asy-TableData">
+													<button
+														className="editbutton"
+														update
+														onClick={() =>
+															this.setState({ ListOpen: false, FormOpen: true })}
+													>
 														{index % 2 === 0 ? (
 															<img
 																src={edit1}
-																className="asy-Edit" onClick={this.handleUpdateData.bind(this, data._id)}
-																alt="Edit-Icon Certification Page" />
+																className="asy-Edit"
+																onClick={this.handleUpdateData.bind(this, data._id)}
+																alt="Edit-Icon Certification Page"
+															/>
 														) : (
 															<img
 																src={edit11}
-																className="asy-Edit" onClick={this.handleUpdateData.bind(this, data._id)} 
-																alt="Edit-Icon Certification Page" />
+																className="asy-Edit"
+																onClick={this.handleUpdateData.bind(this, data._id)}
+																alt="Edit-Icon Certification Page"
+															/>
 														)}
 													</button>
-													<button className="deletebutton" onClick={this.handleModalShow.bind(this, data._id)} >
+													<button
+														className="deletebutton"
+														onClick={this.handleModalShow.bind(this, data._id)}
+													>
 														{index % 2 === 0 ? (
 															<img
 																src={trash1}
@@ -266,6 +276,7 @@ class Certification extends React.Component {
 														</Modal.Footer>
 													</Modal>
 												</td>
+												<td></td>
 											</tr>
 										))}
 									</tbody>
@@ -360,7 +371,10 @@ class Certification extends React.Component {
 									<div className="text-center">
 										<Button
 											className="asy-secondary-submit-button"
-											onClick={() => { this.submitHandler(); }} 	>
+											onClick={() => {
+												this.submitHandler();
+											}}
+										>
 											{this.state.dyanamicBtnName}
 										</Button>
 
@@ -368,13 +382,13 @@ class Certification extends React.Component {
 											className="asy-secondary-cancle-button"
 											onClick={() => this.setState({ ListOpen: true, FormOpen: false })}
 											onClickCapture={this.handleManualReset}
-											value="reset" >
+											value="reset"
+										>
 											Cancel
 										</Button>
 									</div>
 								</form>
 							</div>
-
 						</div>
 					) : null}
 				</div>

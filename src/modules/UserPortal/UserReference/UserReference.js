@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Row, Table, Col, Modal, Button } from 'react-bootstrap';
 import * as services from '../../../services/services';
-import trash1 from '../../../../src/assets/images/trashw.png'; 
-import trash11 from '../../../../src/assets/images/trash.png'; 
+import trash1 from '../../../../src/assets/images/trashw.png';
+import trash11 from '../../../../src/assets/images/trash.png';
 import edit1 from '../../../../src/assets/images/edit (1).png';
 import edit11 from '../../../../src/assets/images/edit b(1).png';
 
@@ -310,24 +310,7 @@ export default class UserReference extends Component {
 	};
 	render() {
 		return (
-			<div className="asy-main-jumbotron">
-				<Row>
-					<Col className="d-flex flex-row-reverse ">
-						{this.state.onHideForm ? (
-							!this.onHideForm()
-						) : (
-							<div className="mb-1 mt-2">
-							<button
-								className="add-button-flip"
-								onClick={() => this.setState({ onHideForm: true, dyanamicBtnName: 'Submit' })}
-							>
-								ADD
-							</button>
-							</div>
-						)}
-					</Col>
-				</Row>
-
+			<div>
 				{/* <hr className="asy-hr-line" /> */}
 				<div>
 					{this.state.onHideForm ? (
@@ -343,17 +326,37 @@ export default class UserReference extends Component {
 										<th className="asy-th">Email</th>
 										<th className="asy-th">Mobile</th>
 										<th className="asy-th">Edit/Delete</th>
+										<th className="asy-th">
+												<Row>
+													<Col>
+														{this.state.onHideForm ? (
+															!this.onHideForm()
+														) : (
+															<button
+																className="add-button-flip"
+																onClick={() =>
+																	this.setState({
+																		onHideForm: true,
+																		dyanamicBtnName: 'Submit'
+																	})}
+															>
+																ADD
+															</button>
+														)}
+													</Col>
+												</Row>
+											</th>
 									</tr>
 								</thead>
 								<tbody>
 									{this.state.data.map((data, index) => (
-										<tr className="asy-TableData" key={index}>
-											<td>{data.name}</td>
-											<td>{data.title}</td>
-											<td>{data.company}</td>
-											<td>{data.email}</td>
-											<td>{data.mobile}</td>
-											<td>
+										<tr className="asy-TableDataRow" key={index}>
+											<td className="asy-TableData">{data.name}</td>
+											<td className="asy-TableData">{data.title}</td>
+											<td className="asy-TableData">{data.company}</td>
+											<td className="asy-TableData">{data.email}</td>
+											<td className="asy-TableData">{data.mobile}</td>
+											<td className="asy-TableData">
 												<button
 													className="editbutton"
 													onClick={this.onEditData.bind(this, data._id)}
@@ -384,7 +387,7 @@ export default class UserReference extends Component {
 															className="asy-Trash"
 															alt="Delete-Icon Reference Page"
 														/>
-												 	) : (
+													) : (
 														<img
 															src={trash11}
 															className="asy-Trash"
@@ -400,15 +403,26 @@ export default class UserReference extends Component {
 													<Modal.Footer className="asy-modal-footer">
 														<div className="row modal-Row ">
 															<div className="col modal-Row">
-																<Button onClick={this.onRemoveData} className="asy-secondary-submit-button">Delete</Button>
+																<Button
+																	onClick={this.onRemoveData}
+																	className="asy-secondary-submit-button"
+																>
+																	Delete
+																</Button>
 															</div>
 															<div className="col modal-Row ">
-																<Button onClick={this.handleModalHide} className="asy-secondary-cancle-button ">Close</Button>
+																<Button
+																	onClick={this.handleModalHide}
+																	className="asy-secondary-cancle-button "
+																>
+																	Close
+																</Button>
 															</div>
 														</div>
 													</Modal.Footer>
 												</Modal>
 											</td>
+											<td></td>
 										</tr>
 									))}
 								</tbody>
