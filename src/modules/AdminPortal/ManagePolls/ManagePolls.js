@@ -186,7 +186,7 @@ class ManagePolls extends Component {
                 </div>
 
                 <div className="form-container">
-                    <div className="card asy-manage-page-card" >
+                    <div className="asy-card-primary-design" >
                         <div className="card-body">
                             <form>
                                 <Row>

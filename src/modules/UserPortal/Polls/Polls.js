@@ -71,7 +71,7 @@ class Polls extends Component {
 
 
                 <div className="form-container ">
-                    <div className="card asy-polls-page-card" >
+                    <div className="asy-card-primary-design" >
                         <form className="h-100 d-inline-block mt-2">
                             <Row>
                                 <div id="LabelArea" className="form-group ">
@@ -135,12 +135,12 @@ class Polls extends Component {
                             </Row>
 
                             <div className=" text-center mt-3">
-                                <Button className=" asy-primary-submit-button width" onClick={this.submitVoteHandler}>
+                                <Button className=" asy-primary-submit-button width my-2" onClick={this.submitVoteHandler}>
                                     <h6 className="text-center asy-button-heading">
                                         Submit Vote
                                     </h6>
                                 </Button>
-                                <Button className="asy-secondary-cancle-button cancel" onClick={() => this.setState({ showForm: !this.state.showForm })}>
+                                <Button className="asy-secondary-cancle-button cancel my-2" onClick={() => this.setState({ showForm: !this.state.showForm })}>
                                     <h6 className="text-center asy-button-heading">
                                         Cancel
                                     </h6>
