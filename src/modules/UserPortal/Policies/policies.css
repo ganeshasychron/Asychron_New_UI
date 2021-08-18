@@ -1,4 +1,4 @@
-.select_option{
+/* .select_option{
     width: auto;
     height:auto;
     padding: .375rem .75rem;
@@ -6,13 +6,13 @@
     font-weight: 400;
     line-height: 1.5;
     border: none;
-}
+} */
 
-.submit-btn {
-/* display: inline-block;  */
+/* .submit-btn {
+display: inline-block; 
 color: #fff;
 background: #0cd070;
-/*margin-top: 20px; */
+margin-top: 20px;
 outline: none;
 border: none;
 border-radius: none;
@@ -22,13 +22,13 @@ font-weight: 500;
 letter-spacing: 2px;
 text-transform: uppercase;
 cursor: pointer;
-}
+} */
     
 .ColumnWidth {
     width: 85%;
 }
     
-#no{
+#back_color{
     background-color: transparent;
 }
 

@@ -392,14 +392,14 @@ class ManagePolls extends Component {
                                                     <th className="asy-th">Status</th>
                                                     <th className="asy-th">Start Date</th>
                                                     <th className="asy-th">End Date</th>
-                                                    <th className="asy-th"></th>
+                                                    <th className="asy-th">Add/Delete</th>
                                                 </tr>
                                             </thead>
 
                                             <tbody>
                                                 {
                                                     this.state.data.map((data) => (
-                                                        <tr className="asy-TableData" key={data._id}>
+                                                        <tr className="asy-TableDataRow" key={data._id}>
                                                             <td>
                                                                 {data.pollTitle}
                                                             </td>

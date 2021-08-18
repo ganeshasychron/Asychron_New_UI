@@ -164,7 +164,7 @@ class Polls extends Component {
 
 
                     <Col className="d-flex flex-row-reverse">
-                        <Button className="add-button-flip" onClick={() => this.setState({ showResult: !this.state.showResult })}>
+                        <Button id="add_btn" className="add-button-flip" onClick={() => this.setState({ showResult: !this.state.showResult })}>
                             <h6 className="text-center asy-button-heading">
                                 Back
                             </h6>
@@ -231,7 +231,7 @@ class Polls extends Component {
                                                         <tbody>
                                                             {
                                                                 this.state.data.map((data) => (
-                                                                    <tr className="asy-TableData" key={data._id}>
+                                                                    <tr className="asy-TableDataRow" key={data._id}>
                                                                         <td>
                                                                             {data.pollTitle}
                                                                         </td>
@@ -246,7 +246,7 @@ class Polls extends Component {
                                                                         </td>
                                                                         <td className="btn-align">
 
-                                                                            <Button className="asy-primary-submit-button m-0" onClick={() => this.setState({ showResult: !this.state.showResult })}>
+                                                                            <Button className="asy-primary-submit-button m-0 mr-2" onClick={() => this.setState({ showResult: !this.state.showResult })}>
                                                                                 <h6 className="text-center asy-button-heading">
                                                                                     View Result
                                                                                 </h6>

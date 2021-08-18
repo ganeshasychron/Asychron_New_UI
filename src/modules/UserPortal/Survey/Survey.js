@@ -36,7 +36,7 @@ const Survey = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="asy-TableData">
+                    <tr className="asy-TableDataRow">
                       <td>Covid 19 Internal</td>
                       <td>abcd</td>
                       <td>High</td>
