@@ -51,13 +51,13 @@
    padding: 2px 15px;
 }
 
- .container {
+ /* .container {
   display: block;
   position: relative;
   padding-left: 20px;
   margin: 0% !important;
   cursor: pointer;
-}
+} */
 
 .container input {
   position: absolute;

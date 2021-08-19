@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 // import ReactDOM from "react-dom";
 
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
@@ -18,7 +19,7 @@ class App extends Component {
 			<div>
 				<Switch>
 					<Route path="/" render={(props) => <UserLayout {...props} />} />
-					<Redirect from="/" to="/" />
+					{/* <Redirect from="/" to="/" /> */}
 				</Switch>
 			</div>
 		);
