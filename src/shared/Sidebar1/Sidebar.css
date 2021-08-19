@@ -1,3 +1,5 @@
+@import "../../shared/CSS/blueTheme.css";
+
 * {
     margin: 0;
     padding: 0;
@@ -13,9 +15,9 @@ li {
 }
 
 body {
-    background-color: #eee;
-    font-family: "Open Sans", sans-serif;
+    background-color: var(--asy-main-background-color);
 }
+
 
 /* width */
 ::-webkit-scrollbar {
