@@ -11,6 +11,7 @@ function Sidebar({ color, routes }) {
 	// const activeRoute = (routeName) => {
 	//   return location.pathname.indexOf(routeName) > -1 ? "active" : "";
 	// };
+  
 	return (
 		<IconContext.Provider value={{ color: '#fff' }}>
 			<div className="sidebar" data-color={color}>

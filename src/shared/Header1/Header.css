@@ -1,0 +1,106 @@
+.asy-main-header{
+width: 100% !important;
+height: 100px !important;
+display: flex;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+  background-color: #fff;
+}
+
+.asy-main-header-navbar{
+    display: flex;
+}
+
+.header-second-half{
+    display: flex;
+}
+
+.asy-header-logo-lext {
+    font-family: Roboto !important;
+    font-size: 2.6rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px !important;
+    text-align: left;
+    color: #181818 !important;
+    margin-left: 30px !important;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 576px) {
+.asy-header-logo-lext {
+   font-size: 25px;
+   margin-left: 0px;
+}
+}
+
+.notification-bell-icon-main{
+    margin-top: 50px;
+}
+
+@media (max-width: 576px) {
+.notification-bell-icon-main {
+        margin-right: 100px !important;
+    }
+}
+
+.asy-notification-bell-icon{
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 30px !important;
+        margin-top: -40px;
+}
+
+.rounded-circle{
+    width: 3.5rem;
+    height: 3.5rem;
+    border: solid 1px #707070;
+        margin-right: 20px;
+}
+
+@media (max-width: 576px) {
+   .rounded-circle {
+       height: 40px;
+       width: 40px;
+       margin-right: 80px;
+        margin-top: -90px !important;
+    }
+}
+
+.asy-profile-icon-header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-profile-text-header{
+    font-family: Poppins;
+    font-size: 1rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    margin-left: -15px;
+    margin-right: 30px ;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.user-profile-text-header a {
+    color: #242424;
+        display: flex;
+        align-items: center;
+}
+
+@media (max-width: 576px) {
+.user-profile-text-header{
+    font-size: 0.8rem;
+        margin-right: -5px;
+        margin-top: -75px !important;
+    }
+}
